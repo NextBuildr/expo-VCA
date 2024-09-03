@@ -8,7 +8,7 @@ export default function Splash() {
   useEffect(() => {
     // Navigate to onboarding after a 2-second delay
     const timeout = setTimeout(() => {
-      router.replace("/onboarding/page2");
+      router.replace("/onboarding/page1");
     }, 5000);
 
     // Cleanup the timeout if the component unmounts

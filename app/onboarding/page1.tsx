@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
     marginBottom: 40,
     lineHeight: 36,
     color: " #1B263B;",
+    alignItems: "center"
   },
 
   nextButton: {
