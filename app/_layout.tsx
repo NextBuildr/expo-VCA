@@ -33,7 +33,7 @@ function AppNavigator() {
   return (
     <Stack>
       {/* Splash Screen */}
-      <Stack.Screen name="splash" options={{ headerShown: false }} />
+      <Stack.Screen name="splash/index" options={{ headerShown: false }} />
 
       {/* Onboarding Stack */}
       <Stack.Screen name="onboarding/page1" options={{ headerShown: false }} />

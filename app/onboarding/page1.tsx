@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, Image, Button, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 import { useRouter } from "expo-router";
 
 export default function OnboardingPage1() {
@@ -17,7 +24,12 @@ export default function OnboardingPage1() {
         conversations every time.
       </Text>
       <View style={styles.buttonContainer}>
-        <Button title="Next" onPress={() => router.push("/onboarding/page2")} />
+        <TouchableOpacity
+          style={styles.nextButton}
+          onPress={() => router.push("/onboarding/page2")}
+        >
+          <Text style={styles.nextButtonText}>Next</Text>
+        </TouchableOpacity>
         <Button
           title="Skip"
           onPress={() => router.replace("/auth/login")}
@@ -38,9 +50,31 @@ const styles = StyleSheet.create({
   headText: {
     fontSize: 24,
     fontWeight: "bold",
-    marginBottom: 20,
+    marginBottom: 40,
     color: " #1B263B;",
   },
+
+  nextButton: {
+    padding: 12, // Equivalent to 0.75rem
+    backgroundColor: "#415a77",
+    borderRadius: 5,
+    width: "100%",
+    alignItems: "center",
+    marginBottom: 10, // Add margin between buttons
+  },
+  nextButtonText: {
+    fontSize: 15, // Font size 15px
+    color: "#fff",
+  },
+  skipButton: {
+    alignItems: "center",
+    marginTop: 10, 
+  },
+  skipButtonText: {
+    fontSize: 15, // Font size 15px
+    color: "#1B263B", // Lighter color for the Skip button text
+  },
+
   image: {
     width: 250,
     height: 250,
@@ -51,8 +85,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: "center",
     marginBottom: 20,
-    lineHeight: 30,
-    color: "#1b263b"
+
+    color: "#1B263BE5",
+
   },
   buttonContainer: {
     flexDirection: "column",
