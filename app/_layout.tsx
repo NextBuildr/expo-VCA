@@ -38,12 +38,12 @@ function AppNavigator() {
       <Stack.Screen name="onboarding/page3" options={{ headerShown: false }} />
 
       {/* Auth Stack */}
-      {/* <Stack.Screen name="auth/login" options={{ headerShown: false }} />
+      <Stack.Screen name="auth/login" options={{ headerShown: false }} />
       <Stack.Screen name="auth/signup" options={{ headerShown: false }} />
       <Stack.Screen
         name="auth/forgot-password"
         options={{ headerShown: false }}
-      /> */}
+      />
 
       {/* Main App Stack */}
       {/* <Stack.Screen name="home" options={{ headerShown: false }} />
