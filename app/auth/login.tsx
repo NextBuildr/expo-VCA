@@ -84,10 +84,11 @@ const LoginScreen = () => {
 const styles = StyleSheet.create({
   loginContainer: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     paddingHorizontal: 20,
-    fontFamily: 'Inter', // Ensure font is loaded via react-native-fonts or expo
+    paddingVertical: 80, 
+    fontFamily: 'Inter', 
   },
   formSection: {
     width: '100%',
