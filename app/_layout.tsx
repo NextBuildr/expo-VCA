@@ -1,42 +1,54 @@
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from "@react-navigation/native";
-import { useFonts } from "expo-font";
-import { Stack } from "expo-router";
-import * as SplashScreen from "expo-splash-screen";
-import { useEffect } from "react";
-import "react-native-reanimated";
+import { Stack, useSegments, useRouter } from "expo-router";
+import { useContext, useEffect } from "react";
+// import { AuthProvider, AuthContext } from '../context/AuthContext';
+// import { ThemeProvider } from '../navigation/ThemeProvider';
 
-import { useColorScheme } from "@/hooks/useColorScheme";
+export default function Layout() {
+  return (
+    // <ThemeProvider>
+    //   <AuthProvider>
+    <AppNavigator />
+    //   </AuthProvider>
+    // </ThemeProvider>
+  );
+}
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
+function AppNavigator() {
+  //   const { user } = useContext(AuthContext);
+  const segments = useSegments();
+  const router = useRouter();
 
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
-  });
+  //   useEffect(() => {
+  //     const inAuthGroup = segments[0] === 'auth';
+  //     const inOnboardingGroup = segments[0] === 'onboarding';
 
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
-
-  if (!loaded) {
-    return null;
-  }
+  //     // Redirect to appropriate stack based on authentication state
+  //     if (!user && !inAuthGroup && !inOnboardingGroup) {
+  //       router.replace('/onboarding/page1');
+  //     } else if (user && (inAuthGroup || inOnboardingGroup)) {
+  //       router.replace('/home');
+  //     }
+  //   }, [user, segments]);
 
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="onboarding" options={{ headerShown: false }} />
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-    </ThemeProvider>
+    <Stack>
+      {/* Onboarding Stack */}
+      <Stack.Screen name="onboarding/page1" options={{ headerShown: false }} />
+      <Stack.Screen name="onboarding/page2" options={{ headerShown: false }} />
+      <Stack.Screen name="onboarding/page3" options={{ headerShown: false }} />
+
+      {/* Auth Stack */}
+      {/* <Stack.Screen name="auth/login" options={{ headerShown: false }} />
+      <Stack.Screen name="auth/signup" options={{ headerShown: false }} />
+      <Stack.Screen
+        name="auth/forgot-password"
+        options={{ headerShown: false }}
+      /> */}
+
+      {/* Main App Stack */}
+      {/* <Stack.Screen name="home" options={{ headerShown: false }} />
+      <Stack.Screen name="contacts" options={{ headerShown: false }} />
+      <Stack.Screen name="call" options={{ headerShown: false }} /> */}
+    </Stack>
   );
 }
