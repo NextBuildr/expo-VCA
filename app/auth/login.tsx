@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useRouter } from "expo-router";
+
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigation = useNavigation();
+  const router = useRouter();
+
 
   const login = () => {
     console.log('Email:', email);
@@ -21,6 +25,7 @@ const LoginScreen = () => {
           <Text style={styles.subText}>Please enter your details to login.</Text>
         </View>
         <View style={styles.inputGroup}>
+        <Text style={styles.label}>Email</Text>
           <TextInput
             style={styles.input}
             placeholder="Email"
@@ -29,6 +34,7 @@ const LoginScreen = () => {
           />
         </View>
         <View style={styles.inputGroup}>
+        <Text style={styles.label}>Password</Text>
           <TextInput
             style={styles.input}
             placeholder="Password"
@@ -65,7 +71,7 @@ const LoginScreen = () => {
         <View style={styles.acctTextContainer}>
           <Text style={styles.acctText}>
             Don’t have an account?
-            <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
+            <TouchableOpacity onPress={() => router.replace("/auth/signup")}>
               <Text style={styles.createAccountText}> Create an account</Text>
             </TouchableOpacity>
           </Text>
@@ -105,6 +111,13 @@ const styles = StyleSheet.create({
   },
   inputGroup: {
     marginBottom: 15,
+  },
+  label: {
+    fontSize: 14,
+    fontWeight: '400',
+    marginBottom: 5,
+    color: '#1B263B',
+
   },
   input: {
     height: 44,
