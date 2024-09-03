@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
   },
   acctText: {
     fontSize: 15,
-    color: "#778da9",
+    color: "#1B263B",
   },
   createAccountText: {
     color: "#778DA9",
