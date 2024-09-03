@@ -31,7 +31,7 @@ export default function OnboardingPage1() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
     padding: 20,
   },
@@ -48,9 +48,11 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   description: {
-    fontSize: 16,
+    fontSize: 20,
     textAlign: "center",
     marginBottom: 20,
+    lineHeight: 30,
+    color: "#1b263b"
   },
   buttonContainer: {
     flexDirection: "column",

@@ -18,6 +18,8 @@ export default function LoginScreen() {
       {/* <Button title="Login" onPress={() => login(email, password)} /> */}
       <Button title="Sign Up" onPress={() => router.push('/auth/signup')} />
       <Button title="Forgot Password" onPress={() => router.push('/auth/forget-password')} />
+      <Button title="onboarding" onPress={() => router.push('/onboarding/page1')} />
+
     </View>
   );
 }
