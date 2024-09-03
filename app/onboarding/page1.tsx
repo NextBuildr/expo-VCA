@@ -10,6 +10,7 @@ export default function OnboardingPage1() {
       <Text>Onboarding Page 1</Text>
       <Button title="Next" onPress={() => router.push('/onboarding/page2')} />
       <Button title="Skip" onPress={() => router.replace('/auth/login')} />
+        
     </View>
   );
 }
