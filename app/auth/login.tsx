@@ -36,7 +36,7 @@ const LoginScreen = () => {
             style={styles.input}
             placeholder="PeachAlda@gmail.com"
             value={email}
-            placeholderTextColor="#1B263BE5" 
+            placeholderTextColor="#1B263BE5"
             onChangeText={setEmail}
           />
         </View>
@@ -47,7 +47,7 @@ const LoginScreen = () => {
             placeholder="........"
             secureTextEntry
             value={password}
-            placeholderTextColor="#1B263BE5" 
+            placeholderTextColor="#1B263BE5"
             onChangeText={setPassword}
           />
         </View>
@@ -81,7 +81,7 @@ const LoginScreen = () => {
         </TouchableOpacity>
         <View style={styles.acctTextContainer}>
           <Text style={styles.acctText}>
-            Don’t have an account?
+            Don’t have an Account?
             <TouchableOpacity onPress={() => router.replace("/auth/signup")}>
               <Text style={styles.createAccountText}> Create an account</Text>
             </TouchableOpacity>
@@ -220,7 +220,7 @@ const styles = StyleSheet.create({
   },
   createAccountText: {
     color: "#778DA9",
-    fontWeight: "700"
+    fontWeight: "700",
   },
 });
 
