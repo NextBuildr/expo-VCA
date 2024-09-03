@@ -67,7 +67,7 @@ const LoginScreen = () => {
         </TouchableOpacity>
         <View style={styles.divider}>
           <View style={styles.dividerLine}></View>
-          <Text style={styles.dividerText}>Or</Text>
+          <Text style={styles.dividerText}>OR</Text>
           <View style={styles.dividerLine}></View>
         </View>
         <TouchableOpacity style={styles.googleSignupWrapper}>
@@ -219,7 +219,8 @@ const styles = StyleSheet.create({
     color: "#778da9",
   },
   createAccountText: {
-    color: "#415a77",
+    color: "#778DA9",
+    fontWeight: "700"
   },
 });
 
