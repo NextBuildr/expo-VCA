@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 
 export default function OnboardingPage1() {
@@ -14,3 +14,18 @@ export default function OnboardingPage1() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+  },
+
+  text: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#333',
+  },
+});

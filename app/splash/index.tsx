@@ -31,11 +31,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fff',
   },
-  logo: {
-    width: 150,
-    height: 150,
-    marginBottom: 20,
-  },
+
   text: {
     fontSize: 24,
     fontWeight: 'bold',
