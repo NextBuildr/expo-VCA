@@ -30,11 +30,12 @@ export default function OnboardingPage1() {
         >
           <Text style={styles.nextButtonText}>Next</Text>
         </TouchableOpacity>
-        <Button
-          title="Skip"
+        <TouchableOpacity
+          style={styles.skipButton}
           onPress={() => router.replace("/auth/login")}
-          color="#ccc"
-        />
+        >
+          <Text style={styles.skipButtonText}>Skip</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -49,8 +50,9 @@ const styles = StyleSheet.create({
   },
   headText: {
     fontSize: 24,
-    fontWeight: "bold",
+    fontWeight: "700",
     marginBottom: 40,
+    lineHeight: 36,
     color: " #1B263B;",
   },
 
@@ -68,7 +70,7 @@ const styles = StyleSheet.create({
   },
   skipButton: {
     alignItems: "center",
-    marginTop: 10, 
+    marginTop: 10,
   },
   skipButtonText: {
     fontSize: 15, // Font size 15px
@@ -79,15 +81,14 @@ const styles = StyleSheet.create({
     width: 250,
     height: 250,
     resizeMode: "contain",
-    marginBottom: 20,
+    marginBottom: 50,
   },
   description: {
     fontSize: 20,
     textAlign: "center",
     marginBottom: 20,
-
+    fontWeight: "400",
     color: "#1B263BE5",
-
   },
   buttonContainer: {
     flexDirection: "column",
