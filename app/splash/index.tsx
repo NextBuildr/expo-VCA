@@ -8,8 +8,8 @@ export default function Splash() {
   useEffect(() => {
     // Navigate to onboarding after a 2-second delay
     const timeout = setTimeout(() => {
-      router.replace('/onboarding/page1');
-    }, 2000);
+      router.replace('/onboarding/page2');
+    }, 5000);
 
     // Cleanup the timeout if the component unmounts
     return () => clearTimeout(timeout);
@@ -19,7 +19,7 @@ export default function Splash() {
     <View style={styles.container}>
       {/* Replace with your logo */}
       <Image source={require('../../assets/images/logo.png')} style={styles.logo} />
-     
+    
     </View>
   );
 }
@@ -31,7 +31,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fff',
   },
-
+  logo: {
+   
+    marginBottom: 20,
+  },
   text: {
     fontSize: 24,
     fontWeight: 'bold',
