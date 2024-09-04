@@ -1,6 +1,12 @@
-import React from 'react';
-import { Text, View, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
-import { Ionicons } from '@expo/vector-icons'; // For back arrow icon
+import React from "react";
+import {
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+} from "react-native";
+import { Ionicons } from "@expo/vector-icons"; // For back arrow icon
 
 export default function ForgotPasswordScreen() {
   return (
@@ -19,11 +25,11 @@ export default function ForgotPasswordScreen() {
       </Text>
 
       {/* Input with Label */}
-      <View style={styles.inputContainer}>
-        <Text style={styles.label}>Email Address</Text>
-        <TextInput 
-          style={styles.input} 
-          placeholder="Enter your email" 
+      <View style={styles.inputGroup}>
+        <Text style={styles.label}>Email</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="PeachAlda@gmail.com"
           placeholderTextColor="#1B263BE5"
         />
       </View>
@@ -45,56 +51,61 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    justifyContent: 'flex-start',
-    backgroundColor: '#fff',
+    justifyContent: "flex-start",
+    backgroundColor: "#fff",
   },
   backButton: {
-    marginTop: 10,
+    marginTop: 50,
     marginBottom: 20,
   },
   header: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#000',
+    fontSize: 20,
+    fontWeight: "700",
+    color: "#1B263B",
+    lineHeight: 30,
     marginBottom: 10,
   },
   subText: {
     fontSize: 16,
-    color: '#6c757d',
-    marginBottom: 30,
+    color: "#1B263BE5",
+    fontWeight: "400",
+    marginBottom: 60,
+    lineHeight: 27,
   },
-  inputContainer: {
-    marginBottom: 20,
+  inputGroup: {
+    marginBottom: 60,
   },
   label: {
     fontSize: 14,
-    color: '#000',
+    fontWeight: "400",
     marginBottom: 5,
+    color: "#1B263B",
   },
   input: {
+    height: 44,
+    padding: 12,
+    fontSize: 14,
+    borderColor: "#ccc",
     borderWidth: 1,
-    borderColor: '#ced4da',
-    borderRadius: 5,
-    padding: 10,
-    fontSize: 16,
-    color: '#000',
+    borderRadius: 4,
+    backgroundColor: "#fff",
   },
   link: {
     fontSize: 16,
-    color: '#1E90FF',
-    marginTop: 15,
-    textAlign: 'center',
+    color: "#1E90FF",
+    marginBottom: 80,
+    textAlign: "center",
   },
   sendButton: {
-    backgroundColor: '#1E90FF',
+    backgroundColor: "#1E90FF",
     paddingVertical: 15,
     borderRadius: 5,
     marginTop: 30,
-    alignItems: 'center',
+    alignItems: "center",
   },
   sendButtonText: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });

@@ -74,7 +74,7 @@ const SignupScreen = () => {
             </TouchableOpacity>
             <Text style={styles.rememberText}>Already have an Account?</Text>
           </View>
-          <TouchableOpacity onPress={() => router.replace("/auth/login")}>
+          <TouchableOpacity onPress={() => router.replace("/auth/forget-password")}>
             <Text style={styles.forgetPassword}>Forget password?</Text>
           </TouchableOpacity>
         </View>
