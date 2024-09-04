@@ -40,8 +40,8 @@ export default function ForgotPasswordScreen() {
       </TouchableOpacity>
 
       {/* Send Button */}
-      <TouchableOpacity style={styles.sendButton}>
-        <Text style={styles.sendButtonText}>Send</Text>
+      <TouchableOpacity style={styles.formSubmitButton}>
+        <Text style={styles.buttonText}>Send</Text>
       </TouchableOpacity>
     </View>
   );
@@ -95,17 +95,31 @@ const styles = StyleSheet.create({
     color: "#1E90FF",
     marginBottom: 80,
     textAlign: "center",
+    fontWeight: "400",
+    textDecorationLine: "underline",
+  },
+
+  formSubmitButton: {
+    backgroundColor: "#415a77",
+    padding: 12,
+    borderRadius: 10,
+    alignItems: "center",
+    marginBottom: 25,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 15,
   },
   sendButton: {
-    backgroundColor: "#1E90FF",
-    paddingVertical: 15,
+    padding: 12,
+    backgroundColor: "#415a77",
     borderRadius: 5,
-    marginTop: 30,
+    width: "100%",
     alignItems: "center",
+    marginBottom: 10,
   },
   sendButtonText: {
+    fontSize: 15,
     color: "#fff",
-    fontSize: 16,
-    fontWeight: "bold",
   },
 });
