@@ -16,11 +16,11 @@ export default function ConfirmationPage() {
       </TouchableOpacity>
 
       <View style={styles.contentContainer}>
-        <Image source={require('../assets/confirmation.png')} style={styles.image} />
+        <Image source={require('../../assets/images/confirmmail.png')} style={styles.image} />
 
-        <Text style={styles.headerText}>Confirmation Required</Text>
+        <Text style={styles.headerText}>Check your mail</Text>
         <Text style={styles.descriptionText}>
-          Please confirm your email address by clicking the link we sent you.
+        A verification link has been sent to your email. Please check your inbox.
         </Text>
 
         <TouchableOpacity style={styles.checkoutButton}>
@@ -40,11 +40,74 @@ export default function ConfirmationPage() {
 }
 
 const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: 'flex-start', // Aligns all content at the top
+      paddingHorizontal: 20,
+      paddingTop: 40, // Optional, to add some space from the top
+    },
+    arrowButton: {
+      position: 'absolute',
+      top: 10,
+      left: 10,
+      padding: 10,
+    },
+    arrow: {
+      fontSize: 24,
+    },
+    mainContent: {
+      marginTop: 60, // Space from the arrow button
+      alignItems: 'center', // Center content horizontally
+    },
+    image: {
+      width: 200,
+      height: 200,
+      marginBottom: 20,
+    },
+    headText: {
+      fontSize: 24,
+      fontWeight: 'bold',
+      marginBottom: 10,
+    },
+    descriptionText: {
+      fontSize: 16,
+      color: '#555',
+      marginBottom: 20,
+      textAlign: 'center',
+    },
+    checkoutButton: {
+      backgroundColor: '#415A77',
+      padding: 15,
+      borderRadius: 10,
+      marginTop: 20,
+      width: '100%',
+      alignItems: 'center',
+    },
+    checkoutButtonText: {
+      color: '#fff',
+      fontSize: 16,
+    },
+    skipText: {
+      marginTop: 10,
+      color: '#1b263b',
+      textAlign: 'center',
+    },
+    bottomText: {
+      position: 'absolute',
+      bottom: 10,
+      left: 20,
+      right: 20,
+      textAlign: 'center',
+      color: '#778DA9',
+    },
+  });
+
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
     backgroundColor: '#fff',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
   },
   backArrow: {
     marginTop: 30,
@@ -95,5 +158,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     textAlign: 'center',
     marginBottom: 20,
+    alignSelf: 'flex-end',
+
   },
 });
