@@ -82,16 +82,16 @@ const styles = StyleSheet.create({
     fontWeight: "400",
   },
   checkoutButton: {
-    backgroundColor: "#415A77",
-    padding: 15,
-    borderRadius: 10,
+    padding: 12,
+    backgroundColor: "#415a77",
+    borderRadius: 5,
     width: "100%",
     alignItems: "center",
-    marginBottom: 20,
+    marginBottom: 10,
   },
   checkoutButtonText: {
+    fontSize: 15, 
     color: "#fff",
-    fontSize: 16,
   },
   skipText: {
     marginTop: 10,
