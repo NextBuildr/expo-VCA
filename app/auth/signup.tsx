@@ -49,7 +49,7 @@ const SignupScreen = () => {
             style={styles.input}
             placeholder="peachalda@gmail.com"
             secureTextEntry
-            value={password}
+            value={email}
             placeholderTextColor="#1B263BE5"
             onChangeText={setEmail}
           />
@@ -78,7 +78,10 @@ const SignupScreen = () => {
             <Text style={styles.forgetPassword}>Forget password?</Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.formSubmitButton} onPress={() => router.replace("/auth/login")}>
+        <TouchableOpacity
+          style={styles.formSubmitButton}
+          onPress={() => router.replace("/auth/login")}
+        >
           <Text style={styles.buttonText}>Sign Up</Text>
         </TouchableOpacity>
         <View style={styles.divider}>
@@ -97,7 +100,7 @@ const SignupScreen = () => {
         </TouchableOpacity>
         <View style={styles.acctTextContainer}>
           <Text style={styles.acctText}>
-            Don’t have an Account?
+            Already have an Account?
             <TouchableOpacity onPress={() => router.replace("/auth/login")}>
               <Text style={styles.createAccountText}> Log in</Text>
             </TouchableOpacity>
