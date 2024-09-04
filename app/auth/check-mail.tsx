@@ -40,7 +40,7 @@ export default function ConfirmationPage() {
       </View>
 
       <Text style={styles.bottomText}>Did not receive email? Check your spam</Text>
-      <Text style={styles.footer}>
+      <Text style={styles.bottomText}>
         or <Text style={styles.bottomlink}>try another email address</Text>
       </Text>
     </View>
