@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
   },
   bottomText: {
     position: "absolute",
-    bottom: 10,
+    bottom: 50,
     left: 20,
     right: 20,
     textAlign: "center",
