@@ -63,7 +63,7 @@ const HomePage = () => {
           onPress={() => handleTabPress("call")}
         >
           <View style={styles.navContent}>
-            <FontAwesome name="phone" size={24} color={activeTab === 'home' ? '#FFF' : '#415A77'} />
+            <FontAwesome name="phone" size={24} color={activeTab === 'call' ? '#FFF' : '#415A77'} />
             {activeTab === "call" && <Text style={styles.navText}>Call</Text>}
           </View>
         </TouchableOpacity>
@@ -73,7 +73,7 @@ const HomePage = () => {
           onPress={() => handleTabPress("profile")}
         >
           <View style={styles.navContent}>
-            <FontAwesome name="user" size={24} color={activeTab === 'home' ? '#FFF' : '#415A77'} />
+            <FontAwesome name="user" size={24} color={activeTab === 'profile' ? '#FFF' : '#415A77'} />
             {activeTab === "profile" && (
               <Text style={styles.navText}>Profile</Text>
             )}
