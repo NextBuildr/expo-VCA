@@ -49,15 +49,10 @@ function AppNavigator() {
       <Stack.Screen name="auth/forget-password" options={{ headerShown: false }} />
 
 
-      {/* <Stack.Screen
-        name="auth/forgot-password"
-        options={{ headerShown: false }}
-      /> */}
-
       {/* Main App Stack */}
-      {/* <Stack.Screen name="home" options={{ headerShown: false }} />
-      <Stack.Screen name="contacts" options={{ headerShown: false }} />
-      <Stack.Screen name="call" options={{ headerShown: false }} /> */}
+      <Stack.Screen name="home" options={{ headerShown: false }} />
+      {/* <Stack.Screen name="contacts" options={{ headerShown: false }} /> */}
+      {/* <Stack.Screen name="call" options={{ headerShown: false }} /> */}
     </Stack>
   );
 }

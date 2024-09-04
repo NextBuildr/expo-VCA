@@ -32,7 +32,10 @@ export default function ConfirmationPage() {
           exploring and enjoying all the features we offer
         </Text>
 
-        <TouchableOpacity style={styles.checkoutButton}>
+        <TouchableOpacity
+          style={styles.checkoutButton}
+          onPress={() => router.replace("/home")}
+        >
           <Text style={styles.checkoutButtonText}>Go To Homepage</Text>
         </TouchableOpacity>
       </View>
