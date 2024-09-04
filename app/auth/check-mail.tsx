@@ -1,9 +1,8 @@
-import React from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { AntDesign } from '@expo/vector-icons';
+import React from "react";
+import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { AntDesign } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-
 
 export default function ConfirmationPage() {
   const navigation = useNavigation();
@@ -11,16 +10,23 @@ export default function ConfirmationPage() {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backArrow}>
+      <TouchableOpacity
+        onPress={() => navigation.goBack()}
+        style={styles.backArrow}
+      >
         <AntDesign name="arrowleft" size={24} color="#1B263B" />
       </TouchableOpacity>
 
       <View style={styles.contentContainer}>
-        <Image source={require('../../assets/images/confirmmail.png')} style={styles.image} />
+        <Image
+          source={require("../../assets/images/confirmmail.png")}
+          style={styles.image}
+        />
 
         <Text style={styles.headerText}>Check your mail</Text>
         <Text style={styles.descriptionText}>
-        A verification link has been sent to your email. Please check your inbox.
+          A verification link has been sent to your email. Please check your
+          inbox.
         </Text>
 
         <TouchableOpacity style={styles.checkoutButton}>
@@ -40,125 +46,64 @@ export default function ConfirmationPage() {
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'flex-start', // Aligns all content at the top
-      paddingHorizontal: 20,
-      paddingTop: 40, // Optional, to add some space from the top
-    },
-    arrowButton: {
-      position: 'absolute',
-      top: 10,
-      left: 10,
-      padding: 10,
-    },
-    arrow: {
-      fontSize: 24,
-    },
-    mainContent: {
-      marginTop: 60, // Space from the arrow button
-      alignItems: 'center', // Center content horizontally
-    },
-    image: {
-      width: 200,
-      height: 200,
-      marginBottom: 20,
-    },
-    headText: {
-      fontSize: 24,
-      fontWeight: 'bold',
-      marginBottom: 10,
-    },
-    descriptionText: {
-      fontSize: 16,
-      color: '#555',
-      marginBottom: 20,
-      textAlign: 'center',
-    },
-    checkoutButton: {
-      backgroundColor: '#415A77',
-      padding: 15,
-      borderRadius: 10,
-      marginTop: 20,
-      width: '100%',
-      alignItems: 'center',
-    },
-    checkoutButtonText: {
-      color: '#fff',
-      fontSize: 16,
-    },
-    skipText: {
-      marginTop: 10,
-      color: '#1b263b',
-      textAlign: 'center',
-    },
-    bottomText: {
-      position: 'absolute',
-      bottom: 10,
-      left: 20,
-      right: 20,
-      textAlign: 'center',
-      color: '#778DA9',
-    },
-  });
-
-const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-    backgroundColor: '#fff',
-    justifyContent: 'flex-start',
+    justifyContent: "flex-start", // Aligns all content at the top
+    paddingHorizontal: 20,
+    paddingTop: 40, // Optional, to add some space from the top
   },
-  backArrow: {
-    marginTop: 30,
-    alignSelf: 'flex-start',
+  arrowButton: {
+    position: "absolute",
+    top: 10,
+    left: 10,
+    padding: 10,
   },
-  contentContainer: {
-    alignItems: 'center',
-    marginTop: 40,
+  arrow: {
+    fontSize: 24,
+  },
+  mainContent: {
+    marginTop: 60, // Space from the arrow button
+    alignItems: "center", // Center content horizontally
   },
   image: {
-    width: 150,
-    height: 150,
+    width: 200,
+    height: 200,
     marginBottom: 20,
   },
-  headerText: {
+  headText: {
     fontSize: 24,
-    fontWeight: 'bold',
-    color: '#1B263B',
+    fontWeight: "bold",
     marginBottom: 10,
   },
   descriptionText: {
     fontSize: 16,
-    color: '#778DA9',
-    textAlign: 'center',
-    marginBottom: 30,
-    paddingHorizontal: 20,
+    color: "#555",
+    marginBottom: 20,
+    textAlign: "center",
   },
   checkoutButton: {
-    backgroundColor: '#415A77',
+    backgroundColor: "#415A77",
     padding: 15,
     borderRadius: 10,
-    width: '100%',
-    alignItems: 'center',
+    width: "100%",
+    alignItems: "center",
     marginBottom: 20,
   },
   checkoutButtonText: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 16,
-    fontWeight: 'bold',
   },
   skipText: {
-    color: '#778DA9',
-    fontSize: 14,
-    marginBottom: 20,
+    marginTop: 10,
+    color: "#1b263b",
+    textAlign: "center",
   },
   bottomText: {
-    color: '#778DA9',
-    fontSize: 14,
-    textAlign: 'center',
-    marginBottom: 20,
-    alignSelf: 'flex-end',
-
+    position: "absolute",
+    bottom: 10,
+    left: 20,
+    right: 20,
+    textAlign: "center",
+    color: "#778DA9",
   },
 });
