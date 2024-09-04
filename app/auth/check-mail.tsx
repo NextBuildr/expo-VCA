@@ -30,7 +30,10 @@ export default function ConfirmationPage() {
           inbox.
         </Text>
 
-        <TouchableOpacity style={styles.checkoutButton}>
+        <TouchableOpacity
+          style={styles.checkoutButton}
+          onPress={() => router.replace("/auth/congrats-mail")}
+        >
           <Text style={styles.checkoutButtonText}>Check Out</Text>
         </TouchableOpacity>
 
@@ -39,9 +42,8 @@ export default function ConfirmationPage() {
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.bottomText}>Did not receive email? Check your spam</Text>
       <Text style={styles.bottomText}>
-        or <Text style={styles.bottomlink}>try another email address</Text>
+        Did not receive email? Check your spam or try another email address.
       </Text>
     </View>
   );
@@ -91,7 +93,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   checkoutButtonText: {
-    fontSize: 15, 
+    fontSize: 15,
     color: "#fff",
   },
   skipText: {
@@ -110,7 +112,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "#778DA9",
   },
-  bottomlink:{
-    color: "#778DA9"
-  }
+  bottomTextLink: {
+    color: "#778DA9",
+  },
 });
