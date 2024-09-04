@@ -5,6 +5,7 @@ import { AntDesign } from '@expo/vector-icons';
 
 export default function ConfirmationPage() {
   const navigation = useNavigation();
+  const router = useRouter();
 
   return (
     <View style={styles.container}>
