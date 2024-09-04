@@ -39,8 +39,9 @@ export default function ConfirmationPage() {
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.bottomText}>
-        Did not receive email? Check your spam or try another email address.
+      <Text style={styles.bottomText}>Did not receive email? Check your spam</Text>
+      <Text style={styles.footer}>
+        or <Text style={styles.bottomlink}>try another email address</Text>
       </Text>
     </View>
   );
@@ -109,4 +110,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "#778DA9",
   },
+  bottomlink:{
+    color: "#778DA9"
+  }
 });
