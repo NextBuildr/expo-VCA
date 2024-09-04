@@ -46,6 +46,7 @@ function AppNavigator() {
       <Stack.Screen name="auth/signup" options={{ headerShown: false }} />
       <Stack.Screen name="auth/check-mail" options={{ headerShown: false }} />
       <Stack.Screen name="auth/congrats-mail" options={{ headerShown: false }} />
+      <Stack.Screen name="auth/forget-password" options={{ headerShown: false }} />
 
 
       {/* <Stack.Screen
