@@ -15,56 +15,56 @@ import RecentCallsCard from "../components/callCard";
 const contact = () => {
   const [activeTab, setActiveTab] = useState("call");
 
-  const recentCallsData = [
-    {
-      name: "John Doe",
-      timeAgo: "25 mins ago",
-      isCallIncoming: false,
-      isVideoCall: false,
-      profileImage: require("../assets/images/Ellipse 37.png"),
-    },
-    {
-      name: "Jane Smith",
-      timeAgo: "1 hour ago",
-      isCallIncoming: true,
-      isVideoCall: true,
-      profileImage: require("../assets/images/Ellipse 37.png"),
-    },
-    {
-      name: "Aloye",
-      timeAgo: "2 hours ago",
-      isVideoCall: true,
-      isCallIncoming: false,
-      profileImage: require("../assets/images/Ellipse 37.png"),
-    },
-    {
-      name: "Aloye",
-      timeAgo: "2 hours ago",
-      isCallIncoming: false,
-      profileImage: require("../assets/images/Ellipse 37.png"),
-    },
-    {
-      name: "Aloye",
-      timeAgo: "2 hours ago",
-      isCallIncoming: false,
-      isVideoCall: false,
+  const recentCallsData: any[] = [
+    // {
+    //   name: "John Doe",
+    //   timeAgo: "25 mins ago",
+    //   isCallIncoming: false,
+    //   isVideoCall: false,
+    //   profileImage: require("../assets/images/Ellipse 37.png"),
+    // },
+    // {
+    //   name: "Jane Smith",
+    //   timeAgo: "1 hour ago",
+    //   isCallIncoming: true,
+    //   isVideoCall: true,
+    //   profileImage: require("../assets/images/Ellipse 37.png"),
+    // },
+    // {
+    //   name: "Aloye",
+    //   timeAgo: "2 hours ago",
+    //   isVideoCall: true,
+    //   isCallIncoming: false,
+    //   profileImage: require("../assets/images/Ellipse 37.png"),
+    // },
+    // {
+    //   name: "Aloye",
+    //   timeAgo: "2 hours ago",
+    //   isCallIncoming: false,
+    //   profileImage: require("../assets/images/Ellipse 37.png"),
+    // },
+    // {
+    //   name: "Aloye",
+    //   timeAgo: "2 hours ago",
+    //   isCallIncoming: true,
+    //   isVideoCall: false,
 
-      profileImage: require("../assets/images/Ellipse 37.png"),
-    },
-    {
-      name: "Aloye",
-      timeAgo: "2 hours ago",
-      isVideoCall: false,
-      isCallIncoming: false,
-      profileImage: require("../assets/images/Ellipse 37.png"),
-    },
-    {
-      name: "Aloye",
-      timeAgo: "2 hours ago",
-      isCallIncoming: false,
-      isVideoCall: false,
-      profileImage: require("../assets/images/Ellipse 37.png"),
-    },
+    //   profileImage: require("../assets/images/Ellipse 37.png"),
+    // },
+    // {
+    //   name: "Aloye",
+    //   timeAgo: "2 hours ago",
+    //   isVideoCall: true,
+    //   isCallIncoming: false,
+    //   profileImage: require("../assets/images/Ellipse 37.png"),
+    // },
+    // {
+    //   name: "Aloye",
+    //   timeAgo: "2 hours ago",
+    //   isCallIncoming: false,
+    //   isVideoCall: true,
+    //   profileImage: require("../assets/images/Ellipse 37.png"),
+    // },
     // Add more entries as needed
   ];
 
@@ -80,19 +80,39 @@ const contact = () => {
           <Entypo name="dots-three-vertical" size={24} color="#415A77" />
         </View>
 
-        {/* Recent Calls Card */}
-
-        {recentCallsData.map((call, index) => (
-          <RecentCallsCard
-            key={index}
-            name={call.name}
-            timeAgo={call.timeAgo}
-            isCallIncoming={call.isCallIncoming}
-            profileImage={call.profileImage}
+       {/* Conditional rendering */}
+       {recentCallsData.length === 0 ? (
+        // Empty call log state
+        <View style={styles.emptyStateContainer}>
+          <Image
+            source={require("../assets/images/Ellipse 41.png")} // Placeholder image
+            style={styles.emptyStateImage}
           />
-        ))}
-      </ScrollView>
+          <Text style={styles.emptyStateHeader}>Your call log is empty</Text>
+          <Text style={styles.emptyStateSubtext}>
+            Your recent calls will appear here. Start a call to see your call history.
+          </Text>
+          <TouchableOpacity style={styles.startCallButton}>
+            <Text style={styles.startCallButtonText}>Start a Call</Text>
+          </TouchableOpacity>
+        </View>
+      ) : (
+        // Call log state
+        <ScrollView>
+          {recentCallsData.map((call, index) => (
+            <RecentCallsCard
+              key={index}
+              name={call.name}
+              timeAgo={call.timeAgo}
+              profileImage={call.profileImage}
+              isCallIncoming={call.isCallIncoming}
+              isVideoCall={call.isVideoCall}
+            />
+          ))}
+        </ScrollView>
+      )}
       {/* Bottom Navigation */}
+      </ScrollView>
       <NavigationTab activeTab={activeTab} handleTabPress={handleTabPress} />
     </View>
   );
@@ -120,6 +140,41 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     color: "#1B263B",
     lineHeight: 36,
+  },
+  emptyStateContainer: {
+    // flex: 1,
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    paddingHorizontal: 20,
+  },
+  emptyStateImage: {
+    width: 150,
+    height: 150,
+    marginBottom: 20,
+  },
+  emptyStateHeader: {
+    fontSize: 22,
+    fontWeight: "700",
+    color: "#1B263B",
+    marginBottom: 10,
+  },
+  emptyStateSubtext: {
+    fontSize: 16,
+    color: "#415A77",
+    textAlign: "center",
+    marginBottom: 30,
+  },
+  startCallButton: {
+    backgroundColor: "#415A77",
+    paddingVertical: 12,
+    paddingHorizontal: 40,
+    borderRadius: 25,
+  },
+  startCallButtonText: {
+    color: "#FFF",
+    fontSize: 16,
+    fontWeight: "600",
   },
 });
 

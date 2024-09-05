@@ -25,7 +25,7 @@ const callCard = ({ name, timeAgo, profileImage, isCallIncoming,isVideoCall  }) 
 
       <FontAwesome
           name={isVideoCall ? "video-camera" : "phone"}
-          size={24}
+          size={20}
           color="#415A77"
         />
     </View>
