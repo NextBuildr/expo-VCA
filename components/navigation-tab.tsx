@@ -1,14 +1,23 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 
 const NavigationTab = ({ activeTab, handleTabPress }) => {
+
+  const router = useRouter();
+
+  const handleNavigation = (tab) => {
+    handleTabPress(tab); 
+    router.replace(tab); 
+  };
+
   return (
     <View style={styles.navigationTabContainer}>
       <View style={styles.navigationTab}>
         <TouchableOpacity
           style={[styles.navItem, activeTab === "home" && styles.activeTab]}
-          onPress={() => handleTabPress("home")}
+          onPress={() => handleNavigation("home")}
         >
           <View style={styles.navContent}>
             <FontAwesome
@@ -22,7 +31,7 @@ const NavigationTab = ({ activeTab, handleTabPress }) => {
 
         <TouchableOpacity
           style={[styles.navItem, activeTab === "contact" && styles.activeTab]}
-          onPress={() => handleTabPress("contact")}
+          onPress={() => handleNavigation("contact")}
         >
           <View style={styles.navContent}>
             <FontAwesome

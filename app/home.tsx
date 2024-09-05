@@ -197,10 +197,10 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   headerText: {
-    fontSize: 32,
+    fontSize: 24,
     fontWeight: "700",
     color: "#fff",
-    lineHeight: 48,
+    lineHeight: 36,
   },
   subText: {
     fontSize: 20,

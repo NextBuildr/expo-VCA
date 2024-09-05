@@ -36,6 +36,12 @@ export default function OnboardingPage1() {
         >
           <Text style={styles.skipButtonText}>Skip</Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.skipButton}
+          onPress={() => router.replace("home")}
+        >
+          <Text style={styles.skipButtonText}>home</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
