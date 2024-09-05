@@ -22,86 +22,92 @@ const EditProfile = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={styles.arrowButton}
-        >
-          <AntDesign name="arrowleft" size={24} color="#1B263B" />
-        </TouchableOpacity>
-        <Text style={styles.headerText}>Edit Profile</Text>
-      </View>
-
-      <View style={styles.profileSection}>
-        <View style={styles.profilePictureContainer}>
-          <Image
-            source={require("../assets/images/Ellipse 37.png")}
-            style={styles.profilePicture}
-          />
-          <TouchableOpacity style={styles.cameraIcon}>
-            <FontAwesome name="camera" size={18} color="#FFF" />
+      <ScrollView contentContainerStyle={styles.contentContainer}>
+        <View style={styles.header}>
+          <TouchableOpacity
+            onPress={() => navigation.goBack()}
+            style={styles.arrowButton}
+          >
+            <AntDesign name="arrowleft" size={24} color="#1B263B" />
           </TouchableOpacity>
+          <Text style={styles.headerText}>Edit Profile</Text>
         </View>
-        <Text style={styles.nameText}>John Doe</Text>
-        <Text style={styles.usernameText}>@johndoe</Text>
-      </View>
 
-      <View style={styles.separator} />
-
-      <View style={styles.inputContainer}>
-        <Text style={styles.label}>Full Name</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Enter your full name"
-          value={fullName}
-          onChangeText={setFullName}
-        />
-
-        <Text style={styles.label}>Username</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Enter your username"
-          value={username}
-          onChangeText={setUsername}
-        />
-
-        <Text style={styles.label}>Email</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Enter your email"
-          value={email}
-          onChangeText={setEmail}
-        />
-
-        <Text style={styles.label}>Phone Number</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Enter your phone number"
-          value={phoneNumber}
-          onChangeText={setPhoneNumber}
-        />
-
-        <View style={styles.flexContainer}>
-          <View style={styles.flexItem}>
-            <Text style={styles.label}>Birthday</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="MM/DD/YYYY"
-              value={birthday}
-              onChangeText={setBirthday}
+        <View style={styles.profileSection}>
+          <View style={styles.profilePictureContainer}>
+            <Image
+              source={require("../assets/images/Ellipse 37.png")}
+              style={styles.profilePicture}
             />
+            <TouchableOpacity style={styles.cameraIcon}>
+              <FontAwesome name="camera" size={18} color="#FFF" />
+            </TouchableOpacity>
           </View>
-          <View style={styles.flexItem}>
-            <Text style={styles.label}>Gender</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="Select Gender"
-              value={gender}
-              onChangeText={setGender}
-            />
+          <Text style={styles.nameText}>John Doe</Text>
+          <Text style={styles.usernameText}>@johndoe</Text>
+        </View>
+
+        <View style={styles.separator} />
+
+        <View style={styles.inputContainer}>
+          <Text style={styles.label}>Full Name</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Enter your full name"
+            value={fullName}
+            onChangeText={setFullName}
+          />
+
+          <Text style={styles.label}>Username</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Enter your username"
+            value={username}
+            onChangeText={setUsername}
+          />
+
+          <Text style={styles.label}>Email</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Enter your email"
+            value={email}
+            onChangeText={setEmail}
+          />
+
+          <Text style={styles.label}>Phone Number</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Enter your phone number"
+            value={phoneNumber}
+            onChangeText={setPhoneNumber}
+          />
+
+          <View style={styles.flexContainer}>
+            <View style={styles.flexItem}>
+              <Text style={styles.label}>Birthday</Text>
+              <TextInput
+                style={styles.input}
+                placeholder="MM/DD/YYYY"
+                value={birthday}
+                onChangeText={setBirthday}
+              />
+            </View>
+            <View style={styles.flexItem}>
+              <Text style={styles.label}>Gender</Text>
+              <TextInput
+                style={styles.input}
+                placeholder="Select Gender"
+                value={gender}
+                onChangeText={setGender}
+              />
+            </View>
           </View>
         </View>
-      </View>
+
+        <TouchableOpacity style={styles.formSubmitButton}>
+          <Text style={styles.buttonText}>Save</Text>
+        </TouchableOpacity>
+      </ScrollView>
     </View>
   );
 };
@@ -142,10 +148,10 @@ const styles = StyleSheet.create({
   cameraIcon: {
     position: "absolute",
     bottom: 0,
-    right: 0,
-    backgroundColor: "#415A77",
+    right: 10,
+    backgroundColor: "#D9D9D9",
     borderRadius: 12,
-    padding: 4,
+    padding: 5,
   },
   nameText: {
     fontSize: 18,
@@ -192,6 +198,17 @@ const styles = StyleSheet.create({
   flexItem: {
     flex: 1,
     marginRight: 10,
+  },
+  formSubmitButton: {
+    backgroundColor: "#415a77",
+    padding: 12,
+    borderRadius: 10,
+    alignItems: "center",
+    marginBottom: 25,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 15,
   },
 });
 
