@@ -53,6 +53,7 @@ function AppNavigator() {
       <Stack.Screen name="home" options={{ headerShown: false }} />
       <Stack.Screen name="contact" options={{ headerShown: false }} />
       <Stack.Screen name="call" options={{ headerShown: false }} />
+      <Stack.Screen name="profile" options={{ headerShown: false }} />
     </Stack>
   );
 }

@@ -16,55 +16,55 @@ const contact = () => {
   const [activeTab, setActiveTab] = useState("call");
 
   const recentCallsData: any[] = [
-    // {
-    //   name: "John Doe",
-    //   timeAgo: "25 mins ago",
-    //   isCallIncoming: false,
-    //   isVideoCall: false,
-    //   profileImage: require("../assets/images/Ellipse 37.png"),
-    // },
-    // {
-    //   name: "Jane Smith",
-    //   timeAgo: "1 hour ago",
-    //   isCallIncoming: true,
-    //   isVideoCall: true,
-    //   profileImage: require("../assets/images/Ellipse 37.png"),
-    // },
-    // {
-    //   name: "Aloye",
-    //   timeAgo: "2 hours ago",
-    //   isVideoCall: true,
-    //   isCallIncoming: false,
-    //   profileImage: require("../assets/images/Ellipse 37.png"),
-    // },
-    // {
-    //   name: "Aloye",
-    //   timeAgo: "2 hours ago",
-    //   isCallIncoming: false,
-    //   profileImage: require("../assets/images/Ellipse 37.png"),
-    // },
-    // {
-    //   name: "Aloye",
-    //   timeAgo: "2 hours ago",
-    //   isCallIncoming: true,
-    //   isVideoCall: false,
+    {
+      name: "John Doe",
+      timeAgo: "25 mins ago",
+      isCallIncoming: false,
+      isVideoCall: false,
+      profileImage: require("../assets/images/Ellipse 37.png"),
+    },
+    {
+      name: "Jane Smith",
+      timeAgo: "1 hour ago",
+      isCallIncoming: true,
+      isVideoCall: true,
+      profileImage: require("../assets/images/Ellipse 37.png"),
+    },
+    {
+      name: "Aloye",
+      timeAgo: "2 hours ago",
+      isVideoCall: true,
+      isCallIncoming: false,
+      profileImage: require("../assets/images/Ellipse 37.png"),
+    },
+    {
+      name: "Aloye",
+      timeAgo: "2 hours ago",
+      isCallIncoming: false,
+      profileImage: require("../assets/images/Ellipse 37.png"),
+    },
+    {
+      name: "Aloye",
+      timeAgo: "2 hours ago",
+      isCallIncoming: true,
+      isVideoCall: false,
 
-    //   profileImage: require("../assets/images/Ellipse 37.png"),
-    // },
-    // {
-    //   name: "Aloye",
-    //   timeAgo: "2 hours ago",
-    //   isVideoCall: true,
-    //   isCallIncoming: false,
-    //   profileImage: require("../assets/images/Ellipse 37.png"),
-    // },
-    // {
-    //   name: "Aloye",
-    //   timeAgo: "2 hours ago",
-    //   isCallIncoming: false,
-    //   isVideoCall: true,
-    //   profileImage: require("../assets/images/Ellipse 37.png"),
-    // },
+      profileImage: require("../assets/images/Ellipse 37.png"),
+    },
+    {
+      name: "Aloye",
+      timeAgo: "2 hours ago",
+      isVideoCall: true,
+      isCallIncoming: false,
+      profileImage: require("../assets/images/Ellipse 37.png"),
+    },
+    {
+      name: "Aloye",
+      timeAgo: "2 hours ago",
+      isCallIncoming: false,
+      isVideoCall: true,
+      profileImage: require("../assets/images/Ellipse 37.png"),
+    },
     // Add more entries as needed
   ];
 
