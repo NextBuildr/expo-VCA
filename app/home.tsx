@@ -218,6 +218,45 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 5,
   },
+  cardContainer: {
+    backgroundColor: '#415A77',
+    padding: 20,
+    borderRadius: 10,
+    marginVertical: 20,
+    position: 'relative', // Needed for absolute positioning of the small card
+  },
+  smallCard: {
+    backgroundColor: '#0D1B2A',
+    paddingVertical: 5,
+    paddingHorizontal: 15,
+    borderRadius: 5,
+    position: 'absolute',
+    top: -10, // Adjust to desired height above the card
+    left: 20, // Center it horizontally by adjusting left
+  },
+  smallCardText: {
+    color: 'white',
+    fontSize: 12,
+  },
+  cardTitle: {
+    color: 'white',
+    fontSize: 18,
+    marginBottom: 10,
+  },
+  cardInfo: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  timeContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  timeText: {
+    color: 'white',
+    fontSize: 14,
+    marginLeft: 8,
+  },
   navigationTab: {
     flexDirection: "row",
     backgroundColor: "#F5F5F5",
