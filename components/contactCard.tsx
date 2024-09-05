@@ -9,6 +9,8 @@ const ContactCard = ({ name, phoneNumber, profileImage }) => {
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.phoneNumber}>{phoneNumber}</Text>
       </View>
+       {/* Border Line */}
+       <View style={styles.borderLine} />
     </View>
   );
 };

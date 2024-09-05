@@ -80,8 +80,7 @@ const contact = () => {
         ))}
       </View>
 
-        {/* Border Line */}
-        <View style={styles.borderLine} />
+       
       </ScrollView>
       {/* Bottom Navigation */}
       <NavigationTab activeTab={activeTab} handleTabPress={handleTabPress} />
@@ -160,10 +159,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
 
-  borderLine: {
-    height: 1,
-    backgroundColor: "#D9D9D9",
-  },
+
 });
 
 export default contact;
