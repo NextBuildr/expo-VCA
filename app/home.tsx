@@ -9,6 +9,7 @@ import {
   ScrollView,
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
+import NavigationTab from "../components/navigation-tab"
 
 const HomePage = () => {
   const [activeTab, setActiveTab] = useState("home"); // Default active tab
@@ -174,85 +175,7 @@ const HomePage = () => {
       </ScrollView>
 
       {/* Bottom Navigation */}
-      {/* <View style={styles.navigationinner}> */}
-      <View style={styles.navigationTab}>
-        <TouchableOpacity
-          style={[styles.navItem, activeTab === "home" && styles.activeTab]}
-          onPress={() => handleTabPress("home")}
-        >
-          <View style={styles.navContent}>
-            <FontAwesome
-              name="home"
-              size={24}
-              color={activeTab === "home" ? "#FFF" : "#415A77"}
-            />
-            {activeTab === "home" && <Text style={styles.navText}>Home</Text>}
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[styles.navItem, activeTab === "contact" && styles.activeTab]}
-          onPress={() => handleTabPress("contact")}
-        >
-          <View style={styles.navContent}>
-            <FontAwesome
-              name="address-book"
-              size={24}
-              color={activeTab === "contact" ? "#FFF" : "#415A77"}
-            />
-            {activeTab === "contact" && (
-              <Text style={styles.navText}>Contact</Text>
-            )}
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[styles.navItem, activeTab === "schedule" && styles.activeTab]}
-          onPress={() => handleTabPress("schedule")}
-        >
-          <View style={styles.navContent}>
-            <FontAwesome
-              name="calendar"
-              size={24}
-              color={activeTab === "schedule" ? "#FFF" : "#415A77"}
-            />
-            {activeTab === "schedule" && (
-              <Text style={styles.navText}>Schedule</Text>
-            )}
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[styles.navItem, activeTab === "call" && styles.activeTab]}
-          onPress={() => handleTabPress("call")}
-        >
-          <View style={styles.navContent}>
-            <FontAwesome
-              name="phone"
-              size={24}
-              color={activeTab === "call" ? "#FFF" : "#415A77"}
-            />
-            {activeTab === "call" && <Text style={styles.navText}>Call</Text>}
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[styles.navItem, activeTab === "profile" && styles.activeTab]}
-          onPress={() => handleTabPress("profile")}
-        >
-          <View style={styles.navContent}>
-            <FontAwesome
-              name="user"
-              size={24}
-              color={activeTab === "profile" ? "#FFF" : "#415A77"}
-            />
-            {activeTab === "profile" && (
-              <Text style={styles.navText}>Profile</Text>
-            )}
-          </View>
-        </TouchableOpacity>
-      </View>
-      {/* </View> */}
+      <NavigationTab activeTab={activeTab} handleTabPress={handleTabPress} />
     </View>
   );
 };
