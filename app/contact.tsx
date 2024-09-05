@@ -56,9 +56,7 @@ const contact = () => {
         {/* Contact Card */}
         <View style={styles.card}>
           <Image
-            source={{
-              uri: "https://via.placeholder.com/50", // Placeholder for profile picture
-            }}
+            source={require("../assets/images/Ellipse 37.png")}
             style={styles.profileImage}
           />
           <View style={styles.cardContent}>
@@ -153,17 +151,17 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
     borderRadius: 8,
     marginBottom: 15,
-    elevation: 2, // Adds shadow for Android
-    shadowColor: "#000", // Adds shadow for iOS
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
+    // elevation: 2, // Adds shadow for Android
+    // shadowColor: "#000", // Adds shadow for iOS
+    // shadowOffset: { width: 0, height: 2 },
+    // shadowOpacity: 0.1,
+    // shadowRadius: 4,
   },
   profileImage: {
     width: 50,
     height: 50,
     borderRadius: 25,
-    marginRight: 15,
+    // marginRight: 15,
   },
   cardContent: {
     flexDirection: "column",
