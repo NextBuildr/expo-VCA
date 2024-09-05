@@ -14,7 +14,13 @@ import NavigationTab from "../components/navigation-tab"
 
 const contact = () => {
   return (
-    
+    <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.contentContainer}>
+
+      </ScrollView>
+        {/* Bottom Navigation */}
+        <NavigationTab activeTab={activeTab} handleTabPress={handleTabPress} />
+    </View>
   )
 }
 
