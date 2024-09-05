@@ -8,7 +8,7 @@ import {
   TextInput,
   ScrollView,
 } from "react-native";
-import { FontAwesome,Entypo } from "@expo/vector-icons";
+import { FontAwesome, Entypo } from "@expo/vector-icons";
 import NavigationTab from "../components/navigation-tab";
 
 const contact = () => {
@@ -27,23 +27,23 @@ const contact = () => {
         </View>
 
         <View style={styles.searchSection}>
-            <View style={styles.searchInputContainer}>
-              <FontAwesome
-                name="search"
-                size={20}
-                color="#1B263B"
-                style={styles.searchIcon}
-              />
-              <TextInput
-                placeholder="Search"
-                placeholderTextColor="#1B263B"
-                style={styles.searchInput}
-              />
-            </View>
-            <TouchableOpacity style={styles.filterButton}>
-              <FontAwesome name="sliders" size={24} color="#1B263B" />
-            </TouchableOpacity>
+          <View style={styles.searchInputContainer}>
+            <FontAwesome
+              name="search"
+              size={20}
+              color="#1B263B"
+              style={styles.searchIcon}
+            />
+            <TextInput
+              placeholder="Search"
+              placeholderTextColor="#1B263B"
+              style={styles.searchInput}
+            />
           </View>
+          <TouchableOpacity style={styles.filterButton}>
+            <FontAwesome name="sliders" size={24} color="#1B263B" />
+          </TouchableOpacity>
+        </View>
 
         {/* Add New Section */}
         <TouchableOpacity style={styles.addNewSection}>
@@ -79,7 +79,7 @@ const contact = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    position: "relative", 
+    position: "relative",
   },
   contentContainer: {
     paddingBottom: 80,
@@ -96,23 +96,25 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "700",
     color: "#1B263B",
-    lineHeight: 36
+    lineHeight: 36,
   },
   addNewSection: {
     flexDirection: "row",
     alignItems: "center",
     marginBottom: 20,
+    marginTop: 20,
   },
   addButton: {
     backgroundColor: "#778DA980",
     padding: 10,
-    borderRadius: 8,
+    borderRadius: 50,
     marginRight: 10,
   },
   addNewText: {
     fontSize: 16,
-    fontWeight: "500",
-    color: "#415A77",
+    fontWeight: "400",
+    color: "#1B263B",
+    lineHeight: 30,
   },
   searchSection: {
     flexDirection: "row",
@@ -128,7 +130,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 10,
     borderRadius: 5,
-   
+
     marginRight: 5,
   },
   searchIcon: {
