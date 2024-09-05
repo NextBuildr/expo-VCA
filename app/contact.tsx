@@ -128,8 +128,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 10,
     borderRadius: 5,
-    borderWidth: 1,
-    borderColor: "#1B263B",
+   
     marginRight: 5,
   },
   searchIcon: {
