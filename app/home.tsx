@@ -18,8 +18,8 @@ const HomePage = () => {
   };
 
   return (
-    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-      <View style={styles.container}>
+    <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.contentContainer}>
         {/* First Section */}
         <View style={styles.headerSection}>
           <View style={styles.headerSectionInn}>
@@ -81,14 +81,14 @@ const HomePage = () => {
         <View style={styles.boxContainer}>
           <View style={styles.boxWrapper}>
             <TouchableOpacity style={styles.box}>
-              <FontAwesome name="video-camera" size={32} color="#FFF" />
+              <FontAwesome name="video-camera" size={20} color="#FFF" />
             </TouchableOpacity>
             <Text style={styles.boxText}>Quick Call</Text>
           </View>
 
           <View style={styles.boxWrapper}>
             <TouchableOpacity style={styles.box}>
-              <FontAwesome name="calendar" size={32} color="#FFF" />
+              <FontAwesome name="calendar" size={20} color="#FFF" />
             </TouchableOpacity>
             <Text style={styles.boxText}>Schedule</Text>
           </View>
@@ -96,7 +96,7 @@ const HomePage = () => {
           <View style={styles.boxWrapper}>
             <TouchableOpacity style={styles.box}>
               <View style={styles.plusIconContainer}>
-                <FontAwesome name="plus" size={32} color="#0D1B2A" />
+                <FontAwesome name="plus" size={20} color="#0D1B2A" />
               </View>
             </TouchableOpacity>
             <Text style={styles.boxText}>Join</Text>
@@ -171,103 +171,99 @@ const HomePage = () => {
             <FontAwesome name="video-camera" size={24} color="#415A77" />
           </TouchableOpacity>
         </View>
+      </ScrollView>
 
-        {/* Bottom Navigation */}
-        <View style={styles.navigationTab}>
-          <TouchableOpacity
-            style={[styles.navItem, activeTab === "home" && styles.activeTab]}
-            onPress={() => handleTabPress("home")}
-          >
-            <View style={styles.navContent}>
-              <FontAwesome
-                name="home"
-                size={24}
-                color={activeTab === "home" ? "#FFF" : "#415A77"}
-              />
-              {activeTab === "home" && <Text style={styles.navText}>Home</Text>}
-            </View>
-          </TouchableOpacity>
+      {/* Bottom Navigation */}
+      {/* <View style={styles.navigationinner}> */}
+      <View style={styles.navigationTab}>
+        <TouchableOpacity
+          style={[styles.navItem, activeTab === "home" && styles.activeTab]}
+          onPress={() => handleTabPress("home")}
+        >
+          <View style={styles.navContent}>
+            <FontAwesome
+              name="home"
+              size={24}
+              color={activeTab === "home" ? "#FFF" : "#415A77"}
+            />
+            {activeTab === "home" && <Text style={styles.navText}>Home</Text>}
+          </View>
+        </TouchableOpacity>
 
-          <TouchableOpacity
-            style={[
-              styles.navItem,
-              activeTab === "contact" && styles.activeTab,
-            ]}
-            onPress={() => handleTabPress("contact")}
-          >
-            <View style={styles.navContent}>
-              <FontAwesome
-                name="address-book"
-                size={24}
-                color={activeTab === "contact" ? "#FFF" : "#415A77"}
-              />
-              {activeTab === "contact" && (
-                <Text style={styles.navText}>Contact</Text>
-              )}
-            </View>
-          </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.navItem, activeTab === "contact" && styles.activeTab]}
+          onPress={() => handleTabPress("contact")}
+        >
+          <View style={styles.navContent}>
+            <FontAwesome
+              name="address-book"
+              size={24}
+              color={activeTab === "contact" ? "#FFF" : "#415A77"}
+            />
+            {activeTab === "contact" && (
+              <Text style={styles.navText}>Contact</Text>
+            )}
+          </View>
+        </TouchableOpacity>
 
-          <TouchableOpacity
-            style={[
-              styles.navItem,
-              activeTab === "schedule" && styles.activeTab,
-            ]}
-            onPress={() => handleTabPress("schedule")}
-          >
-            <View style={styles.navContent}>
-              <FontAwesome
-                name="calendar"
-                size={24}
-                color={activeTab === "schedule" ? "#FFF" : "#415A77"}
-              />
-              {activeTab === "schedule" && (
-                <Text style={styles.navText}>Schedule</Text>
-              )}
-            </View>
-          </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.navItem, activeTab === "schedule" && styles.activeTab]}
+          onPress={() => handleTabPress("schedule")}
+        >
+          <View style={styles.navContent}>
+            <FontAwesome
+              name="calendar"
+              size={24}
+              color={activeTab === "schedule" ? "#FFF" : "#415A77"}
+            />
+            {activeTab === "schedule" && (
+              <Text style={styles.navText}>Schedule</Text>
+            )}
+          </View>
+        </TouchableOpacity>
 
-          <TouchableOpacity
-            style={[styles.navItem, activeTab === "call" && styles.activeTab]}
-            onPress={() => handleTabPress("call")}
-          >
-            <View style={styles.navContent}>
-              <FontAwesome
-                name="phone"
-                size={24}
-                color={activeTab === "call" ? "#FFF" : "#415A77"}
-              />
-              {activeTab === "call" && <Text style={styles.navText}>Call</Text>}
-            </View>
-          </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.navItem, activeTab === "call" && styles.activeTab]}
+          onPress={() => handleTabPress("call")}
+        >
+          <View style={styles.navContent}>
+            <FontAwesome
+              name="phone"
+              size={24}
+              color={activeTab === "call" ? "#FFF" : "#415A77"}
+            />
+            {activeTab === "call" && <Text style={styles.navText}>Call</Text>}
+          </View>
+        </TouchableOpacity>
 
-          <TouchableOpacity
-            style={[
-              styles.navItem,
-              activeTab === "profile" && styles.activeTab,
-            ]}
-            onPress={() => handleTabPress("profile")}
-          >
-            <View style={styles.navContent}>
-              <FontAwesome
-                name="user"
-                size={24}
-                color={activeTab === "profile" ? "#FFF" : "#415A77"}
-              />
-              {activeTab === "profile" && (
-                <Text style={styles.navText}>Profile</Text>
-              )}
-            </View>
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity
+          style={[styles.navItem, activeTab === "profile" && styles.activeTab]}
+          onPress={() => handleTabPress("profile")}
+        >
+          <View style={styles.navContent}>
+            <FontAwesome
+              name="user"
+              size={24}
+              color={activeTab === "profile" ? "#FFF" : "#415A77"}
+            />
+            {activeTab === "profile" && (
+              <Text style={styles.navText}>Profile</Text>
+            )}
+          </View>
+        </TouchableOpacity>
       </View>
-    </ScrollView>
+      {/* </View> */}
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "flex-start",
+    position: "relative", // Ensures the nav bar is positioned within the parent container
+  },
+  contentContainer: {
+    paddingBottom: 80, // Prevents content from being hidden behind the fixed nav bar
   },
   headerSection: {
     backgroundColor: "#0D1B2A",
@@ -390,9 +386,9 @@ const styles = StyleSheet.create({
     height: 80,
   },
   boxText: {
-    marginTop: 10,
+    marginTop: 8,
     color: "#1B263B",
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "500",
     lineHeight: 27,
     textAlign: "center",
@@ -426,6 +422,7 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 10,
     marginHorizontal: 20,
+    marginBottom: 20,
   },
   leftCard: {
     flexDirection: "row",
@@ -460,6 +457,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     borderRadius: 10,
   },
+  navigationinner: {
+    backgroundColor: "#FFF",
+  },
   navigationTab: {
     flexDirection: "row",
     backgroundColor: "#F5F5F5",
@@ -469,10 +469,11 @@ const styles = StyleSheet.create({
     borderColor: "#415A77",
     borderRadius: 30,
     position: "absolute",
-    bottom: 30,
+    bottom: 20,
     left: 20,
     right: 20,
   },
+
   navItem: {
     alignItems: "center",
     paddingVertical: 5,
