@@ -308,8 +308,10 @@ const styles = StyleSheet.create({
   },
   boxText: {
     marginTop: 10,
-    color: "#FFF",
-    fontSize: 14,
+    color: "#1B263B",
+    fontSize: 18,
+    fontWeight: "500",
+    lineHeight: 27,
     textAlign: "center",
   },
   plusIconContainer: {
