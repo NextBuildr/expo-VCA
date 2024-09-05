@@ -23,7 +23,7 @@ const HomePage = () => {
         <View style={styles.headerSectionInn}>
           <View style={styles.headerSectionInner}>
             <Text style={styles.headerText}>Onbrela</Text>
-            <Text style={styles.subText}>Hi, Jane</Text>
+            <Text style={styles.subText}>Hi, Janet</Text>
           </View>
 
           <View style={styles.profileSection}>
@@ -33,17 +33,6 @@ const HomePage = () => {
             />
           </View>
         </View>
-        {/* <View style={styles.searchSection}>
-          <TextInput
-            placeholder="Search"
-            placeholderTextColor="#1B263BE5"
-            style={styles.searchInput}
-          />
-          <TouchableOpacity style={styles.filterButton}>
-            <FontAwesome name="filter" size={24} color="white" />
-          </TouchableOpacity>
-        </View> */}
-
         <View style={styles.searchSection}>
           <View style={styles.searchInputContainer}>
             <FontAwesome
@@ -63,6 +52,25 @@ const HomePage = () => {
           </TouchableOpacity>
         </View>
       </View>
+
+      <View style={styles.cardContainer}>
+      {/* Smaller card positioned absolutely */}
+      <View style={styles.smallCard}>
+        <Text style={styles.smallCardText}>27 Aug</Text>
+      </View>
+
+      {/* Main card content */}
+      <Text style={styles.cardTitle}>Designing Name Video Calling App</Text>
+      
+      <View style={styles.cardInfo}>
+        <View style={styles.timeContainer}>
+          <FontAwesome name="clock-o" size={16} color="white" />
+          <Text style={styles.timeText}>10:30AM - 11:30AM</Text>
+        </View>
+        <FontAwesome name="ellipsis-h" size={24} color="white" />
+      </View>
+    </View>
+
       {/* Bottom Navigation */}
       <View style={styles.navigationTab}>
         <TouchableOpacity
@@ -181,21 +189,21 @@ const styles = StyleSheet.create({
   searchSection: {
     flexDirection: "row",
     alignItems: "center",
-   
+
     borderRadius: 8,
-    marginTop: 20,
+    marginTop: 30,
   },
   searchInputContainer: {
     flexDirection: "row",
     alignItems: "center",
-    padding: 10,
+    padding: 15,
     backgroundColor: "#FFFFFF",
     flex: 1,
     paddingHorizontal: 10,
-    borderRadius: 8,
+    borderRadius: 5,
     borderWidth: 1,
     borderColor: "#1B263B",
-    marginRight: 5
+    marginRight: 5,
   },
   searchIcon: {
     marginRight: 10,
@@ -207,8 +215,8 @@ const styles = StyleSheet.create({
   },
   filterButton: {
     backgroundColor: "#fff",
-    padding: 10,
-    borderRadius: 10,
+    padding: 15,
+    borderRadius: 5,
   },
   navigationTab: {
     flexDirection: "row",
