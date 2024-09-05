@@ -1,11 +1,18 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Image,
+  TextInput,
+} from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
 const HomePage = () => {
   const [activeTab, setActiveTab] = useState("home"); // Default active tab
 
-  const handleTabPress = (tab) => {
+  const handleTabPress = (tab: React.SetStateAction<string>) => {
     setActiveTab(tab);
   };
 
@@ -13,15 +20,26 @@ const HomePage = () => {
     <View style={styles.container}>
       {/* First Section */}
       <View style={styles.headerSection}>
-        <Text style={styles.headerText}>onbrela</Text>
-        <View style={styles.profileSection}>
-          <Text style={styles.subText}>Hi, John</Text>
+        <View style={styles.headerSectionInn}>
+          <View style={styles.headerSectionInner}>
+            <Text style={styles.headerText}>Onbrela</Text>
+            <Text style={styles.subText}>Hi, Jane</Text>
+          </View>
+
+          <View style={styles.profileSection}>
+            <Image
+              source={require("../assets/images/Ellipse 37.png")}
+              style={styles.profilePicture}
+            />
+          </View>
         </View>
         <View style={styles.searchSection}>
-          {/* Add your search input and filter button here */}
+          <TextInput placeholder="Search" style={styles.searchInput} />
+          <TouchableOpacity style={styles.filterButton}>
+            <FontAwesome name="filter" size={24} color="white" />
+          </TouchableOpacity>
         </View>
       </View>
-
       {/* Bottom Navigation */}
       <View style={styles.navigationTab}>
         <TouchableOpacity
@@ -29,7 +47,11 @@ const HomePage = () => {
           onPress={() => handleTabPress("home")}
         >
           <View style={styles.navContent}>
-            <FontAwesome name="home" size={24} color={activeTab === 'home' ? '#FFF' : '#415A77'} />
+            <FontAwesome
+              name="home"
+              size={24}
+              color={activeTab === "home" ? "#FFF" : "#415A77"}
+            />
             {activeTab === "home" && <Text style={styles.navText}>Home</Text>}
           </View>
         </TouchableOpacity>
@@ -39,7 +61,11 @@ const HomePage = () => {
           onPress={() => handleTabPress("contact")}
         >
           <View style={styles.navContent}>
-            <FontAwesome name="address-book" size={24} color={activeTab === 'contact' ? '#FFF' : '#415A77'} />
+            <FontAwesome
+              name="address-book"
+              size={24}
+              color={activeTab === "contact" ? "#FFF" : "#415A77"}
+            />
             {activeTab === "contact" && (
               <Text style={styles.navText}>Contact</Text>
             )}
@@ -51,7 +77,11 @@ const HomePage = () => {
           onPress={() => handleTabPress("schedule")}
         >
           <View style={styles.navContent}>
-            <FontAwesome name="calendar" size={24} color={activeTab === 'schedule' ? '#FFF' : '#415A77'} />
+            <FontAwesome
+              name="calendar"
+              size={24}
+              color={activeTab === "schedule" ? "#FFF" : "#415A77"}
+            />
             {activeTab === "schedule" && (
               <Text style={styles.navText}>Schedule</Text>
             )}
@@ -63,7 +93,11 @@ const HomePage = () => {
           onPress={() => handleTabPress("call")}
         >
           <View style={styles.navContent}>
-            <FontAwesome name="phone" size={24} color={activeTab === 'call' ? '#FFF' : '#415A77'} />
+            <FontAwesome
+              name="phone"
+              size={24}
+              color={activeTab === "call" ? "#FFF" : "#415A77"}
+            />
             {activeTab === "call" && <Text style={styles.navText}>Call</Text>}
           </View>
         </TouchableOpacity>
@@ -73,7 +107,11 @@ const HomePage = () => {
           onPress={() => handleTabPress("profile")}
         >
           <View style={styles.navContent}>
-            <FontAwesome name="user" size={24} color={activeTab === 'profile' ? '#FFF' : '#415A77'} />
+            <FontAwesome
+              name="user"
+              size={24}
+              color={activeTab === "profile" ? "#FFF" : "#415A77"}
+            />
             {activeTab === "profile" && (
               <Text style={styles.navText}>Profile</Text>
             )}
@@ -90,26 +128,50 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   headerSection: {
-    backgroundColor: "#f0f0f0",
+    backgroundColor: "#0D1B2A",
     padding: 20,
+    
   },
-  headerText: {
-    fontSize: 30,
-    fontWeight: "bold",
-    color: "#333",
-  },
-  profileSection: {
-    marginTop: 10,
-  },
-  subText: {
-    fontSize: 18,
-    color: "#333",
-  },
-  searchSection: {
-    marginTop: 20,
+  headerSectionInn: {
     flexDirection: "row",
     justifyContent: "space-between",
-    // Add styles for search input and filter button
+  },
+  headerText: {
+    fontSize: 32,
+    fontWeight: "700",
+    color: "#fff",
+    lineHeight: 48,
+  },
+  subText: {
+    fontSize: 20,
+    fontWeight: "400",
+    color: "#fff",
+    lineHeight: 30,
+  },
+  profileSection: {
+    marginTop: 60,
+  },
+  headerSectionInner: {
+    marginTop: 60,
+  },
+
+  profilePicture: {},
+  searchSection: {
+    flexDirection: "row",
+    marginTop: 20,
+  },
+  searchInput: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: "#ccc",
+    padding: 10,
+    borderRadius: 10,
+    marginRight: 10,
+  },
+  filterButton: {
+    backgroundColor: "#333",
+    padding: 10,
+    borderRadius: 10,
   },
   navigationTab: {
     flexDirection: "row",
@@ -117,11 +179,11 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     justifyContent: "space-around",
     borderWidth: 1,
-    borderColor: '#415A77', 
-    borderRadius: 30,       
-    marginHorizontal: 10,  
-    marginBottom: 20,   
-  },    
+    borderColor: "#415A77",
+    borderRadius: 30,
+    marginHorizontal: 10,
+    marginBottom: 20,
+  },
   navItem: {
     alignItems: "center",
     paddingVertical: 5,
