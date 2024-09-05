@@ -80,6 +80,38 @@ const ProfilePage = () => {
         <Entypo name="chevron-right" size={24} color="#778DA9" />
       </TouchableOpacity>
       {/* </View> */}
+
+       {/* Logout Modal */}
+       <Modal
+        animationType="slide"
+        transparent={true}
+        visible={logoutModalVisible}
+        onRequestClose={() => setLogoutModalVisible(false)}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalHeadText}>Log Out</Text>
+            <Text style={styles.modalSubText}>
+              Are you sure you want to log out?
+            </Text>
+
+            <View style={styles.modalButtonContainer}>
+              <TouchableOpacity
+                style={styles.modalButtonCancel}
+                onPress={handleCancelPress}
+              >
+                <Text style={styles.modalButtonText}>Cancel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.modalButtonLogout}
+                onPress={handleConfirmLogoutPress}
+              >
+                <Text style={styles.modalButtonText}>Log Out</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
       <NavigationTab activeTab={activeTab} handleTabPress={handleTabPress} />
     </View>
   );

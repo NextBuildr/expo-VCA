@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   StyleSheet,
   ScrollView,
-  Modal,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { FontAwesome, AntDesign } from "@expo/vector-icons";
@@ -17,25 +16,10 @@ const EditProfile = ({}) => {
   const navigation = useNavigation();
 
   const [password, setPassword] = useState("");
-  const [logoutModalVisible, setLogoutModalVisible] = useState(false);
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
-  };
-
-  const handleLogoutPress = () => {
-    setLogoutModalVisible(true);
-  };
-
-  const handleCancelPress = () => {
-    setLogoutModalVisible(false);
-  };
-
-  const handleConfirmLogoutPress = () => {
-    setLogoutModalVisible(false);
-    // Add your logout logic here
-    router.replace("/login"); // Navigate to login or home screen
   };
 
   const router = useRouter();
