@@ -36,7 +36,7 @@ const EditProfile = ({ navigation }) => {
           <Text style={styles.headerText}>Change password</Text>
         </View>
 
-        <Text style={styles.label}>Password</Text>
+        <Text style={styles.label}>Enter Old Password</Text>
         <View style={styles.passwordContainer}>
           <TextInput
             style={styles.inputWithIcon}
@@ -57,7 +57,7 @@ const EditProfile = ({ navigation }) => {
           </TouchableOpacity>
         </View>
 
-        <Text style={styles.label}>Password</Text>
+        <Text style={styles.label}>New Password</Text>
         <View style={styles.passwordContainer}>
           <TextInput
             style={styles.inputWithIcon}
@@ -78,7 +78,7 @@ const EditProfile = ({ navigation }) => {
           </TouchableOpacity>
         </View>
 
-        <Text style={styles.label}>Password</Text>
+        <Text style={styles.label}>Confirm New Password</Text>
         <View style={styles.passwordContainer}>
           <TextInput
             style={styles.inputWithIcon}
@@ -103,7 +103,7 @@ const EditProfile = ({ navigation }) => {
           style={styles.formSubmitButton}
           onPress={() => router.replace("/profile")}
         >
-          <Text style={styles.buttonText}>Save</Text>
+          <Text style={styles.buttonText}>Change Password</Text>
         </TouchableOpacity>
       </ScrollView>
     </View>
@@ -120,8 +120,8 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 20,
-    marginTop: 30,
+    marginBottom: 80,
+    marginTop: 50,
   },
   headerText: {
     flex: 1,
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 4,
     backgroundColor: "#fff",
-    marginBottom: 20,
+    marginBottom: 50,
   },
  
   passwordContainer: {
@@ -165,6 +165,7 @@ const styles = StyleSheet.create({
     padding: 12,
     borderRadius: 10,
     alignItems: "center",
+    marginTop: 80,
     marginBottom: 25,
   },
   buttonText: {
