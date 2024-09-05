@@ -39,7 +39,7 @@ const EditProfile = ({ navigation }) => {
         <Text style={styles.label}>Password</Text>
         <View style={styles.passwordContainer}>
           <TextInput
-            style={styles.input}
+            style={styles.inputWithIcon}
             placeholder="Enter your password"
             secureTextEntry={!isPasswordVisible}
             value={password}
@@ -50,7 +50,7 @@ const EditProfile = ({ navigation }) => {
             onPress={togglePasswordVisibility}
           >
             <FontAwesome
-              name={isPasswordVisible ? "eye-slash" : "eye"}
+              name={isPasswordVisible ? "eye" : "eye-slash"}
               size={20}
               color="#778DA9"
             />
@@ -60,7 +60,7 @@ const EditProfile = ({ navigation }) => {
         <Text style={styles.label}>Password</Text>
         <View style={styles.passwordContainer}>
           <TextInput
-            style={styles.input}
+            style={styles.inputWithIcon}
             placeholder="Enter your password"
             secureTextEntry={!isPasswordVisible}
             value={password}
@@ -71,7 +71,7 @@ const EditProfile = ({ navigation }) => {
             onPress={togglePasswordVisibility}
           >
             <FontAwesome
-              name={isPasswordVisible ? "eye-slash" : "eye"}
+              name={isPasswordVisible ? "eye" : "eye-slash"}
               size={20}
               color="#778DA9"
             />
@@ -81,7 +81,7 @@ const EditProfile = ({ navigation }) => {
         <Text style={styles.label}>Password</Text>
         <View style={styles.passwordContainer}>
           <TextInput
-            style={styles.input}
+            style={styles.inputWithIcon}
             placeholder="Enter your password"
             secureTextEntry={!isPasswordVisible}
             value={password}
@@ -92,7 +92,7 @@ const EditProfile = ({ navigation }) => {
             onPress={togglePasswordVisibility}
           >
             <FontAwesome
-              name={isPasswordVisible ? "eye-slash" : "eye"}
+              name={isPasswordVisible ? "eye" : "eye-slash"}
               size={20}
               color="#778DA9"
             />
@@ -131,29 +131,16 @@ const styles = StyleSheet.create({
     color: "#415A77",
     lineHeight: 30,
   },
-
-  passwordContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  eyeIcon: {
-    position: "absolute",
-    right: 10,
-  },
   inputContainer: {
     marginBottom: 20,
   },
-  inputGroup: {
-    marginBottom: 15,
-  },
   label: {
-    fontSize: 15,
+    fontSize: 14,
     fontWeight: "400",
     marginBottom: 5,
-    lineHeight: 27,
     color: "#1B263B",
   },
-  input: {
+  inputWithIcon: {
     height: 44,
     padding: 12,
     fontSize: 14,
@@ -163,14 +150,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     marginBottom: 20,
   },
-  flexContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+ 
+  passwordContainer: {
+    position: "relative",
   },
-  flexItem: {
-    flex: 1,
-    marginRight: 10,
+  eyeIcon: {
+    position: "absolute",
+    right: 10,
+    top: 14, // Adjust to vertically center the icon inside the input
   },
+
   formSubmitButton: {
     backgroundColor: "#415a77",
     padding: 12,
@@ -183,22 +172,5 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
 });
-
-// const pickerSelectStyles = StyleSheet.create({
-//   inputIOS: {
-//     backgroundColor: "#F5F5F5",
-//     padding: 10,
-//     borderRadius: 8,
-//     marginBottom: 15,
-//     color: "#415A77",
-//   },
-//   inputAndroid: {
-//     backgroundColor: "#F5F5F5",
-//     padding: 10,
-//     borderRadius: 8,
-//     marginBottom: 15,
-//     color: "#415A77",
-//   },
-// });
 
 export default EditProfile;

@@ -5,7 +5,6 @@ import { FontAwesome, MaterialIcons, Entypo } from "@expo/vector-icons";
 import NavigationTab from "../components/navigation-tab";
 import { useRouter } from "expo-router";
 
-
 const ProfilePage = () => {
   const [activeTab, setActiveTab] = useState("profile");
   const handleTabPress = (tab: React.SetStateAction<string>) => {
@@ -53,7 +52,10 @@ const ProfilePage = () => {
         <Entypo name="chevron-right" size={24} color="#778DA9" />
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.listItem}>
+      <TouchableOpacity
+        style={styles.listItem}
+        onPress={() => router.replace("/change-password")}
+      >
         <View style={styles.listItemContent}>
           <FontAwesome name="lock" size={24} color="#1B263B" />
           <Text style={styles.listItemText}>Change Password</Text>
