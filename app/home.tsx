@@ -33,10 +33,33 @@ const HomePage = () => {
             />
           </View>
         </View>
-        <View style={styles.searchSection}>
-          <TextInput placeholder="Search" style={styles.searchInput} />
+        {/* <View style={styles.searchSection}>
+          <TextInput
+            placeholder="Search"
+            placeholderTextColor="#1B263BE5"
+            style={styles.searchInput}
+          />
           <TouchableOpacity style={styles.filterButton}>
             <FontAwesome name="filter" size={24} color="white" />
+          </TouchableOpacity>
+        </View> */}
+
+        <View style={styles.searchSection}>
+          <View style={styles.searchInputContainer}>
+            <FontAwesome
+              name="search"
+              size={20}
+              color="#1B263B"
+              style={styles.searchIcon}
+            />
+            <TextInput
+              placeholder="Search"
+              placeholderTextColor="#1B263B"
+              style={styles.searchInput}
+            />
+          </View>
+          <TouchableOpacity style={styles.filterButton}>
+            <FontAwesome name="sliders" size={24} color="#1B263B" />
           </TouchableOpacity>
         </View>
       </View>
@@ -130,7 +153,6 @@ const styles = StyleSheet.create({
   headerSection: {
     backgroundColor: "#0D1B2A",
     padding: 20,
-    
   },
   headerSectionInn: {
     flexDirection: "row",
@@ -158,18 +180,33 @@ const styles = StyleSheet.create({
   profilePicture: {},
   searchSection: {
     flexDirection: "row",
+    alignItems: "center",
+   
+    borderRadius: 8,
     marginTop: 20,
+  },
+  searchInputContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 10,
+    backgroundColor: "#FFFFFF",
+    flex: 1,
+    paddingHorizontal: 10,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "#1B263B",
+    marginRight: 5
+  },
+  searchIcon: {
+    marginRight: 10,
   },
   searchInput: {
     flex: 1,
-    borderWidth: 1,
-    borderColor: "#ccc",
-    padding: 10,
-    borderRadius: 10,
-    marginRight: 10,
+    color: "#1B263B",
+    fontSize: 16,
   },
   filterButton: {
-    backgroundColor: "#333",
+    backgroundColor: "#fff",
     padding: 10,
     borderRadius: 10,
   },
