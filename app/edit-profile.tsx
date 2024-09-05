@@ -6,6 +6,7 @@ import {
   Image,
   TouchableOpacity,
   StyleSheet,
+  ScrollView
 } from "react-native";
 import { FontAwesome, AntDesign } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
@@ -104,7 +105,7 @@ const EditProfile = ({ navigation }) => {
           </View>
         </View>
 
-        <TouchableOpacity style={styles.formSubmitButton}>
+        <TouchableOpacity style={styles.formSubmitButton} onPress={() => router.replace("/profile")}>
           <Text style={styles.buttonText}>Save</Text>
         </TouchableOpacity>
       </ScrollView>
