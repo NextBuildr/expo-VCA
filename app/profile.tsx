@@ -5,7 +5,7 @@ import { FontAwesome, MaterialIcons, Entypo } from "@expo/vector-icons";
 import NavigationTab from "../components/navigation-tab";
 
 const ProfilePage = () => {
-  const [activeTab, setActiveTab] = useState("call");
+  const [activeTab, setActiveTab] = useState("profile");
   const handleTabPress = (tab: React.SetStateAction<string>) => {
     setActiveTab(tab);
   };
@@ -29,48 +29,48 @@ const ProfilePage = () => {
       <View style={styles.horizontalLine} />
 
       {/* Settings List */}
-      <View style={styles.settingsList}>
-        <TouchableOpacity style={styles.listItem}>
-          <View style={styles.listItemContent}>
-            <FontAwesome name="cog" size={24} color="#1B263B" />
-            <Text style={styles.listItemText}>Settings</Text>
-          </View>
-          <Entypo name="chevron-right" size={24} color="#778DA9" />
-        </TouchableOpacity>
+      {/* <View style={styles.settingsList}> */}
+      <TouchableOpacity style={styles.listItem}>
+        <View style={styles.listItemContent}>
+          <FontAwesome name="cog" size={24} color="#1B263B" />
+          <Text style={styles.listItemText}>Settings</Text>
+        </View>
+        <Entypo name="chevron-right" size={24} color="#778DA9" />
+      </TouchableOpacity>
 
-        <TouchableOpacity style={styles.listItem}>
-          <View style={styles.listItemContent}>
-            <MaterialIcons name="notifications" size={24} color="#1B263B" />
-            <Text style={styles.listItemText}>Notification</Text>
-          </View>
-          <Entypo name="chevron-right" size={24} color="#778DA9" />
-        </TouchableOpacity>
+      <TouchableOpacity style={styles.listItem}>
+        <View style={styles.listItemContent}>
+          <MaterialIcons name="notifications" size={24} color="#1B263B" />
+          <Text style={styles.listItemText}>Notification</Text>
+        </View>
+        <Entypo name="chevron-right" size={24} color="#778DA9" />
+      </TouchableOpacity>
 
-        <TouchableOpacity style={styles.listItem}>
-          <View style={styles.listItemContent}>
-            <FontAwesome name="lock" size={24} color="#1B263B" />
-            <Text style={styles.listItemText}>Change Password</Text>
-          </View>
-          <Entypo name="chevron-right" size={24} color="#778DA9" />
-        </TouchableOpacity>
-        <View style={styles.horizontalLine} />
+      <TouchableOpacity style={styles.listItem}>
+        <View style={styles.listItemContent}>
+          <FontAwesome name="lock" size={24} color="#1B263B" />
+          <Text style={styles.listItemText}>Change Password</Text>
+        </View>
+        <Entypo name="chevron-right" size={24} color="#778DA9" />
+      </TouchableOpacity>
+      <View style={styles.horizontalLine} />
 
-        <TouchableOpacity style={styles.listItem}>
-          <View style={styles.listItemContent}>
-            <MaterialIcons name="help-outline" size={24} color="#1B263B" />
-            <Text style={styles.listItemText}>Help & Support</Text>
-          </View>
-          <Entypo name="chevron-right" size={24} color="#778DA9" />
-        </TouchableOpacity>
+      <TouchableOpacity style={styles.listItem}>
+        <View style={styles.listItemContent}>
+          <MaterialIcons name="help-outline" size={24} color="#1B263B" />
+          <Text style={styles.listItemText}>Help & Support</Text>
+        </View>
+        <Entypo name="chevron-right" size={24} color="#778DA9" />
+      </TouchableOpacity>
 
-        <TouchableOpacity style={styles.listItem}>
-          <View style={styles.listItemContent}>
-            <FontAwesome name="sign-out" size={24} color="#1B263B" />
-            <Text style={styles.listItemText}>Log Out</Text>
-          </View>
-          <Entypo name="chevron-right" size={24} color="#778DA9" />
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity style={styles.listItem}>
+        <View style={styles.listItemContent}>
+          <FontAwesome name="sign-out" size={24} color="#1B263B" />
+          <Text style={styles.listItemText}>Log Out</Text>
+        </View>
+        <Entypo name="chevron-right" size={24} color="#778DA9" />
+      </TouchableOpacity>
+      {/* </View> */}
       <NavigationTab activeTab={activeTab} handleTabPress={handleTabPress} />
     </View>
   );
@@ -91,15 +91,18 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   headName: {
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: "700",
     color: "#1B263B",
     marginBottom: 5,
+    lineHeight: 30,
   },
   username: {
     fontSize: 16,
-    color: "#415A77",
+    color: "#1B263BE5",
     marginBottom: 20,
+    fontWeight: 400,
+    lineHeight: 27,
   },
   horizontalLine: {
     width: "100%",
@@ -148,6 +151,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     fontSize: 18,
     color: "#1B263B",
+    fontWeight: "400",
   },
 });
 
