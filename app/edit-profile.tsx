@@ -6,18 +6,21 @@ import {
   Image,
   TouchableOpacity,
   StyleSheet,
-  ScrollView
+  ScrollView,
 } from "react-native";
 import { FontAwesome, AntDesign } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
+import RNPickerSelect from "react-native-picker-select";
+import DatePicker from "react-native-date-picker";
 
 const EditProfile = ({ navigation }) => {
   const [fullName, setFullName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [birthday, setBirthday] = useState("");
+  const [birthday, setBirthday] = useState(new Date());
   const [gender, setGender] = useState("");
+  const [openDatePicker, setOpenDatePicker] = useState(false);
 
   const router = useRouter();
 
@@ -103,9 +106,56 @@ const EditProfile = ({ navigation }) => {
               />
             </View>
           </View>
+
+          {/* <View style={styles.flexContainer}>
+            <View style={styles.flexItem}>
+              <Text style={styles.label}>Birthday</Text>
+              <TouchableOpacity onPress={() => setOpenDatePicker(true)}>
+                <TextInput
+                  style={styles.input}
+                  value={birthday.toDateString()}
+                  editable={false}
+                  placeholder="MM/DD/YYYY"
+                />
+              </TouchableOpacity>
+              <DatePicker
+                modal
+                mode="date"
+                open={openDatePicker}
+                date={birthday}
+                onConfirm={(date) => {
+                  setOpenDatePicker(false);
+                  setBirthday(date);
+                }}
+                onCancel={() => {
+                  setOpenDatePicker(false);
+                }}
+              />
+            </View>
+            <View style={styles.flexItem}>
+              <Text style={styles.label}>Gender</Text>
+              <RNPickerSelect
+                onValueChange={(value) => setGender(value)}
+                items={[
+                  { label: "Male", value: "male" },
+                  { label: "Female", value: "female" },
+                  { label: "Other", value: "other" },
+                ]}
+                style={pickerSelectStyles}
+                placeholder={{
+                  label: "Select Gender",
+                  value: null,
+                }}
+                value={gender}
+              />
+            </View>
+          </View> */}
         </View>
 
-        <TouchableOpacity style={styles.formSubmitButton} onPress={() => router.replace("/profile")}>
+        <TouchableOpacity
+          style={styles.formSubmitButton}
+          onPress={() => router.replace("/profile")}
+        >
           <Text style={styles.buttonText}>Save</Text>
         </TouchableOpacity>
       </ScrollView>
@@ -212,5 +262,22 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
 });
+
+// const pickerSelectStyles = StyleSheet.create({
+//   inputIOS: {
+//     backgroundColor: "#F5F5F5",
+//     padding: 10,
+//     borderRadius: 8,
+//     marginBottom: 15,
+//     color: "#415A77",
+//   },
+//   inputAndroid: {
+//     backgroundColor: "#F5F5F5",
+//     padding: 10,
+//     borderRadius: 8,
+//     marginBottom: 15,
+//     color: "#415A77",
+//   },
+// });
 
 export default EditProfile;
