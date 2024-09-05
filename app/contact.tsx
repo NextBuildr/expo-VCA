@@ -10,9 +10,24 @@ import {
 } from "react-native";
 import { FontAwesome, Entypo } from "@expo/vector-icons";
 import NavigationTab from "../components/navigation-tab";
+import ContactCard from "../components/contactCard"
 
 const contact = () => {
   const [activeTab, setActiveTab] = useState("contact"); // Default active tab
+
+  const contacts = [
+    { name: "Aloye", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
+    { name: "Sam", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
+    { name: "David", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
+    { name: "Tunde", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
+    { name: "Alex", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
+    { name: "Chris", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
+    { name: "Dan", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
+    { name: "Anita", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
+    { name: "Nelly", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
+   
+  ];
+
 
   const handleTabPress = (tab: React.SetStateAction<string>) => {
     setActiveTab(tab);
@@ -48,22 +63,22 @@ const contact = () => {
         {/* Add New Section */}
         <TouchableOpacity style={styles.addNewSection}>
           <View style={styles.addButton}>
-            <FontAwesome name="plus" size={16} color="#FFF" />
+            <FontAwesome name="plus" size={16} color="#1B263B" />
           </View>
           <Text style={styles.addNewText}>Add New</Text>
         </TouchableOpacity>
 
         {/* Contact Card */}
-        <View style={styles.card}>
-          <Image
-            source={require("../assets/images/Ellipse 37.png")}
-            style={styles.profileImage}
+        <View style={{ padding: 20 }}>
+        {contacts.map((contact, index) => (
+          <ContactCard
+            key={index}
+            name={contact.name}
+            phoneNumber={contact.phoneNumber}
+            profileImage={contact.profileImage}
           />
-          <View style={styles.cardContent}>
-            <Text style={styles.name}>Aloye</Text>
-            <Text style={styles.phoneNumber}>+234 567 564 765</Text>
-          </View>
-        </View>
+        ))}
+      </View>
 
         {/* Border Line */}
         <View style={styles.borderLine} />
@@ -105,8 +120,9 @@ const styles = StyleSheet.create({
   addButton: {
     backgroundColor: "#778DA980",
     padding: 10,
-    borderRadius: 50,
+    borderRadius: 30,
     marginRight: 10,
+    textAlign: "center",
   },
   addNewText: {
     fontSize: 16,
@@ -128,7 +144,6 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 10,
     borderRadius: 5,
-
     marginRight: 5,
   },
   searchIcon: {
@@ -144,38 +159,7 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 5,
   },
-  card: {
-    flexDirection: "row",
-    alignItems: "center",
-    padding: 15,
-    backgroundColor: "#FFF",
-    borderRadius: 8,
-    marginBottom: 15,
-    // elevation: 2, // Adds shadow for Android
-    // shadowColor: "#000", // Adds shadow for iOS
-    // shadowOffset: { width: 0, height: 2 },
-    // shadowOpacity: 0.1,
-    // shadowRadius: 4,
-  },
-  profileImage: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    // marginRight: 15,
-  },
-  cardContent: {
-    flexDirection: "column",
-  },
-  name: {
-    fontSize: 18,
-    fontWeight: "600",
-    color: "#415A77",
-  },
-  phoneNumber: {
-    fontSize: 14,
-    color: "#778DA9",
-    marginTop: 4,
-  },
+
   borderLine: {
     height: 1,
     backgroundColor: "#D9D9D9",
