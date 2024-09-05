@@ -165,16 +165,25 @@ const styles = StyleSheet.create({
   inputContainer: {
     marginBottom: 20,
   },
+  inputGroup: {
+    marginBottom: 15,
+  },
   label: {
-    fontSize: 14,
-    color: "#415A77",
+    fontSize: 15,
+    fontWeight: "400",
     marginBottom: 5,
+    lineHeight: 27,
+    color: "#1B263B",
   },
   input: {
-    backgroundColor: "#F5F5F5",
-    padding: 10,
-    borderRadius: 8,
-    marginBottom: 15,
+    height: 44,
+    padding: 12,
+    fontSize: 14,
+    borderColor: "#ccc",
+    borderWidth: 1,
+    borderRadius: 4,
+    backgroundColor: "#fff",
+    marginBottom: 20,
   },
   flexContainer: {
     flexDirection: "row",
