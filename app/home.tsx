@@ -9,10 +9,32 @@ import {
   ScrollView,
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
-import NavigationTab from "../components/navigation-tab"
-
+import NavigationTab from "../components/navigation-tab";
+import RecentCallsCard from "../components/callCard";
 const HomePage = () => {
   const [activeTab, setActiveTab] = useState("home"); // Default active tab
+
+  const recentCallsData = [
+    {
+      name: "John Doe",
+      timeAgo: "25 mins ago",
+      isCallIncoming: false,
+      profileImage: require("../assets/images/Ellipse 37.png"),
+    },
+    {
+      name: "Jane Smith",
+      timeAgo: "1 hour ago",
+      isCallIncoming: true,
+      profileImage: require("../assets/images/Ellipse 37.png"),
+    },
+    {
+      name: "Aloye",
+      timeAgo: "2 hours ago",
+      isCallIncoming: false,
+      profileImage: require("../assets/images/Ellipse 37.png"),
+    },
+    // Add more entries as needed
+  ];
 
   const handleTabPress = (tab: React.SetStateAction<string>) => {
     setActiveTab(tab);
@@ -113,7 +135,7 @@ const HomePage = () => {
         </View>
 
         {/* Recent Calls Card */}
-        <View style={styles.recentCallsCard}>
+        {/* <View style={styles.recentCallsCard}>
           <View style={styles.leftCard}>
             <Image
               source={require("../assets/images/Ellipse 37.png")}
@@ -131,7 +153,18 @@ const HomePage = () => {
           <TouchableOpacity style={styles.rightCard}>
             <FontAwesome name="video-camera" size={24} color="#415A77" />
           </TouchableOpacity>
-        </View>
+        </View> */}
+
+        <ScrollView>
+          {recentCallsData.map((call, index) => (
+            <RecentCallsCard
+              key={index}
+              name={call.name}
+              timeAgo={call.timeAgo}
+              isCallIncoming={call.isCallIncoming}
+            />
+          ))}
+        </ScrollView>
 
         <View style={styles.recentCallsCard}>
           <View style={styles.leftCard}>
@@ -377,8 +410,8 @@ const styles = StyleSheet.create({
   },
   rightCard: {
     padding: 10,
-    backgroundColor: "#FFFFFF",
-    borderRadius: 10,
+    // backgroundColor: "#FFFFFF",
+    // borderRadius: 10,
   },
   navigationinner: {
     backgroundColor: "#FFF",
