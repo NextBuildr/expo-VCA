@@ -1,8 +1,14 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Image, TouchableOpacity, StyleSheet } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
+import {
+  View,
+  Text,
+  TextInput,
+  Image,
+  TouchableOpacity,
+  StyleSheet,
+} from "react-native";
+import { FontAwesome, AntDesign } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-
 
 const EditProfile = ({ navigation }) => {
   const [fullName, setFullName] = useState("");
@@ -17,12 +23,15 @@ const EditProfile = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <FontAwesome name="arrow-left" size={24} color="#415A77" />
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={styles.arrowButton}
+        >
+          <AntDesign name="arrowleft" size={24} color="#1B263B" />
         </TouchableOpacity>
         <Text style={styles.headerText}>Edit Profile</Text>
       </View>
-      
+
       <View style={styles.profileSection}>
         <View style={styles.profilePictureContainer}>
           <Image
@@ -36,7 +45,7 @@ const EditProfile = ({ navigation }) => {
         <Text style={styles.nameText}>John Doe</Text>
         <Text style={styles.usernameText}>@johndoe</Text>
       </View>
-      
+
       <View style={styles.separator} />
 
       <View style={styles.inputContainer}>
@@ -103,17 +112,20 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: "#FFF",
   },
+  arrowButton: {},
   header: {
     flexDirection: "row",
     alignItems: "center",
     marginBottom: 20,
+    marginTop: 30,
   },
   headerText: {
     flex: 1,
     textAlign: "center",
     fontSize: 20,
-    fontWeight: "600",
+    fontWeight: "700",
     color: "#415A77",
+    lineHeight: 30,
   },
   profileSection: {
     alignItems: "center",
