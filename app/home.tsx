@@ -135,25 +135,6 @@ const HomePage = () => {
         </View>
 
         {/* Recent Calls Card */}
-        {/* <View style={styles.recentCallsCard}>
-          <View style={styles.leftCard}>
-            <Image
-              source={require("../assets/images/Ellipse 37.png")}
-              style={styles.profilePicture}
-            />
-            <View style={styles.callInfo}>
-              <Text style={styles.nameText}>John Doe</Text>
-              <View style={styles.timeInfo}>
-                <FontAwesome name="arrow-up" size={14} color="green" />
-                <Text style={styles.tiimeText}>25 mins ago</Text>
-              </View>
-            </View>
-          </View>
-
-          <TouchableOpacity style={styles.rightCard}>
-            <FontAwesome name="video-camera" size={24} color="#415A77" />
-          </TouchableOpacity>
-        </View> */}
 
         <ScrollView>
           {recentCallsData.map((call, index) => (
@@ -162,49 +143,10 @@ const HomePage = () => {
               name={call.name}
               timeAgo={call.timeAgo}
               isCallIncoming={call.isCallIncoming}
+              profileImage={call.profileImage}
             />
           ))}
         </ScrollView>
-
-        <View style={styles.recentCallsCard}>
-          <View style={styles.leftCard}>
-            <Image
-              source={require("../assets/images/Ellipse 37.png")}
-              style={styles.profilePicture}
-            />
-            <View style={styles.callInfo}>
-              <Text style={styles.nameText}>John Doe</Text>
-              <View style={styles.timeInfo}>
-                <FontAwesome name="arrow-up" size={14} color="green" />
-                <Text style={styles.tiimeText}>25 mins ago</Text>
-              </View>
-            </View>
-          </View>
-
-          <TouchableOpacity style={styles.rightCard}>
-            <FontAwesome name="video-camera" size={24} color="#415A77" />
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.recentCallsCard}>
-          <View style={styles.leftCard}>
-            <Image
-              source={require("../assets/images/Ellipse 37.png")}
-              style={styles.profilePicture}
-            />
-            <View style={styles.callInfo}>
-              <Text style={styles.nameText}>John Doe</Text>
-              <View style={styles.timeInfo}>
-                <FontAwesome name="arrow-up" size={14} color="green" />
-                <Text style={styles.tiimeText}>25 mins ago</Text>
-              </View>
-            </View>
-          </View>
-
-          <TouchableOpacity style={styles.rightCard}>
-            <FontAwesome name="video-camera" size={24} color="#415A77" />
-          </TouchableOpacity>
-        </View>
       </ScrollView>
 
       {/* Bottom Navigation */}

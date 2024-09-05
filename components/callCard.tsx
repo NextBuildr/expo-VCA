@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
-const callCard = ({ name, timeAgo, profileImage, isCallIncoming }) => {
+const callCard = ({ name, timeAgo, profileImage, isCallIncoming,isVideoCall  }) => {
   return (
     <View style={styles.recentCallsCard}>
       <View style={styles.leftCard}>
@@ -23,9 +23,11 @@ const callCard = ({ name, timeAgo, profileImage, isCallIncoming }) => {
         </View>
       </View>
 
-      <TouchableOpacity style={styles.rightCard}>
-        <FontAwesome name="video-camera" size={24} color="#415A77" />
-      </TouchableOpacity>
+      <FontAwesome
+          name={isVideoCall ? "video-camera" : "phone"}
+          size={24}
+          color="#415A77"
+        />
     </View>
   );
 };
@@ -34,12 +36,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingHorizontal: 20,
-    marginVertical: 20,
+    // paddingHorizontal: 20,
+    // marginVertical: 20,
   },
   recentCallsText: {
     fontSize: 20,
-    fontWeight: "600",
+    fontWeight: "700",
     color: "#1B263B",
   },
   viewAllText: {
