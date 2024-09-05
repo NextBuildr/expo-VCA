@@ -3,14 +3,16 @@ import { View, Text, Image, StyleSheet } from "react-native";
 
 const ContactCard = ({ name, phoneNumber, profileImage }) => {
   return (
-    <View style={styles.card}>
-      <Image source={profileImage} style={styles.profileImage} />
-      <View style={styles.cardContent}>
-        <Text style={styles.name}>{name}</Text>
-        <Text style={styles.phoneNumber}>{phoneNumber}</Text>
+    <View style={styles.cardContainer}>
+      <View style={styles.card}>
+        <Image source={profileImage} style={styles.profileImage} />
+        <View style={styles.cardContent}>
+          <Text style={styles.name}>{name}</Text>
+          <Text style={styles.phoneNumber}>{phoneNumber}</Text>
+        </View>
+        {/* Border Line */}
       </View>
-       {/* Border Line */}
-       <View style={styles.borderLine} />
+      <View style={styles.borderLine} />
     </View>
   );
 };
@@ -19,16 +21,8 @@ const styles = StyleSheet.create({
   card: {
     flexDirection: "row",
     alignItems: "center",
-    // paddingVertical: 15,
-    // backgroundColor: "#FFF",
-    borderRadius: 8,
     marginBottom: 10,
     marginTop: 10,
-    // elevation: 2, // Adds shadow for Android
-    // shadowColor: "#000", // Adds shadow for iOS
-    // shadowOffset: { width: 0, height: 2 },
-    // shadowOpacity: 0.1,
-    // shadowRadius: 4,
   },
   profileImage: {
     width: 50,
@@ -48,6 +42,11 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: "#778DA9",
     marginTop: 4,
+  },
+  borderLine: {
+    height: 1,
+    backgroundColor: "#D9D9D9",
+  
   },
 });
 

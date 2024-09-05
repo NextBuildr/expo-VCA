@@ -69,7 +69,7 @@ const contact = () => {
         </TouchableOpacity>
 
         {/* Contact Card */}
-        <View style={{ padding: 20 }}>
+        <View>
         {contacts.map((contact, index) => (
           <ContactCard
             key={index}
