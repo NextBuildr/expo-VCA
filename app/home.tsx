@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Image,
   TextInput,
+  ScrollView,
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
@@ -17,188 +18,249 @@ const HomePage = () => {
   };
 
   return (
-    <View style={styles.container}>
-      {/* First Section */}
-      <View style={styles.headerSection}>
-        <View style={styles.headerSectionInn}>
-          <View style={styles.headerSectionInner}>
-            <Text style={styles.headerText}>Onbrela</Text>
-            <Text style={styles.subText}>Hi, Janet</Text>
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+      <View style={styles.container}>
+        {/* First Section */}
+        <View style={styles.headerSection}>
+          <View style={styles.headerSectionInn}>
+            <View style={styles.headerSectionInner}>
+              <Text style={styles.headerText}>Onbrela</Text>
+              <Text style={styles.subText}>Hi, Janet</Text>
+            </View>
+
+            <View style={styles.profileSection}>
+              <Image
+                source={require("../assets/images/Ellipse 37.png")}
+                style={styles.profilePicture}
+              />
+            </View>
+          </View>
+          <View style={styles.searchSection}>
+            <View style={styles.searchInputContainer}>
+              <FontAwesome
+                name="search"
+                size={20}
+                color="#1B263B"
+                style={styles.searchIcon}
+              />
+              <TextInput
+                placeholder="Search"
+                placeholderTextColor="#1B263B"
+                style={styles.searchInput}
+              />
+            </View>
+            <TouchableOpacity style={styles.filterButton}>
+              <FontAwesome name="sliders" size={24} color="#1B263B" />
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        {/* Card Section */}
+        <View style={styles.cardWrapper}>
+          <View style={styles.cardContainer}>
+            {/* Smaller card positioned absolutely */}
+            <View style={styles.smallCard}>
+              <Text style={styles.smallCardText}>27 Aug</Text>
+            </View>
+
+            {/* Main card content */}
+            <Text style={styles.cardTitle}>
+              Designing Name Video Calling App
+            </Text>
+
+            <View style={styles.cardInfo}>
+              <View style={styles.timeContainer}>
+                <FontAwesome name="clock-o" size={16} color="white" />
+                <Text style={styles.timeText}>10:30AM - 11:30AM</Text>
+              </View>
+              <FontAwesome name="ellipsis-h" size={24} color="white" />
+            </View>
+          </View>
+        </View>
+
+        <View style={styles.boxContainer}>
+          <View style={styles.boxWrapper}>
+            <TouchableOpacity style={styles.box}>
+              <FontAwesome name="video-camera" size={32} color="#FFF" />
+            </TouchableOpacity>
+            <Text style={styles.boxText}>Quick Call</Text>
           </View>
 
-          <View style={styles.profileSection}>
+          <View style={styles.boxWrapper}>
+            <TouchableOpacity style={styles.box}>
+              <FontAwesome name="calendar" size={32} color="#FFF" />
+            </TouchableOpacity>
+            <Text style={styles.boxText}>Schedule</Text>
+          </View>
+
+          <View style={styles.boxWrapper}>
+            <TouchableOpacity style={styles.box}>
+              <View style={styles.plusIconContainer}>
+                <FontAwesome name="plus" size={32} color="#0D1B2A" />
+              </View>
+            </TouchableOpacity>
+            <Text style={styles.boxText}>Join</Text>
+          </View>
+        </View>
+
+        {/* Recent Calls Header */}
+        <View style={styles.recentCallsHeader}>
+          <Text style={styles.recentCallsText}>Recent Calls</Text>
+          <TouchableOpacity>
+            <Text style={styles.viewAllText}>View All</Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* Recent Calls Card */}
+        <View style={styles.recentCallsCard}>
+          <View style={styles.leftCard}>
             <Image
               source={require("../assets/images/Ellipse 37.png")}
               style={styles.profilePicture}
             />
-          </View>
-        </View>
-        <View style={styles.searchSection}>
-          <View style={styles.searchInputContainer}>
-            <FontAwesome
-              name="search"
-              size={20}
-              color="#1B263B"
-              style={styles.searchIcon}
-            />
-            <TextInput
-              placeholder="Search"
-              placeholderTextColor="#1B263B"
-              style={styles.searchInput}
-            />
-          </View>
-          <TouchableOpacity style={styles.filterButton}>
-            <FontAwesome name="sliders" size={24} color="#1B263B" />
-          </TouchableOpacity>
-        </View>
-      </View>
-
-      {/* Card Section */}
-      <View style={styles.cardWrapper}>
-        <View style={styles.cardContainer}>
-          {/* Smaller card positioned absolutely */}
-          <View style={styles.smallCard}>
-            <Text style={styles.smallCardText}>27 Aug</Text>
-          </View>
-
-          {/* Main card content */}
-          <Text style={styles.cardTitle}>Designing Name Video Calling App</Text>
-
-          <View style={styles.cardInfo}>
-            <View style={styles.timeContainer}>
-              <FontAwesome name="clock-o" size={16} color="white" />
-              <Text style={styles.timeText}>10:30AM - 11:30AM</Text>
-            </View>
-            <FontAwesome name="ellipsis-h" size={24} color="white" />
-          </View>
-        </View>
-      </View>
-
-      <View style={styles.boxContainer}>
-        <View style={styles.boxWrapper}>
-          <TouchableOpacity style={styles.box}>
-            <FontAwesome name="video-camera" size={32} color="#FFF" />
-          </TouchableOpacity>
-          <Text style={styles.boxText}>Quick Call</Text>
-        </View>
-
-        <View style={styles.boxWrapper}>
-          <TouchableOpacity style={styles.box}>
-            <FontAwesome name="calendar" size={32} color="#FFF" />
-          </TouchableOpacity>
-          <Text style={styles.boxText}>Schedule</Text>
-        </View>
-
-        <View style={styles.boxWrapper}>
-          <TouchableOpacity style={styles.box}>
-            <View style={styles.plusIconContainer}>
-              <FontAwesome name="plus" size={32} color="#0D1B2A" />
-            </View>
-          </TouchableOpacity>
-          <Text style={styles.boxText}>Join</Text>
-        </View>
-      </View>
-
-       {/* Recent Calls Card */}
-       <View style={styles.recentCallsCard}>
-        <View style={styles.leftCard}>
-          <Image
-            source={require("../assets/images/Ellipse 37.png")}
-            style={styles.profilePicture}
-          />
-          <View style={styles.callInfo}>
-            <Text style={styles.nameText}>John Doe</Text>
-            <View style={styles.timeInfo}>
-              <FontAwesome name="arrow-up" size={14} color="green" />
-              <Text style={styles.tiimeText}>25 mins ago</Text>
+            <View style={styles.callInfo}>
+              <Text style={styles.nameText}>John Doe</Text>
+              <View style={styles.timeInfo}>
+                <FontAwesome name="arrow-up" size={14} color="green" />
+                <Text style={styles.tiimeText}>25 mins ago</Text>
+              </View>
             </View>
           </View>
+
+          <TouchableOpacity style={styles.rightCard}>
+            <FontAwesome name="video-camera" size={24} color="#415A77" />
+          </TouchableOpacity>
         </View>
 
-        <TouchableOpacity style={styles.rightCard}>
-          <FontAwesome name="video-camera" size={24} color="#415A77" />
-        </TouchableOpacity>
+        <View style={styles.recentCallsCard}>
+          <View style={styles.leftCard}>
+            <Image
+              source={require("../assets/images/Ellipse 37.png")}
+              style={styles.profilePicture}
+            />
+            <View style={styles.callInfo}>
+              <Text style={styles.nameText}>John Doe</Text>
+              <View style={styles.timeInfo}>
+                <FontAwesome name="arrow-up" size={14} color="green" />
+                <Text style={styles.tiimeText}>25 mins ago</Text>
+              </View>
+            </View>
+          </View>
+
+          <TouchableOpacity style={styles.rightCard}>
+            <FontAwesome name="video-camera" size={24} color="#415A77" />
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.recentCallsCard}>
+          <View style={styles.leftCard}>
+            <Image
+              source={require("../assets/images/Ellipse 37.png")}
+              style={styles.profilePicture}
+            />
+            <View style={styles.callInfo}>
+              <Text style={styles.nameText}>John Doe</Text>
+              <View style={styles.timeInfo}>
+                <FontAwesome name="arrow-up" size={14} color="green" />
+                <Text style={styles.tiimeText}>25 mins ago</Text>
+              </View>
+            </View>
+          </View>
+
+          <TouchableOpacity style={styles.rightCard}>
+            <FontAwesome name="video-camera" size={24} color="#415A77" />
+          </TouchableOpacity>
+        </View>
+
+        {/* Bottom Navigation */}
+        <View style={styles.navigationTab}>
+          <TouchableOpacity
+            style={[styles.navItem, activeTab === "home" && styles.activeTab]}
+            onPress={() => handleTabPress("home")}
+          >
+            <View style={styles.navContent}>
+              <FontAwesome
+                name="home"
+                size={24}
+                color={activeTab === "home" ? "#FFF" : "#415A77"}
+              />
+              {activeTab === "home" && <Text style={styles.navText}>Home</Text>}
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[
+              styles.navItem,
+              activeTab === "contact" && styles.activeTab,
+            ]}
+            onPress={() => handleTabPress("contact")}
+          >
+            <View style={styles.navContent}>
+              <FontAwesome
+                name="address-book"
+                size={24}
+                color={activeTab === "contact" ? "#FFF" : "#415A77"}
+              />
+              {activeTab === "contact" && (
+                <Text style={styles.navText}>Contact</Text>
+              )}
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[
+              styles.navItem,
+              activeTab === "schedule" && styles.activeTab,
+            ]}
+            onPress={() => handleTabPress("schedule")}
+          >
+            <View style={styles.navContent}>
+              <FontAwesome
+                name="calendar"
+                size={24}
+                color={activeTab === "schedule" ? "#FFF" : "#415A77"}
+              />
+              {activeTab === "schedule" && (
+                <Text style={styles.navText}>Schedule</Text>
+              )}
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[styles.navItem, activeTab === "call" && styles.activeTab]}
+            onPress={() => handleTabPress("call")}
+          >
+            <View style={styles.navContent}>
+              <FontAwesome
+                name="phone"
+                size={24}
+                color={activeTab === "call" ? "#FFF" : "#415A77"}
+              />
+              {activeTab === "call" && <Text style={styles.navText}>Call</Text>}
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[
+              styles.navItem,
+              activeTab === "profile" && styles.activeTab,
+            ]}
+            onPress={() => handleTabPress("profile")}
+          >
+            <View style={styles.navContent}>
+              <FontAwesome
+                name="user"
+                size={24}
+                color={activeTab === "profile" ? "#FFF" : "#415A77"}
+              />
+              {activeTab === "profile" && (
+                <Text style={styles.navText}>Profile</Text>
+              )}
+            </View>
+          </TouchableOpacity>
+        </View>
       </View>
-
-      {/* Bottom Navigation */}
-      <View style={styles.navigationTab}>
-        <TouchableOpacity
-          style={[styles.navItem, activeTab === "home" && styles.activeTab]}
-          onPress={() => handleTabPress("home")}
-        >
-          <View style={styles.navContent}>
-            <FontAwesome
-              name="home"
-              size={24}
-              color={activeTab === "home" ? "#FFF" : "#415A77"}
-            />
-            {activeTab === "home" && <Text style={styles.navText}>Home</Text>}
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[styles.navItem, activeTab === "contact" && styles.activeTab]}
-          onPress={() => handleTabPress("contact")}
-        >
-          <View style={styles.navContent}>
-            <FontAwesome
-              name="address-book"
-              size={24}
-              color={activeTab === "contact" ? "#FFF" : "#415A77"}
-            />
-            {activeTab === "contact" && (
-              <Text style={styles.navText}>Contact</Text>
-            )}
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[styles.navItem, activeTab === "schedule" && styles.activeTab]}
-          onPress={() => handleTabPress("schedule")}
-        >
-          <View style={styles.navContent}>
-            <FontAwesome
-              name="calendar"
-              size={24}
-              color={activeTab === "schedule" ? "#FFF" : "#415A77"}
-            />
-            {activeTab === "schedule" && (
-              <Text style={styles.navText}>Schedule</Text>
-            )}
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[styles.navItem, activeTab === "call" && styles.activeTab]}
-          onPress={() => handleTabPress("call")}
-        >
-          <View style={styles.navContent}>
-            <FontAwesome
-              name="phone"
-              size={24}
-              color={activeTab === "call" ? "#FFF" : "#415A77"}
-            />
-            {activeTab === "call" && <Text style={styles.navText}>Call</Text>}
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[styles.navItem, activeTab === "profile" && styles.activeTab]}
-          onPress={() => handleTabPress("profile")}
-        >
-          <View style={styles.navContent}>
-            <FontAwesome
-              name="user"
-              size={24}
-              color={activeTab === "profile" ? "#FFF" : "#415A77"}
-            />
-            {activeTab === "profile" && (
-              <Text style={styles.navText}>Profile</Text>
-            )}
-          </View>
-        </TouchableOpacity>
-      </View>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -266,47 +328,47 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   cardWrapper: {
-    marginHorizontal: 20, 
-    marginTop: 20, 
+    marginHorizontal: 20,
+    marginTop: 20,
   },
   cardContainer: {
-    backgroundColor: '#415A77',
+    backgroundColor: "#415A77",
     padding: 40,
     borderRadius: 10,
-    position: 'relative',
+    position: "relative",
   },
   smallCard: {
-    backgroundColor: '#0D1B2A',
+    backgroundColor: "#0D1B2A",
     paddingVertical: 10,
     paddingHorizontal: 15,
     borderRadius: 5,
-    position: 'absolute',
+    position: "absolute",
     top: -10,
     left: 20,
   },
   smallCardText: {
-    color: 'white',
+    color: "white",
     fontSize: 20,
-    fontWeight: "700"
+    fontWeight: "700",
   },
   cardTitle: {
-    color: 'white',
+    color: "white",
     fontSize: 20,
     fontWeight: "700",
     lineHeight: 30,
     marginBottom: 10,
   },
   cardInfo: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   timeContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
   timeText: {
-    color: 'white',
+    color: "white",
     fontSize: 14,
     marginLeft: 8,
   },
