@@ -74,6 +74,31 @@ const HomePage = () => {
         </View>
       </View>
 
+      <View style={styles.boxContainer}>
+        <View style={styles.boxWrapper}>
+          <TouchableOpacity style={styles.box}>
+            <FontAwesome name="video-camera" size={32} color="#FFF" />
+          </TouchableOpacity>
+          <Text style={styles.boxText}>Quick Call</Text>
+        </View>
+
+        <View style={styles.boxWrapper}>
+          <TouchableOpacity style={styles.box}>
+            <FontAwesome name="calendar" size={32} color="#FFF" />
+          </TouchableOpacity>
+          <Text style={styles.boxText}>Schedule</Text>
+        </View>
+
+        <View style={styles.boxWrapper}>
+          <TouchableOpacity style={styles.box}>
+            <View style={styles.plusIconContainer}>
+              <FontAwesome name="plus" size={32} color="#0D1B2A" />
+            </View>
+          </TouchableOpacity>
+          <Text style={styles.boxText}>Join</Text>
+        </View>
+      </View>
+
       {/* Bottom Navigation */}
       <View style={styles.navigationTab}>
         <TouchableOpacity
@@ -263,6 +288,33 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 14,
     marginLeft: 8,
+  },
+  boxContainer: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    marginVertical: 20,
+  },
+  boxWrapper: {
+    alignItems: "center",
+  },
+  box: {
+    backgroundColor: "#0D1B2A",
+    padding: 20,
+    borderRadius: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    width: 100,
+    height: 120,
+  },
+  boxText: {
+    marginTop: 10,
+    color: "#FFF",
+    fontSize: 14,
+    textAlign: "center",
+  },
+  plusIconContainer: {
+    backgroundColor: "#FFF",
+    padding: 10,
   },
   navigationTab: {
     flexDirection: "row",
