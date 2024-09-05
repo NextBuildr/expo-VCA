@@ -3,12 +3,16 @@ import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { FontAwesome, MaterialIcons, Entypo } from "@expo/vector-icons";
 import NavigationTab from "../components/navigation-tab";
+import { useRouter } from "expo-router";
+
 
 const ProfilePage = () => {
   const [activeTab, setActiveTab] = useState("profile");
   const handleTabPress = (tab: React.SetStateAction<string>) => {
     setActiveTab(tab);
   };
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
       {/* Profile Picture */}
@@ -21,7 +25,10 @@ const ProfilePage = () => {
       <Text style={styles.headName}>John Doe</Text>
       <Text style={styles.username}>@johndoe</Text>
 
-      <TouchableOpacity style={styles.formSubmitButton}>
+      <TouchableOpacity
+        style={styles.formSubmitButton}
+        onPress={() => router.replace("/edit-profile")}
+      >
         <Feather name="edit-2" size={20} color="#FFF" style={styles.icon} />
         <Text style={styles.buttonText}>Edit Profile</Text>
       </TouchableOpacity>
