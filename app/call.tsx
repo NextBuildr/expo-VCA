@@ -149,8 +149,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   emptyStateImage: {
-    width: 150,
-    height: 150,
+    // width: 150,
+    // height: 150,
     marginBottom: 20,
   },
   emptyStateHeader: {
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#415A77",
     paddingVertical: 12,
     paddingHorizontal: 40,
-    borderRadius: 25,
+    borderRadius: 5,
   },
   startCallButtonText: {
     color: "#FFF",
