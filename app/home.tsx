@@ -99,6 +99,27 @@ const HomePage = () => {
         </View>
       </View>
 
+       {/* Recent Calls Card */}
+       <View style={styles.recentCallsCard}>
+        <View style={styles.leftCard}>
+          <Image
+            source={require("../assets/images/Ellipse 37.png")}
+            style={styles.profilePicture}
+          />
+          <View style={styles.callInfo}>
+            <Text style={styles.nameText}>John Doe</Text>
+            <View style={styles.timeInfo}>
+              <FontAwesome name="arrow-up" size={14} color="green" />
+              <Text style={styles.tiimeText}>25 mins ago</Text>
+            </View>
+          </View>
+        </View>
+
+        <TouchableOpacity style={styles.rightCard}>
+          <FontAwesome name="video-camera" size={24} color="#415A77" />
+        </TouchableOpacity>
+      </View>
+
       {/* Bottom Navigation */}
       <View style={styles.navigationTab}>
         <TouchableOpacity
@@ -299,12 +320,12 @@ const styles = StyleSheet.create({
   },
   box: {
     backgroundColor: "#0D1B2A",
-    padding: 20,
+    padding: 10,
     borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
     width: 100,
-    height: 120,
+    height: 80,
   },
   boxText: {
     marginTop: 10,
@@ -316,7 +337,66 @@ const styles = StyleSheet.create({
   },
   plusIconContainer: {
     backgroundColor: "#FFF",
+    padding: 5,
+  },
+  recentCallsHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 20,
+    marginVertical: 20,
+  },
+  recentCallsText: {
+    fontSize: 20,
+    fontWeight: "600",
+    color: "#1B263B",
+  },
+  viewAllText: {
+    fontSize: 16,
+    fontWeight: "400",
+    color: "#1B263B",
+  },
+  recentCallsCard: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: "#D9D9D980",
+    padding: 15,
+    borderRadius: 10,
+    marginHorizontal: 20,
+  },
+  leftCard: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  profilePicture: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    marginRight: 10,
+  },
+  callInfo: {
+    justifyContent: "center",
+  },
+  nameText: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: "#1B263B",
+  },
+  timeInfo: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 5,
+  },
+  tiimeText: {
+    marginLeft: 5,
+    fontSize: 14,
+    color: "#1B263B",
+  },
+  rightCard: {
     padding: 10,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 10,
   },
   navigationTab: {
     flexDirection: "row",
