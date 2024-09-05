@@ -1,5 +1,6 @@
 import { Stack, useSegments, useRouter } from "expo-router";
 import { useContext, useEffect } from "react";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 // import { AuthProvider, AuthContext } from '../context/AuthContext';
 // import { ThemeProvider } from '../navigation/ThemeProvider';
 
@@ -31,6 +32,7 @@ function AppNavigator() {
   //   }, [user, segments]);
 
   return (
+    <GestureHandlerRootView style={{ flex: 1 }}>
     <Stack>
       {/* Splash Screen */}
       <Stack.Screen name="splash/index" options={{ headerShown: false }} />
@@ -59,5 +61,6 @@ function AppNavigator() {
 
 
     </Stack>
+    </GestureHandlerRootView>
   );
 }

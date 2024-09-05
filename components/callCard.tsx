@@ -1,63 +1,75 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
+import { Swipeable } from "react-native-gesture-handler";
 
-const callCard = ({ name, timeAgo, profileImage, isCallIncoming,isVideoCall  }) => {
+const CallCard = ({ name, timeAgo, profileImage, isCallIncoming, isVideoCall, onDelete }) => {
+  const [isSwiped, setIsSwiped] = useState(false);
+
+  const renderRightActions = () => (
+    <TouchableOpacity style={styles.deleteButton} onPress={onDelete}>
+      <FontAwesome name="trash" size={24} color="#FFF" />
+    </TouchableOpacity>
+  );
+
+  const handleSwipe = () => {
+    setIsSwiped(true);
+  };
+
+  const handleSwipeClose = () => {
+    setIsSwiped(false);
+  };
+
   return (
-    <View style={styles.recentCallsCard}>
-      <View style={styles.leftCard}>
-        <Image
-          source={profileImage} // Replace with dynamic image source
-          style={styles.profilePicture}
-        />
-        <View style={styles.callInfo}>
-          <Text style={styles.nameText}>{name}</Text>
-          <View style={styles.timeInfo}>
-            <FontAwesome
-              name={isCallIncoming ? "arrow-down" : "arrow-up"}
-              size={14}
-              color={isCallIncoming ? "red" : "green"}
-            />
-            <Text style={styles.tiimeText}>{timeAgo}</Text>
+    <Swipeable
+      renderRightActions={renderRightActions}
+      onSwipeableOpen={handleSwipe}
+      onSwipeableClose={handleSwipeClose}
+    >
+      <View
+        style={[
+          styles.recentCallsCard,
+          isSwiped && styles.swipedCard, // Apply conditional styling
+        ]}
+      >
+        <View style={styles.leftCard}>
+          <Image source={profileImage} style={styles.profilePicture} />
+          <View style={styles.callInfo}>
+            <Text style={styles.nameText}>{name}</Text>
+            <View style={styles.timeInfo}>
+              <FontAwesome
+                name={isCallIncoming ? "arrow-down" : "arrow-up"}
+                size={14}
+                color={isCallIncoming ? "red" : "green"}
+              />
+              <Text style={styles.timeText}>{timeAgo}</Text>
+            </View>
           </View>
         </View>
-      </View>
-
-      <FontAwesome
+        <FontAwesome
           name={isVideoCall ? "video-camera" : "phone"}
           size={20}
           color="#415A77"
         />
-    </View>
+      </View>
+    </Swipeable>
   );
 };
+
 const styles = StyleSheet.create({
-  recentCallsHeader: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    // paddingHorizontal: 20,
-    // marginVertical: 20,
-  },
-  recentCallsText: {
-    fontSize: 20,
-    fontWeight: "700",
-    color: "#1B263B",
-  },
-  viewAllText: {
-    fontSize: 16,
-    fontWeight: "400",
-    color: "#1B263B",
-  },
   recentCallsCard: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: "#D9D9D980",
     padding: 15,
-    borderRadius: 10,
-    marginHorizontal: 20,
+    borderRadius: 10, // Default borderRadius
+    marginHorizontal: 20, // Default marginHorizontal
     marginBottom: 20,
+  },
+  swipedCard: {
+    borderRadius: 0, // Remove borderRadius when swiped
+    marginHorizontal: 0, // Remove marginHorizontal when swiped
   },
   leftCard: {
     flexDirection: "row",
@@ -82,15 +94,21 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 5,
   },
-  tiimeText: {
+  timeText: {
     marginLeft: 5,
     fontSize: 14,
     color: "#1B263B",
   },
-  rightCard: {
-    padding: 10,
-    // backgroundColor: "#FFFFFF",
+  deleteButton: {
+    justifyContent: "center",
+    alignItems: "center",
+    width: 80,
+    backgroundColor: "#FF6B6B",
+    marginBottom: 20,
+
     // borderRadius: 10,
+    // marginVertical: 10,
   },
 });
-export default callCard;
+
+export default CallCard;
