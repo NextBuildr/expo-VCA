@@ -77,9 +77,19 @@ const Contact = () => {
 
         {/* Conditional Rendering for Empty Contact List or Search Results */}
         {contacts.length === 0 ? (
-          <View style={styles.emptyState}>
-            <Text style={styles.emptyStateText}>No contacts available</Text>
-          </View>
+          <View style={styles.emptyStateContainer}>
+          <Image
+            source={require("../assets/images/Ellipse 41.png")} // Placeholder image
+            style={styles.emptyStateImage}
+          />
+          <Text style={styles.emptyStateHeader}>Your call log is empty</Text>
+          <Text style={styles.emptyStateSubtext}>
+            Your recent calls will appear here. Start a call to see your call history.
+          </Text>
+          <TouchableOpacity style={styles.startCallButton}>
+            <Text style={styles.startCallButtonText}>Start a Call</Text>
+          </TouchableOpacity>
+        </View>
         ) : filteredContacts.length === 0 ? (
           <View style={styles.emptyState}>
             <Text style={styles.emptyStateText}>No search results found</Text>
