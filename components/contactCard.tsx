@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 10,
     // width: "100%"
-
+    paddingVertical: 5,
   },
   expandedContainer: {
     flexDirection: "row",

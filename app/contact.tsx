@@ -172,7 +172,7 @@ const Contact = () => {
           </View>
         ) : (
           <View style={styles.container}>
-            <ScrollView contentContainerStyle={styles.contentContainer}>
+            <ScrollView contentContainerStyle={styles.cardContentContainer}>
               {filteredContacts.map((contact, index) => (
                 <ContactCard
                   key={index}
