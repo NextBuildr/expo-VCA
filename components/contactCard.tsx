@@ -76,9 +76,9 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
   },
-  selectedCard: {
-    backgroundColor: "#B0E0E6", // Selected card background color
-  },
+//   selectedCard: {
+//     backgroundColor: "#B0E0E6", // Selected card background color
+//   },
   iconsContainer: {
     flexDirection: "row",
     marginLeft: 10,

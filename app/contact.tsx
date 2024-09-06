@@ -15,6 +15,7 @@ import ContactCard from "../components/contactCard";
 const Contact = () => {
   const [activeTab, setActiveTab] = useState("contact");
   const [searchQuery, setSearchQuery] = useState("");
+  const [expandedCardIndex, setExpandedCardIndex] = useState(null);
 
   const contacts = [
     {
@@ -79,6 +80,10 @@ const Contact = () => {
   const filteredContacts = contacts.filter((contact) =>
     contact.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  const handleToggleExpand = (index) => {
+    setExpandedCardIndex(index === expandedCardIndex ? null : index); // Collapse if clicked again
+  };
 
   const handleTabPress = (tab) => {
     setActiveTab(tab);
