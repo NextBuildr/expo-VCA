@@ -9,8 +9,6 @@ import {
   ScrollView,
 } from "react-native";
 import { AntDesign, FontAwesome, Entypo } from "@expo/vector-icons";
-import { useRouter } from "expo-router";
-
 
 const CreateNewContact = ({ navigation }) => {
   const [firstName, setFirstName] = useState("");
