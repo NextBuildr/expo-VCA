@@ -31,7 +31,7 @@ const CreateNewContact = ({ navigation }) => {
         {/* Profile Image Placeholder */}
         <View style={styles.profileImageContainer}>
           <Image
-            source={require("../assets/images/profile-placeholder.png")}
+            source={require("../assets/images/create-contact.png")}
             style={styles.profileImage}
           />
         </View>
