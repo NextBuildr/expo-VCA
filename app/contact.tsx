@@ -240,7 +240,8 @@ const styles = StyleSheet.create({
   },
   favouritesHeader: {
     fontSize: 18,
-    fontWeight: "600",
+    fontWeight: "700",
+    lineHeight: 27,
     color: "#1B263B",
     marginBottom: 10,
   },
