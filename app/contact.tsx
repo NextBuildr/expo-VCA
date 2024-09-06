@@ -11,6 +11,7 @@ import {
 import { FontAwesome, Entypo } from "@expo/vector-icons";
 import NavigationTab from "../components/navigation-tab";
 import ContactCard from "../components/contactCard";
+import { useRouter } from "expo-router";
 
 const Contact = () => {
   const [activeTab, setActiveTab] = useState("contact");
@@ -137,7 +138,10 @@ const Contact = () => {
         </View>
 
         {/* Add New Section */}
-        <TouchableOpacity style={styles.addNewSection}>
+        <TouchableOpacity
+          style={styles.addNewSection}
+          onPress={() => router.replace("/auth/signup")}
+        >
           <View style={styles.addButton}>
             <FontAwesome name="plus" size={16} color="#1B263B" />
           </View>
