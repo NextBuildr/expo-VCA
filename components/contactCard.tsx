@@ -1,9 +1,9 @@
 import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
 
-const ContactCard = ({ name, phoneNumber, profileImage }) => {
+const ContactCard = ({ name, phoneNumber, profileImage,isSelected  }) => {
   return (
-    <View style={styles.cardContainer}>
+    <View style={[styles.cardContainer ,isSelected && styles.selectedCard]}>
       <View style={styles.card}>
         <Image source={profileImage} style={styles.profileImage} />
         <View style={styles.cardContent}>
@@ -29,6 +29,9 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 25,
     marginRight: 15,
+  },
+  selectedCard: {
+    backgroundColor: "#B0E0E6", // Selected card background color
   },
   cardContent: {
     flexDirection: "column",

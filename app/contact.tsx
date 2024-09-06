@@ -10,10 +10,11 @@ import {
 } from "react-native";
 import { FontAwesome, Entypo } from "@expo/vector-icons";
 import NavigationTab from "../components/navigation-tab";
-import ContactCard from "../components/contactCard"
+import ContactCard from "../components/contactCard";
 
-const contact = () => {
-  const [activeTab, setActiveTab] = useState("contact"); // Default active tab
+const Contact = () => {
+  const [activeTab, setActiveTab] = useState("contact");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const contacts = [
     { name: "Aloye", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
@@ -25,13 +26,17 @@ const contact = () => {
     { name: "Dan", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
     { name: "Anita", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
     { name: "Nelly", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
-   
   ];
 
+  // Filter contacts based on search query
+  const filteredContacts = contacts.filter((contact) =>
+    contact.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
-  const handleTabPress = (tab: React.SetStateAction<string>) => {
+  const handleTabPress = (tab) => {
     setActiveTab(tab);
   };
+
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.contentContainer}>
@@ -53,6 +58,8 @@ const contact = () => {
               placeholder="Search"
               placeholderTextColor="#1B263B"
               style={styles.searchInput}
+              value={searchQuery}
+              onChangeText={setSearchQuery}
             />
           </View>
           <TouchableOpacity style={styles.filterButton}>
@@ -68,20 +75,29 @@ const contact = () => {
           <Text style={styles.addNewText}>Add New</Text>
         </TouchableOpacity>
 
-        {/* Contact Card */}
-        <View>
-        {contacts.map((contact, index) => (
-          <ContactCard
-            key={index}
-            name={contact.name}
-            phoneNumber={contact.phoneNumber}
-            profileImage={contact.profileImage}
-          />
-        ))}
-      </View>
-
-       
+        {/* Conditional Rendering for Empty Contact List or Search Results */}
+        {contacts.length === 0 ? (
+          <View style={styles.emptyState}>
+            <Text style={styles.emptyStateText}>No contacts available</Text>
+          </View>
+        ) : filteredContacts.length === 0 ? (
+          <View style={styles.emptyState}>
+            <Text style={styles.emptyStateText}>No search results found</Text>
+          </View>
+        ) : (
+          <View>
+            {filteredContacts.map((contact, index) => (
+              <ContactCard
+                key={index}
+                name={contact.name}
+                phoneNumber={contact.phoneNumber}
+                profileImage={contact.profileImage}
+              />
+            ))}
+          </View>
+        )}
       </ScrollView>
+
       {/* Bottom Navigation */}
       <NavigationTab activeTab={activeTab} handleTabPress={handleTabPress} />
     </View>
@@ -101,7 +117,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    // marginBottom: 20,
     marginTop: 50,
   },
   headerText: {
@@ -109,25 +124,6 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     color: "#1B263B",
     lineHeight: 36,
-  },
-  addNewSection: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 20,
-    marginTop: 20,
-  },
-  addButton: {
-    backgroundColor: "#778DA980",
-    padding: 10,
-    borderRadius: 30,
-    marginRight: 10,
-    textAlign: "center",
-  },
-  addNewText: {
-    fontSize: 16,
-    fontWeight: "400",
-    color: "#1B263B",
-    lineHeight: 30,
   },
   searchSection: {
     flexDirection: "row",
@@ -158,8 +154,35 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 5,
   },
-
-
+  addNewSection: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 20,
+    marginTop: 20,
+  },
+  addButton: {
+    backgroundColor: "#778DA980",
+    padding: 10,
+    borderRadius: 30,
+    marginRight: 10,
+    textAlign: "center",
+  },
+  addNewText: {
+    fontSize: 16,
+    fontWeight: "400",
+    color: "#1B263B",
+    lineHeight: 30,
+  },
+  emptyState: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 50,
+  },
+  emptyStateText: {
+    fontSize: 18,
+    color: "#1B263B",
+  },
 });
 
-export default contact;
+export default Contact;
