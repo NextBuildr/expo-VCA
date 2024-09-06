@@ -2,7 +2,13 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
-const ContactCard = ({ name, phoneNumber, profileImage, isSelected, onExpand }) => {
+const ContactCard = ({
+  name,
+  phoneNumber,
+  profileImage,
+  isSelected,
+  onExpand,
+}) => {
   return (
     <View style={[styles.cardContainer, isSelected && styles.selectedCard]}>
       <TouchableOpacity onPress={onExpand}>
@@ -16,10 +22,7 @@ const ContactCard = ({ name, phoneNumber, profileImage, isSelected, onExpand }) 
           >
             <Image
               source={profileImage}
-              style={[
-                styles.profileImage,
-                isSelected && styles.expandedImage,
-              ]}
+              style={[styles.profileImage, isSelected && styles.expandedImage]}
             />
 
             {isSelected && (
@@ -56,11 +59,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 10,
     // width: "100%"
-    paddingVertical: 5,
+    paddingVertical: 10,
   },
   expandedContainer: {
     flexDirection: "row",
     alignItems: "center",
+    padding: 10,
   },
   expandedBackground: {
     backgroundColor: "#778DA980", // Expanded background color covering profile and icons
@@ -73,18 +77,18 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
-    marginRight: 10,
+    marginRight: 5,
   },
   expandedImage: {
-    width: 60,
-    height: 60,
+    width: 50,
+    height: 50,
   },
-//   selectedCard: {
-//     backgroundColor: "#B0E0E6", // Selected card background color
-//   },
+  //   selectedCard: {
+  //     backgroundColor: "#B0E0E6", // Selected card background color
+  //   },
   iconsContainer: {
     flexDirection: "row",
-    marginLeft: 10,
+    // marginLeft: 3,
   },
   iconButton: {
     backgroundColor: "#1B263B",
