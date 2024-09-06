@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
   },
   iconButton: {
     backgroundColor: "#1B263B",
-    padding: 8,
+    padding: 10,
     borderRadius: 20,
     marginLeft: 8,
   },
