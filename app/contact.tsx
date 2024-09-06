@@ -102,7 +102,7 @@ const Contact = () => {
             </Text>
             <TouchableOpacity style={styles.startCallButton}>
               <Text style={styles.startCallButtonText}>Add contact</Text>
-            </TouchableOpacity>
+          
           </View>
         ) : (
           <View>
