@@ -49,12 +49,13 @@ const ContactCard = ({ name, phoneNumber, profileImage, isSelected, onExpand }) 
 
 const styles = StyleSheet.create({
   cardContainer: {
-    marginBottom: 20,
+    marginBottom: 10,
   },
   card: {
     flexDirection: "row",
     alignItems: "center",
     marginTop: 20,
+
   },
   expandedContainer: {
     flexDirection: "row",
@@ -63,14 +64,15 @@ const styles = StyleSheet.create({
   expandedBackground: {
     backgroundColor: "#778DA980", // Expanded background color covering profile and icons
     borderRadius: 10,
-    paddingHorizontal: 10,
-    paddingVertical: 5,
+    // paddingHorizontal: 10,
+    // paddingVertical: 5,
     marginRight: 15,
   },
   profileImage: {
     width: 50,
     height: 50,
     borderRadius: 25,
+    marginRight: 10,
   },
   expandedImage: {
     width: 60,
