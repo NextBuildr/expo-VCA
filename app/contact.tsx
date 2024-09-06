@@ -100,7 +100,6 @@ const Contact = () => {
             <Text style={styles.emptyStateSubtext}>
             We cant find any contacts matching your search
             </Text>
-            <TouchableOpacity style={styles.startCallButton}>
             
           </View>
         ) : (
