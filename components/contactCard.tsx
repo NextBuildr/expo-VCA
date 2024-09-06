@@ -12,32 +12,31 @@ const ContactCard = ({ name, phoneNumber, profileImage, isSelected }) => {
   return (
     <View style={[styles.cardContainer, isSelected && styles.selectedCard]}>
       <View style={styles.card}>
+        {/* Profile Image and Icons */}
         <TouchableOpacity onPress={toggleExpand}>
           <Image
             source={profileImage}
             style={isExpanded ? styles.expandedImage : styles.profileImage}
           />
         </TouchableOpacity>
-        {!isExpanded && (
-          <View style={styles.cardContent}>
-            <Text style={styles.name}>{name}</Text>
-            <Text style={styles.phoneNumber}>{phoneNumber}</Text>
-          </View>
-        )}
-      </View>
 
-      {isExpanded && (
-        <View style={styles.expandedContent}>
+        {isExpanded && (
           <View style={styles.iconContainer}>
             <TouchableOpacity style={styles.iconButton}>
-              <FontAwesome name="phone" size={24} color="white" />
+              <FontAwesome name="phone" size={18} color="white" />
             </TouchableOpacity>
             <TouchableOpacity style={styles.iconButton}>
-              <FontAwesome name="video-camera" size={24} color="white" />
+              <FontAwesome name="video-camera" size={18} color="white" />
             </TouchableOpacity>
           </View>
+        )}
+
+        {/* Contact Info */}
+        <View style={styles.cardContent}>
+          <Text style={styles.name}>{name}</Text>
+          <Text style={styles.phoneNumber}>{phoneNumber}</Text>
         </View>
-      )}
+      </View>
 
       <View style={styles.borderLine} />
     </View>
@@ -60,16 +59,30 @@ const styles = StyleSheet.create({
     marginRight: 15,
   },
   expandedImage: {
-    width: 120,
-    height: 120,
-    borderRadius: 60,
-    marginBottom: 20,
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    marginRight: 15,
   },
   selectedCard: {
     backgroundColor: "#B0E0E6", // Selected card background color
   },
+  iconContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
+    width: 120,
+    marginLeft: 10,
+  },
+  iconButton: {
+    backgroundColor: "#1B263B",
+    padding: 10,
+    borderRadius: 30,
+  },
   cardContent: {
+    flex: 1,
     flexDirection: "column",
+    marginLeft: isExpanded ? 10 : 0,
   },
   name: {
     fontSize: 18,
@@ -80,20 +93,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: "#778DA9",
     marginTop: 4,
-  },
-  expandedContent: {
-    alignItems: "center",
-    marginBottom: 20,
-  },
-  iconContainer: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    width: "60%",
-  },
-  iconButton: {
-    backgroundColor: "#1B263B",
-    padding: 15,
-    borderRadius: 50,
   },
   borderLine: {
     height: 1,
