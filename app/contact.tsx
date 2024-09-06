@@ -17,6 +17,8 @@ const Contact = () => {
   const [activeTab, setActiveTab] = useState("contact");
   const [searchQuery, setSearchQuery] = useState("");
   const [expandedCardIndex, setExpandedCardIndex] = useState(null);
+  const router = useRouter();
+
 
   const contacts = [
     {
