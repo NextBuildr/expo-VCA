@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   },
   expandedBackground: {
     backgroundColor: "#778DA980", // Expanded background color covering profile and icons
-    borderRadius: 10,
+    borderRadius: 50,
     // paddingHorizontal: 10,
     // paddingVertical: 5,
     marginRight: 15,
@@ -77,15 +77,13 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
-    marginRight: 5,
+    // marginRight: 5,
   },
   expandedImage: {
     width: 50,
     height: 50,
   },
-  //   selectedCard: {
-  //     backgroundColor: "#B0E0E6", // Selected card background color
-  //   },
+
   iconsContainer: {
     flexDirection: "row",
     // marginLeft: 3,
