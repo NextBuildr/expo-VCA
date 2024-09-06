@@ -79,20 +79,30 @@ const Contact = () => {
         {contacts.length === 0 ? (
           <View style={styles.emptyStateContainer}>
           <Image
-            source={require("../assets/images/Ellipse 41.png")} // Placeholder image
+            source={require("../assets/images/addcontact.png")} // Placeholder image
             style={styles.emptyStateImage}
           />
-          <Text style={styles.emptyStateHeader}>Your call log is empty</Text>
+          <Text style={styles.emptyStateHeader}>No contacts found</Text>
           <Text style={styles.emptyStateSubtext}>
-            Your recent calls will appear here. Start a call to see your call history.
+          Try to add more contacts from your personal account
           </Text>
           <TouchableOpacity style={styles.startCallButton}>
-            <Text style={styles.startCallButtonText}>Start a Call</Text>
+            <Text style={styles.startCallButtonText}>Add contact</Text>
           </TouchableOpacity>
         </View>
         ) : filteredContacts.length === 0 ? (
-          <View style={styles.emptyState}>
-            <Text style={styles.emptyStateText}>No search results found</Text>
+            <View style={styles.emptyStateContainer}>
+            <Image
+              source={require("../assets/images/nosearch.png")} // Placeholder image
+              style={styles.emptyStateImage}
+            />
+            <Text style={styles.emptyStateHeader}>No search result</Text>
+            <Text style={styles.emptyStateSubtext}>
+            We cant find any contacts matching your search
+            </Text>
+            <TouchableOpacity style={styles.startCallButton}>
+              <Text style={styles.startCallButtonText}>Add contact</Text>
+            </TouchableOpacity>
           </View>
         ) : (
           <View>
@@ -192,6 +202,41 @@ const styles = StyleSheet.create({
   emptyStateText: {
     fontSize: 18,
     color: "#1B263B",
+  },
+  emptyStateContainer: {
+    // flex: 1,
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    paddingHorizontal: 20,
+  },
+  emptyStateImage: {
+    // width: 150,
+    // height: 150,
+    marginBottom: 20,
+  },
+  emptyStateHeader: {
+    fontSize: 22,
+    fontWeight: "700",
+    color: "#1B263B",
+    marginBottom: 10,
+  },
+  emptyStateSubtext: {
+    fontSize: 16,
+    color: "#415A77",
+    textAlign: "center",
+    marginBottom: 30,
+  },
+  startCallButton: {
+    backgroundColor: "#415A77",
+    paddingVertical: 12,
+    paddingHorizontal: 40,
+    borderRadius: 5,
+  },
+  startCallButtonText: {
+    color: "#FFF",
+    fontSize: 16,
+    fontWeight: "600",
   },
 });
 
