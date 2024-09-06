@@ -16,7 +16,10 @@ const ContactCard = ({ name, phoneNumber, profileImage, isSelected }) => {
         <TouchableOpacity onPress={toggleExpand}>
           <Image
             source={profileImage}
-            style={isExpanded ? styles.expandedImage : styles.profileImage}
+            style={[
+              styles.profileImage,
+              isExpanded && styles.expandedImage,
+            ]}
           />
         </TouchableOpacity>
 
@@ -32,7 +35,12 @@ const ContactCard = ({ name, phoneNumber, profileImage, isSelected }) => {
         )}
 
         {/* Contact Info */}
-        <View style={styles.cardContent}>
+        <View
+          style={[
+            styles.cardContent,
+            isExpanded && { marginLeft: 10 }, // Apply margin when expanded
+          ]}
+        >
           <Text style={styles.name}>{name}</Text>
           <Text style={styles.phoneNumber}>{phoneNumber}</Text>
         </View>
@@ -59,10 +67,7 @@ const styles = StyleSheet.create({
     marginRight: 15,
   },
   expandedImage: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    marginRight: 15,
+    // Expand size based on design, if needed
   },
   selectedCard: {
     backgroundColor: "#B0E0E6", // Selected card background color
@@ -82,7 +87,6 @@ const styles = StyleSheet.create({
   cardContent: {
     flex: 1,
     flexDirection: "column",
-    marginLeft: isExpanded ? 10 : 0,
   },
   name: {
     fontSize: 18,
