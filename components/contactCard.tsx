@@ -24,7 +24,7 @@ const ContactCard = ({ name, phoneNumber, profileImage, isSelected }) => {
         </TouchableOpacity>
 
         {isExpanded && (
-          <View style={styles.iconContainer}>
+          <View style={styles.expandedContainer}>
             <TouchableOpacity style={styles.iconButton}>
               <FontAwesome name="phone" size={18} color="white" />
             </TouchableOpacity>
@@ -67,22 +67,26 @@ const styles = StyleSheet.create({
     marginRight: 15,
   },
   expandedImage: {
-    // Expand size based on design, if needed
+    width: 60,
+    height: 60,
   },
   selectedCard: {
     backgroundColor: "#B0E0E6", // Selected card background color
   },
-  iconContainer: {
+  expandedContainer: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-around",
-    width: 120,
+    justifyContent: "space-between",
+    backgroundColor: "#778DA980",
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
     marginLeft: 10,
   },
   iconButton: {
     backgroundColor: "#1B263B",
-    padding: 10,
-    borderRadius: 30,
+    padding: 8,
+    borderRadius: 20,
   },
   cardContent: {
     flex: 1,
