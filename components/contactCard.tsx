@@ -54,7 +54,8 @@ const styles = StyleSheet.create({
   card: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 20,
+    marginTop: 10,
+    // width: "100%"
 
   },
   expandedContainer: {
