@@ -17,15 +17,15 @@ const Contact = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const contacts = [
-    { name: "Aloye", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
-    { name: "Sam", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
-    { name: "David", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
-    { name: "Tunde", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
-    { name: "Alex", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
-    { name: "Chris", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
-    { name: "Dan", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
-    { name: "Anita", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
-    { name: "Nelly", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
+    // { name: "Aloye", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
+    // { name: "Sam", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
+    // { name: "David", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
+    // { name: "Tunde", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
+    // { name: "Alex", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
+    // { name: "Chris", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
+    // { name: "Dan", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
+    // { name: "Anita", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
+    // { name: "Nelly", phoneNumber: "+234 567 564 765", profileImage: require("../assets/images/Ellipse 37.png") },
   ];
 
   // Filter contacts based on search query
