@@ -1,50 +1,46 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
-const ContactCard = ({ name, phoneNumber, profileImage, isSelected }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  const toggleExpand = () => {
-    setIsExpanded(!isExpanded);
-  };
-
+const ContactCard = ({ name, phoneNumber, profileImage, isSelected, onExpand }) => {
   return (
     <View style={[styles.cardContainer, isSelected && styles.selectedCard]}>
-      <View style={styles.card}>
-        {/* Profile Image and Icons */}
-        <TouchableOpacity onPress={toggleExpand}>
-          <Image
-            source={profileImage}
+      <TouchableOpacity onPress={onExpand}>
+        <View style={styles.card}>
+          {/* Expanded Section: Profile Image and Icons */}
+          <View
             style={[
-              styles.profileImage,
-              isExpanded && styles.expandedImage,
+              styles.expandedContainer,
+              isSelected && styles.expandedBackground,
             ]}
-          />
-        </TouchableOpacity>
+          >
+            <Image
+              source={profileImage}
+              style={[
+                styles.profileImage,
+                isSelected && styles.expandedImage,
+              ]}
+            />
 
-        {isExpanded && (
-          <View style={styles.expandedContainer}>
-            <TouchableOpacity style={styles.iconButton}>
-              <FontAwesome name="phone" size={18} color="white" />
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.iconButton}>
-              <FontAwesome name="video-camera" size={18} color="white" />
-            </TouchableOpacity>
+            {isSelected && (
+              <View style={styles.iconsContainer}>
+                <TouchableOpacity style={styles.iconButton}>
+                  <FontAwesome name="phone" size={18} color="white" />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.iconButton}>
+                  <FontAwesome name="video-camera" size={18} color="white" />
+                </TouchableOpacity>
+              </View>
+            )}
           </View>
-        )}
 
-        {/* Contact Info */}
-        <View
-          style={[
-            styles.cardContent,
-            isExpanded && { marginLeft: 10 }, // Apply margin when expanded
-          ]}
-        >
-          <Text style={styles.name}>{name}</Text>
-          <Text style={styles.phoneNumber}>{phoneNumber}</Text>
+          {/* Contact Info */}
+          <View style={[styles.cardContent, isSelected && { marginLeft: 10 }]}>
+            <Text style={styles.name}>{name}</Text>
+            <Text style={styles.phoneNumber}>{phoneNumber}</Text>
+          </View>
         </View>
-      </View>
+      </TouchableOpacity>
 
       <View style={styles.borderLine} />
     </View>
@@ -60,11 +56,21 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 20,
   },
+  expandedContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  expandedBackground: {
+    backgroundColor: "#778DA980", // Expanded background color covering profile and icons
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    marginRight: 15,
+  },
   profileImage: {
     width: 50,
     height: 50,
     borderRadius: 25,
-    marginRight: 15,
   },
   expandedImage: {
     width: 60,
@@ -73,20 +79,15 @@ const styles = StyleSheet.create({
   selectedCard: {
     backgroundColor: "#B0E0E6", // Selected card background color
   },
-  expandedContainer: {
+  iconsContainer: {
     flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    backgroundColor: "#778DA980",
-    borderRadius: 10,
-    paddingHorizontal: 10,
-    paddingVertical: 5,
     marginLeft: 10,
   },
   iconButton: {
     backgroundColor: "#1B263B",
     padding: 8,
     borderRadius: 20,
+    marginLeft: 8,
   },
   cardContent: {
     flex: 1,

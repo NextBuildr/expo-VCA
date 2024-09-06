@@ -166,15 +166,19 @@ const Contact = () => {
             </Text>
           </View>
         ) : (
-          <View>
-            {filteredContacts.map((contact, index) => (
-              <ContactCard
-                key={index}
-                name={contact.name}
-                phoneNumber={contact.phoneNumber}
-                profileImage={contact.profileImage}
-              />
-            ))}
+          <View style={styles.container}>
+            <ScrollView contentContainerStyle={styles.contentContainer}>
+              {filteredContacts.map((contact, index) => (
+                <ContactCard
+                  key={index}
+                  name={contact.name}
+                  phoneNumber={contact.phoneNumber}
+                  profileImage={contact.profileImage}
+                  isSelected={expandedCardIndex === index}
+                  onExpand={() => handleToggleExpand(index)} // Pass toggle function
+                />
+              ))}
+            </ScrollView>
           </View>
         )}
       </ScrollView>
