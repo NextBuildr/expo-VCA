@@ -1,167 +1,141 @@
-import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  Image,
-  TextInput,
-  ScrollView,
-} from "react-native";
-import { AntDesign, FontAwesome, Entypo } from "@expo/vector-icons";
+import React from 'react';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 
-const CreateNewContact = ({ navigation }) => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [country, setCountry] = useState("");
-  const [phone, setPhone] = useState("");
-
+export default function CreateContactPage() {
   return (
     <View style={styles.container}>
       {/* Header Section */}
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <AntDesign name="arrowleft" size={24} color="#1B263B" />
+      <View style={styles.headerContainer}>
+        <TouchableOpacity style={styles.backButton}>
+          <AntDesign name="arrowleft" size={24} color="black" />
         </TouchableOpacity>
         <Text style={styles.headerText}>Create New Contact</Text>
-        <View style={{ width: 24 }} /> {/* Placeholder to center header text */}
       </View>
 
-      <ScrollView contentContainerStyle={styles.contentContainer}>
-        {/* Profile Image Placeholder */}
-        <View style={styles.profileImageContainer}>
-          <Image
-            source={require("../assets/images/create-contact.png")}
-            style={styles.profileImage}
-          />
-        </View>
+      {/* Profile Image */}
+      <View style={styles.imageContainer}>
+        <Image
+          source={{ uri: 'https://via.placeholder.com/100' }} // Placeholder image
+          style={styles.profileImage}
+        />
+      </View>
 
-        {/* First Name Input */}
-        <View style={styles.inputContainer}>
-          <FontAwesome name="user" size={20} color="#1B263B" />
+      {/* Input Fields */}
+      <View style={styles.inputContainer}>
+        {/* First Name */}
+        <View style={styles.inputWrapper}>
+          <AntDesign name="user" size={20} color="#1B263B" style={styles.icon} />
           <TextInput
-            style={styles.input}
             placeholder="First Name"
-            value={firstName}
-            onChangeText={setFirstName}
+            style={styles.inputWithIcon}
           />
         </View>
 
-        {/* Last Name Input */}
-        <View style={styles.inputContainer}>
-          <FontAwesome name="user" size={20} color="#1B263B" />
+        {/* Last Name */}
+        <View style={styles.inputWrapper}>
+          <View style={styles.emptyIcon} /> {/* Empty space for icon alignment */}
           <TextInput
-            style={styles.input}
             placeholder="Last Name"
-            value={lastName}
-            onChangeText={setLastName}
+            style={styles.inputWithIcon}
           />
         </View>
 
-        {/* Country Dropdown with Label */}
-        <View style={styles.labeledInputContainer}>
-          <Text style={styles.label}>Country</Text>
-          <View style={styles.inputContainer}>
-            <Entypo name="globe" size={20} color="#1B263B" />
-            <TextInput
-              style={styles.input}
-              placeholder="Select Country"
-              value={country}
-              onChangeText={setCountry}
-            />
-          </View>
-        </View>
-
-        {/* Phone Input */}
-        <View style={styles.inputContainer}>
-          <FontAwesome name="phone" size={20} color="#1B263B" />
+        {/* Country with Label */}
+        <Text style={styles.label}>Country</Text>
+        <View style={styles.inputWrapper}>
+          <AntDesign name="phone" size={20} color="#1B263B" style={styles.icon} />
           <TextInput
-            style={styles.input}
-            placeholder="Phone Number"
-            value={phone}
-            onChangeText={setPhone}
-            keyboardType="phone-pad"
+            placeholder="Country"
+            style={styles.inputWithIcon}
           />
         </View>
 
-        {/* Save Button */}
-        <TouchableOpacity style={styles.saveButton}>
-          <Text style={styles.saveButtonText}>Save</Text>
-        </TouchableOpacity>
-      </ScrollView>
+        {/* Phone */}
+        <View style={styles.inputWrapper}>
+          <View style={styles.emptyIcon} /> {/* Empty space for icon alignment */}
+          <TextInput
+            placeholder="Phone"
+            style={styles.inputWithIcon}
+          />
+        </View>
+      </View>
+
+      {/* Save Button */}
+      <TouchableOpacity style={styles.saveButton}>
+        <Text style={styles.saveButtonText}>Save</Text>
+      </TouchableOpacity>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFF",
+    padding: 20,
+    backgroundColor: '#fff',
   },
-  header: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingHorizontal: 20,
-    paddingVertical: 15,
-    backgroundColor: "#F5F5F5",
-    borderBottomWidth: 1,
-    borderBottomColor: "#E5E5E5",
+  headerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 30,
+  },
+  backButton: {
+    position: 'absolute',
+    left: 0,
   },
   headerText: {
-    fontSize: 18,
-    fontWeight: "600",
-    color: "#1B263B",
-    textAlign: "center",
+    flex: 1,
+    textAlign: 'center',
+    fontSize: 24,
+    fontWeight: 'bold',
   },
-  contentContainer: {
-    flexGrow: 1,
-    padding: 20,
-  },
-  profileImageContainer: {
-    alignItems: "center",
-    marginBottom: 40,
+  imageContainer: {
+    alignItems: 'center',
+    marginBottom: 30,
   },
   profileImage: {
     width: 100,
     height: 100,
     borderRadius: 50,
-    backgroundColor: "#D9D9D9",
+    backgroundColor: '#ccc',
   },
   inputContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    borderBottomWidth: 1,
-    borderBottomColor: "#D9D9D9",
-    paddingVertical: 10,
-    marginBottom: 20,
+    width: '100%',
   },
-  input: {
+  inputWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: '#1B263B',
+    paddingBottom: 5,
+  },
+  icon: {
+    marginRight: 10,
+  },
+  emptyIcon: {
+    width: 30, // This should match the icon size for alignment
+  },
+  inputWithIcon: {
     flex: 1,
     fontSize: 16,
-    paddingLeft: 10,
-    color: "#1B263B",
-  },
-  labeledInputContainer: {
-    marginBottom: 20,
   },
   label: {
     fontSize: 14,
-    color: "#415A77",
+    color: '#1B263B',
     marginBottom: 5,
   },
   saveButton: {
-    backgroundColor: "#1B263B",
+    marginTop: 'auto',
+    backgroundColor: '#1B263B',
     padding: 15,
     borderRadius: 5,
-    alignItems: "center",
-    marginTop: 40,
+    alignItems: 'center',
   },
   saveButtonText: {
-    color: "#FFF",
-    fontSize: 16,
-    fontWeight: "600",
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });
-
-export default CreateNewContact;
