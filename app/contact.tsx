@@ -142,7 +142,7 @@ const Contact = () => {
         {/* Add New Section */}
         <TouchableOpacity
           style={styles.addNewSection}
-          onPress={() => router.replace("/auth/signup")}
+          onPress={() => router.replace("/create-contact")}
         >
           <View style={styles.addButton}>
             <FontAwesome name="plus" size={16} color="#1B263B" />
