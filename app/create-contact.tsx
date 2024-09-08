@@ -42,7 +42,7 @@ export default function CreateContactPage() {
         </View>
 
         {/* Country with Label */}
-        <Text style={styles.label}>Country</Text>
+        <Text style={styles.label}>Country</Text> {/* Label wrapped in <Text> */}
         <View style={styles.inputWrapper}>
           <AntDesign name="phone" size={20} color="#1B263B" style={styles.icon} />
           <TextInput
