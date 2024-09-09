@@ -79,12 +79,6 @@ const createContact = ({}) => {
             </View>
 
             <View style={styles.inputWrapper}>
-              <AntDesign
-                name="user"
-                size={20}
-                color="#1B263B"
-                style={styles.icon}
-              />
               <TextInput
                 placeholder="Phone"
                 placeholderTextColor="#1B263BE5"
@@ -163,6 +157,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     justifyContent: "space-between",
+    alignItems: "flex-end",
   },
 
   inputInnerWrapper: {
