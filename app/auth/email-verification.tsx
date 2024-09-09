@@ -10,6 +10,7 @@ import { AntDesign } from "@expo/vector-icons";
 
 const EmailVerification = () => {
   const [code, setCode] = useState(["", "", "", ""]);
+  const [focusedInput, setFocusedInput] = useState(null);
 
   const handleKeypadPress = (value) => {
     const nextEmptyIndex = code.findIndex((digit) => digit === "");
@@ -40,19 +41,67 @@ const EmailVerification = () => {
       { number: "7", letters: "PQRS" },
       { number: "8", letters: "TUV" },
       { number: "9", letters: "WXYZ" },
-      { number: "0", letters: "" }, // "0" will be centered
+      { number: "0", letters: "" },
     ];
 
-    return keypadNumbers.map((key, index) => (
-      <TouchableOpacity
-        key={index}
-        style={[styles.keypadButton, key.number === "0" && styles.zeroButton]}
-        onPress={() => handleKeypadPress(key.number)}
-      >
-        <Text style={styles.keypadNumber}>{key.number}</Text>
-        <Text style={styles.keypadLetters}>{key.letters}</Text>
-      </TouchableOpacity>
-    ));
+    return (
+      <>
+        <View style={styles.keypadRow}>
+          {keypadNumbers.slice(0, 3).map((key, index) => (
+            <TouchableOpacity
+              key={index}
+              style={styles.keypadButton}
+              onPress={() => handleKeypadPress(key.number)}
+            >
+              <Text style={styles.keypadNumber}>{key.number}</Text>
+              <Text style={styles.keypadLetters}>{key.letters}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+
+        <View style={styles.keypadRow}>
+          {keypadNumbers.slice(3, 6).map((key, index) => (
+            <TouchableOpacity
+              key={index}
+              style={styles.keypadButton}
+              onPress={() => handleKeypadPress(key.number)}
+            >
+              <Text style={styles.keypadNumber}>{key.number}</Text>
+              <Text style={styles.keypadLetters}>{key.letters}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+
+        <View style={styles.keypadRow}>
+          {keypadNumbers.slice(6, 9).map((key, index) => (
+            <TouchableOpacity
+              key={index}
+              style={styles.keypadButton}
+              onPress={() => handleKeypadPress(key.number)}
+            >
+              <Text style={styles.keypadNumber}>{key.number}</Text>
+              <Text style={styles.keypadLetters}>{key.letters}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+
+        <View style={styles.keypadRow}>
+          <TouchableOpacity
+            style={[styles.keypadButton, styles.zeroButton]}
+            onPress={() => handleKeypadPress("0")}
+          >
+            <Text style={styles.keypadNumber}>0</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.keypadButton}
+            onPress={handleBackspace}
+          >
+            <AntDesign name="delete" size={24} color="#1B263B" />
+          </TouchableOpacity>
+        </View>
+      </>
+    );
   };
 
   return (
@@ -70,11 +119,15 @@ const EmailVerification = () => {
         {code.map((digit, index) => (
           <TextInput
             key={index}
-            style={styles.codeInput}
+            style={[
+              styles.codeInput,
+              focusedInput === index && styles.focusedCodeInput,
+            ]}
             value={digit}
             keyboardType="none" // Prevent default keyboard from showing up
             maxLength={1}
             editable={false} // Disable manual typing
+            onFocus={() => setFocusedInput(index)}
           />
         ))}
       </View>
@@ -83,15 +136,7 @@ const EmailVerification = () => {
         <Text style={styles.nextButtonText}>Next</Text>
       </TouchableOpacity>
 
-      <View style={styles.keypadContainer}>
-        {renderKeypad()}
-        <TouchableOpacity
-          style={styles.keypadButton}
-          onPress={handleBackspace}
-        >
-          <AntDesign name="delete" size={24} color="#1B263B" />
-        </TouchableOpacity>
-      </View>
+      <View style={styles.keypadContainer}>{renderKeypad()}</View>
     </View>
   );
 };
@@ -115,7 +160,7 @@ const styles = StyleSheet.create({
   descriptionText: {
     fontSize: 16,
     color: "#415A77",
-    textAlign: "center",
+    // textAlign: "center",
     marginBottom: 40,
   },
   codeInputContainer: {
@@ -131,6 +176,11 @@ const styles = StyleSheet.create({
     fontSize: 24,
     borderRadius: 5,
   },
+  focusedCodeInput: {
+    outlineColor: "#1B263B",
+    outlineWidth: 2,
+    backgroundColor: "#FFF",
+  },
   nextButton: {
     backgroundColor: "#415A77",
     paddingVertical: 12,
@@ -143,15 +193,18 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   keypadContainer: {
+    alignItems: "center",
+  },
+  keypadRow: {
     flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
+    marginBottom: 20,
+    width: "100%",
   },
   keypadButton: {
-    width: "30%",
-    paddingVertical: 20,
+    width: 80,
+    paddingVertical: 10,
     alignItems: "center",
-    marginBottom: 20,
     backgroundColor: "#F4F4F9",
     borderRadius: 10,
   },
@@ -164,7 +217,7 @@ const styles = StyleSheet.create({
     color: "#415A77",
   },
   zeroButton: {
-    width: "100%", // Center the "0" button
+    width: "45%", // Make the zero button wider for a centered effect
   },
 });
 
