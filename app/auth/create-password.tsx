@@ -31,7 +31,7 @@ const EditProfile = ({}) => {
         <AntDesign name="arrowleft" size={24} color="#1B263B" />
       </TouchableOpacity>
 
-      <Text style={styles.headerText}>Verify Em</Text>
+      <Text style={styles.headerText}>Create</Text>
       <Text style={styles.descriptionText}>
       your new password must be different from your previously used password
       </Text>
