@@ -90,7 +90,7 @@ const createContact = ({}) => {
       </ScrollView>
       <TouchableOpacity
         style={styles.formSubmitButton}
-        onPress={() => router.replace("/profile")}
+        onPress={() => router.replace("/contact")}
       >
         <Text style={styles.buttonText}>Save</Text>
       </TouchableOpacity>
