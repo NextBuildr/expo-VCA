@@ -25,7 +25,7 @@ export default function ConfirmationPage() {
         />
 
         <Text style={styles.headText}>
-        new password confrimed successful
+        New password confrimed successful
         </Text>
         <Text style={styles.descriptionText}>
           You have successfully confirm your new password. Please use your new
@@ -34,7 +34,7 @@ export default function ConfirmationPage() {
 
         <TouchableOpacity
           style={styles.checkoutButton}
-          onPress={() => router.replace("/home")}
+          onPress={() => router.replace("auth/login")}
         >
           <Text style={styles.checkoutButtonText}>Back to Login</Text>
         </TouchableOpacity>
