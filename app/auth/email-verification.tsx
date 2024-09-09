@@ -156,18 +156,19 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     color: "#415A77",
     // textAlign: "center",
-    marginBottom: 20,
+    marginBottom: 10,
   },
   descriptionText: {
     fontSize: 16,
     color: "#415A77",
     // textAlign: "center",
-    marginBottom: 40,
+    // marginBottom: 40,
   },
   codeInputContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 40,
+    marginBottom: 60,
+    marginTop: 40,
   },
   codeInput: {
     backgroundColor: "#D9D9D980",
