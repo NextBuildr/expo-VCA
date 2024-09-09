@@ -7,10 +7,14 @@ import {
   StyleSheet,
 } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
+
 
 const EmailVerification = () => {
   const [code, setCode] = useState(["", "", "", ""]);
   const [focusedInput, setFocusedInput] = useState(null);
+  
+  const router = useRouter();
 
   const handleKeypadPress = (value) => {
     const nextEmptyIndex = code.findIndex((digit) => digit === "");

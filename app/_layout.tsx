@@ -60,7 +60,7 @@ function AppNavigator() {
           options={{ headerShown: false }}
         />
           <Stack.Screen
-          name="auth/email-create-password"
+          name="auth/create-password"
           options={{ headerShown: false }}
         />
         <Stack.Screen
