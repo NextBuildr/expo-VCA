@@ -61,7 +61,6 @@ const createContact = ({}) => {
             />
           </View>
           <View style={styles.inputWrapperFlex}>
-            <Text style={styles.label}>Full Name</Text>
             <View style={styles.inputWrapper}>
               <AntDesign
                 name="phone"
@@ -69,6 +68,7 @@ const createContact = ({}) => {
                 color="#1B263B"
                 style={styles.icon}
               />
+              <Text style={styles.label}>Full Name</Text>
               <TextInput
                 placeholder="First name"
                 placeholderTextColor="#1B263BE5"
@@ -157,6 +157,7 @@ const styles = StyleSheet.create({
   },
   inputWrapperFlex: {
     flexDirection: "row",
+    width: "100%",
   },
 
   formSubmitButton: {
