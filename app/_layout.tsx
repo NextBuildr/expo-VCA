@@ -71,6 +71,10 @@ function AppNavigator() {
           name="auth/forget-password"
           options={{ headerShown: false }}
         />
+         <Stack.Screen
+          name="auth/reset-success"
+          options={{ headerShown: false }}
+        />
 
         {/* Main App Stack */}
         <Stack.Screen name="home" options={{ headerShown: false }} />

@@ -81,7 +81,7 @@ const EditProfile = ({}) => {
 
         <TouchableOpacity
           style={styles.formSubmitButton}
-          onPress={() => router.replace("auth/congrats-mail")}
+          onPress={() => router.replace("auth/reset-success")}
         >
           <Text style={styles.buttonText}>Reset Password</Text>
         </TouchableOpacity>
