@@ -27,36 +27,15 @@ const EditProfile = ({}) => {
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.contentContainer}>
-        <View style={styles.header}>
-          <TouchableOpacity
-            onPress={() => router.replace("/profile")}
-            style={styles.arrowButton}
-          >
-            <AntDesign name="arrowleft" size={24} color="#1B263B" />
-          </TouchableOpacity>
-          <Text style={styles.headerText}>Change password</Text>
-        </View>
+      <TouchableOpacity style={styles.backArrow}>
+        <AntDesign name="arrowleft" size={24} color="#1B263B" />
+      </TouchableOpacity>
 
-        <Text style={styles.label}>Enter Old Password</Text>
-        <View style={styles.passwordContainer}>
-          <TextInput
-            style={styles.inputWithIcon}
-            placeholder="Enter your password"
-            secureTextEntry={!isPasswordVisible}
-            value={password}
-            onChangeText={setPassword}
-          />
-          <TouchableOpacity
-            style={styles.eyeIcon}
-            onPress={togglePasswordVisibility}
-          >
-            <FontAwesome
-              name={isPasswordVisible ? "eye" : "eye-slash"}
-              size={20}
-              color="#778DA9"
-            />
-          </TouchableOpacity>
-        </View>
+      <Text style={styles.headerText}>Verify Emai</Text>
+      <Text style={styles.descriptionText}>
+      your new password must be different from your previously used password
+      </Text>
+
 
         <Text style={styles.label}>New Password</Text>
         <View style={styles.passwordContainer}>
@@ -117,20 +96,19 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: "#FFF",
   },
-  arrowButton: {},
-  header: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 80,
-    marginTop: 50,
+  backArrow: {
+    marginTop: 30,
+    marginBottom: 30,
   },
   headerText: {
-    flex: 1,
-    textAlign: "center",
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: "700",
     color: "#415A77",
-    lineHeight: 30,
+    marginBottom: 10,
+  },
+  descriptionText: {
+    fontSize: 16,
+    color: "#415A77",
   },
   inputContainer: {
     marginBottom: 20,

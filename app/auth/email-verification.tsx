@@ -132,7 +132,7 @@ const EmailVerification = () => {
         ))}
       </View>
 
-      <TouchableOpacity style={styles.nextButton}>
+      <TouchableOpacity style={styles.nextButton}  onPress={() => router.replace("auth/create-password")}>
         <Text style={styles.nextButtonText}>Next</Text>
       </TouchableOpacity>
 
