@@ -28,11 +28,14 @@ const EmailVerification = () => {
       { number: "7", letters: "PQRS" },
       { number: "8", letters: "TUV" },
       { number: "9", letters: "WXYZ" },
-      { number: "0", letters: "" },
+      { number: "0", letters: "" }, // "0" will be centered
     ];
 
     return keypadNumbers.map((key, index) => (
-      <TouchableOpacity key={index} style={styles.keypadButton}>
+      <TouchableOpacity
+        key={index}
+        style={[styles.keypadButton, key.number === "0" && styles.zeroButton]}
+      >
         <Text style={styles.keypadNumber}>{key.number}</Text>
         <Text style={styles.keypadLetters}>{key.letters}</Text>
       </TouchableOpacity>
@@ -79,20 +82,19 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
   },
   backArrow: {
-    marginTop: 30,
     marginBottom: 20,
   },
   headerText: {
     fontSize: 24,
     fontWeight: "700",
     color: "#415A77",
-    // textAlign: "center",
+    textAlign: "center",
     marginBottom: 20,
   },
   descriptionText: {
     fontSize: 16,
     color: "#415A77",
-    // textAlign: "center",
+    textAlign: "center",
     marginBottom: 40,
   },
   codeInputContainer: {
@@ -101,12 +103,15 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   codeInput: {
-    borderBottomWidth: 2,
-    borderColor: "#1B263B",
+    backgroundColor: "#D9D9D980",
     width: 50,
     height: 50,
     textAlign: "center",
     fontSize: 24,
+    borderRadius: 5,
+  },
+  codeInputFocus: {
+    outline: "2px solid #1B263B", // Focus outline
   },
   nextButton: {
     backgroundColor: "#415A77",
@@ -123,6 +128,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-between",
+    alignItems: "center"
   },
   keypadButton: {
     width: "30%",
@@ -139,6 +145,10 @@ const styles = StyleSheet.create({
   keypadLetters: {
     fontSize: 12,
     color: "#415A77",
+  },
+  zeroButton: {
+    width: "100%", // Center the "0" button
+    marginBottom: 0,
   },
 });
 
