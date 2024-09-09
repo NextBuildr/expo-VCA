@@ -83,7 +83,7 @@ const EditProfile = ({}) => {
           style={styles.formSubmitButton}
           onPress={() => router.replace("auth/congrats-mail")}
         >
-          <Text style={styles.buttonText}>Change Password</Text>
+          <Text style={styles.buttonText}>Reset Password</Text>
         </TouchableOpacity>
       </ScrollView>
     </View>
