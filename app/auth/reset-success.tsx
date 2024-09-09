@@ -28,15 +28,15 @@ export default function ConfirmationPage() {
           Congratulations! Your Account is Now Active!
         </Text>
         <Text style={styles.descriptionText}>
-          Your account with Onbrela is now active! You're all set to start
-          exploring and enjoying all the features we offer
+          You have successfully confirm your new password. Please use your new
+          password when logging in
         </Text>
 
         <TouchableOpacity
           style={styles.checkoutButton}
           onPress={() => router.replace("/home")}
         >
-          <Text style={styles.checkoutButtonText}>Go To Homepage</Text>
+          <Text style={styles.checkoutButtonText}>Back to Login</Text>
         </TouchableOpacity>
       </View>
     </View>
