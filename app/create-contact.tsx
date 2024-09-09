@@ -46,7 +46,7 @@ const createContact = ({}) => {
               style={styles.icon}
             />
             <TextInput
-              placeholder="First Name"
+              placeholder="First name"
               placeholderTextColor="#1B263BE5"
               style={styles.inputWithIcon}
             />
