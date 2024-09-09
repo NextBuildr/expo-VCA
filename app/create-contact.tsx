@@ -136,9 +136,8 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   label: {
-    fontSize: 15,
+    fontSize: 18,
     fontWeight: "400",
-    // marginBottom: 5,
     lineHeight: 27,
     color: "#1B263B",
     paddingLeft: 12,
@@ -158,7 +157,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   specialInput: {
-    marginRight: 10,
+    marginRight: 20,
   },
   //   inputWrapperInner: {
   // marginRight: 20
