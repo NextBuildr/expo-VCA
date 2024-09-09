@@ -61,31 +61,36 @@ const createContact = ({}) => {
             />
           </View>
           <View style={styles.inputWrapperFlex}>
-            <View style={styles.inputWrapper}>
-              <AntDesign
-                name="phone"
-                size={20}
-                color="#1B263B"
-                style={styles.icon}
-              />
-              <View style={styles.inputInnerWrapper}>
-                <Text style={styles.label}>Full Name</Text>
-                <TextInput
-                  placeholder="First name"
-                  placeholderTextColor="#1B263BE5"
-                  style={styles.inputWithIcon}
-                />
-              </View>
-            </View>
+  {/* Country Input */}
+  <View style={styles.inputContainer}>
+    <Text style={styles.label}>Country</Text> {/* Label on top */}
+    <View style={styles.inputWrapper}>
+      <AntDesign
+        name="phone"
+        size={20}
+        color="#1B263B"
+        style={styles.icon}
+      />
+      <TextInput
+        placeholder="NG"
+        placeholderTextColor="#1B263BE5"
+        style={styles.inputWithIcon}
+      />
+    </View>
+  </View>
 
-            <View style={styles.inputWrapper}>
-              <TextInput
-                placeholder="Phone"
-                placeholderTextColor="#1B263BE5"
-                style={styles.inputWithIcon}
-              />
-            </View>
-          </View>
+  {/* Phone Input */}
+  <View style={styles.inputContainerNoLabel}>
+    <View style={styles.inputWrapper}>
+      <TextInput
+        placeholder="Phone"
+        placeholderTextColor="#1B263BE5"
+        style={styles.inputWithIcon}
+        keyboardType="numeric"
+      />
+    </View>
+  </View>
+</View>
         </View>
 
         <TouchableOpacity
@@ -129,6 +134,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     flex: 1,
   },
+  inputWrapperflex: {
+    marginRight: 20,
+  },
   icon: {
     marginRight: 10,
   },
@@ -157,10 +165,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     justifyContent: "space-between",
-    alignItems: "flex-end",
+    alignItems: "center",
   },
 
   inputInnerWrapper: {
+    flex: 1,
     flexDirection: "column",
   },
 
