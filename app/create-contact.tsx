@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 44,
     padding: 12,
-    fontSize: 14,
+    fontSize: 16,
     backgroundColor: "#fff",
     borderBottomWidth: 1,
     borderBottomColor: "#1B263B",
