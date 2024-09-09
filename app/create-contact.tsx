@@ -53,12 +53,41 @@ const createContact = ({}) => {
           </View>
 
           <View style={styles.inputWrapper}>
-          <View style={styles.emptyIcon} />
+            <View style={styles.emptyIcon} />
             <TextInput
               placeholder="Last name"
               placeholderTextColor="#1B263BE5"
               style={styles.inputWithIcon}
             />
+          </View>
+          <View>
+            <View style={styles.inputWrapper}>
+              <AntDesign
+                name="user"
+                size={20}
+                color="#1B263B"
+                style={styles.icon}
+              />
+              <TextInput
+                placeholder="First name"
+                placeholderTextColor="#1B263BE5"
+                style={styles.inputWithIcon}
+              />
+            </View>
+
+            <View style={styles.inputWrapper}>
+              <AntDesign
+                name="user"
+                size={20}
+                color="#1B263B"
+                style={styles.icon}
+              />
+              <TextInput
+                placeholder="First name"
+                placeholderTextColor="#1B263BE5"
+                style={styles.inputWithIcon}
+              />
+            </View>
           </View>
         </View>
 
