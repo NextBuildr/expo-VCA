@@ -34,70 +34,23 @@ const createContact = ({}) => {
           >
             <AntDesign name="arrowleft" size={24} color="#1B263B" />
           </TouchableOpacity>
-          <Text style={styles.headerText}>Create contact</Text>
+          <Text style={styles.headerText}>Create New Contact</Text>
         </View>
 
-        <Text style={styles.label}>Enter Old Password</Text>
-        <View style={styles.passwordContainer}>
-          <TextInput
-            style={styles.inputWithIcon}
-            placeholder="Enter your password"
-            secureTextEntry={!isPasswordVisible}
-            value={password}
-            onChangeText={setPassword}
-          />
-          <TouchableOpacity
-            style={styles.eyeIcon}
-            onPress={togglePasswordVisibility}
-          >
-            <FontAwesome
-              name={isPasswordVisible ? "eye" : "eye-slash"}
+        <View style={styles.inputContainer}>
+          <View style={styles.inputWrapper}>
+            <AntDesign
+              name="user"
               size={20}
-              color="#778DA9"
+              color="#1B263B"
+              style={styles.icon}
             />
-          </TouchableOpacity>
-        </View>
-
-        <Text style={styles.label}>New Password</Text>
-        <View style={styles.passwordContainer}>
-          <TextInput
-            style={styles.inputWithIcon}
-            placeholder="Enter your password"
-            secureTextEntry={!isPasswordVisible}
-            value={password}
-            onChangeText={setPassword}
-          />
-          <TouchableOpacity
-            style={styles.eyeIcon}
-            onPress={togglePasswordVisibility}
-          >
-            <FontAwesome
-              name={isPasswordVisible ? "eye" : "eye-slash"}
-              size={20}
-              color="#778DA9"
+            <TextInput
+              placeholder="First Name"
+              placeholderTextColor="#1B263BE5"
+              style={styles.inputWithIcon}
             />
-          </TouchableOpacity>
-        </View>
-
-        <Text style={styles.label}>Confirm New Password</Text>
-        <View style={styles.passwordContainer}>
-          <TextInput
-            style={styles.inputWithIcon}
-            placeholder="Enter your password"
-            secureTextEntry={!isPasswordVisible}
-            value={password}
-            onChangeText={setPassword}
-          />
-          <TouchableOpacity
-            style={styles.eyeIcon}
-            onPress={togglePasswordVisibility}
-          >
-            <FontAwesome
-              name={isPasswordVisible ? "eye" : "eye-slash"}
-              size={20}
-              color="#778DA9"
-            />
-          </TouchableOpacity>
+          </View>
         </View>
 
         <TouchableOpacity
@@ -135,30 +88,23 @@ const styles = StyleSheet.create({
   inputContainer: {
     marginBottom: 20,
   },
-  label: {
-    fontSize: 14,
-    fontWeight: "400",
-    marginBottom: 5,
-    color: "#1B263B",
+  inputWrapper: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 20,
+  },
+  icon: {
+    marginRight: 10,
+  },
+  emptyIcon: {
+    width: 30, // This should match the icon size for alignment
   },
   inputWithIcon: {
-    height: 44,
-    padding: 12,
-    fontSize: 14,
-    borderColor: "#ccc",
-    borderWidth: 1,
-    borderRadius: 4,
-    backgroundColor: "#fff",
-    marginBottom: 50,
-  },
-
-  passwordContainer: {
-    position: "relative",
-  },
-  eyeIcon: {
-    position: "absolute",
-    right: 10,
-    top: 14, // Adjust to vertically center the icon inside the input
+    flex: 1,
+    fontSize: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: "#1B263B",
+    paddingBottom: 5,
   },
 
   formSubmitButton: {
@@ -176,4 +122,3 @@ const styles = StyleSheet.create({
 });
 
 export default createContact;
-

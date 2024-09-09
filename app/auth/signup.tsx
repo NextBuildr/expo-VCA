@@ -50,7 +50,7 @@ const SignupScreen = () => {
             placeholder="peachalda@gmail.com"
             secureTextEntry
             value={email}
-            placeholderTextColor="#1B263BE5"
+            TextColor="#1B263BE5"
             onChangeText={setEmail}
           />
         </View>
