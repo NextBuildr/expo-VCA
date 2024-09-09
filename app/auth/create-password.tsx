@@ -109,6 +109,8 @@ const styles = StyleSheet.create({
   descriptionText: {
     fontSize: 16,
     color: "#415A77",
+    marginBottom: 50,
+
   },
   inputContainer: {
     marginBottom: 20,
