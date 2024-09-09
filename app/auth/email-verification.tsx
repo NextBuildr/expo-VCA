@@ -79,6 +79,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
   },
   backArrow: {
+    marginTop: 30,
     marginBottom: 20,
   },
   headerText: {
@@ -91,7 +92,7 @@ const styles = StyleSheet.create({
   descriptionText: {
     fontSize: 16,
     color: "#415A77",
-    textAlign: "center",
+    // textAlign: "center",
     marginBottom: 40,
   },
   codeInputContainer: {
