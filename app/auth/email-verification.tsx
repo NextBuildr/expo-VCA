@@ -90,18 +90,20 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     color: "#415A77",
     // textAlign: "center",
-    marginBottom: 20,
+    marginBottom: 5,
   },
   descriptionText: {
     fontSize: 16,
     color: "#415A77",
-    textAlign: "center",
-    marginBottom: 40,
+    // textAlign: "center",
+    marginBottom: 30,
   },
   codeInputContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 40,
+    // marginBottom: 40,
+    marginBottom: 30,
+    marginTop: 30
   },
   codeInput: {
     backgroundColor: "#D9D9D980",
@@ -129,11 +131,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-between",
-    alignItems: "center"
+    alignItems: "center",
+    
   },
   keypadButton: {
     width: "30%",
-    paddingVertical: 20,
+    paddingVertical: 10,
     alignItems: "center",
     marginBottom: 20,
     backgroundColor: "#F4F4F9",
