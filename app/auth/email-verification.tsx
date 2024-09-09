@@ -11,10 +11,22 @@ import { AntDesign } from "@expo/vector-icons";
 const EmailVerification = () => {
   const [code, setCode] = useState(["", "", "", ""]);
 
-  const handleInputChange = (value, index) => {
-    const newCode = [...code];
-    newCode[index] = value;
-    setCode(newCode);
+  const handleKeypadPress = (value) => {
+    const nextEmptyIndex = code.findIndex((digit) => digit === "");
+    if (nextEmptyIndex !== -1) {
+      const newCode = [...code];
+      newCode[nextEmptyIndex] = value;
+      setCode(newCode);
+    }
+  };
+
+  const handleBackspace = () => {
+    const lastFilledIndex = code.map(Boolean).lastIndexOf(true);
+    if (lastFilledIndex !== -1) {
+      const newCode = [...code];
+      newCode[lastFilledIndex] = "";
+      setCode(newCode);
+    }
   };
 
   const renderKeypad = () => {
@@ -35,6 +47,7 @@ const EmailVerification = () => {
       <TouchableOpacity
         key={index}
         style={[styles.keypadButton, key.number === "0" && styles.zeroButton]}
+        onPress={() => handleKeypadPress(key.number)}
       >
         <Text style={styles.keypadNumber}>{key.number}</Text>
         <Text style={styles.keypadLetters}>{key.letters}</Text>
@@ -58,10 +71,10 @@ const EmailVerification = () => {
           <TextInput
             key={index}
             style={styles.codeInput}
-            maxLength={1}
-            keyboardType="numeric"
-            onChangeText={(value) => handleInputChange(value, index)}
             value={digit}
+            keyboardType="none" // Prevent default keyboard from showing up
+            maxLength={1}
+            editable={false} // Disable manual typing
           />
         ))}
       </View>
@@ -70,7 +83,15 @@ const EmailVerification = () => {
         <Text style={styles.nextButtonText}>Next</Text>
       </TouchableOpacity>
 
-      <View style={styles.keypadContainer}>{renderKeypad()}</View>
+      <View style={styles.keypadContainer}>
+        {renderKeypad()}
+        <TouchableOpacity
+          style={styles.keypadButton}
+          onPress={handleBackspace}
+        >
+          <AntDesign name="delete" size={24} color="#1B263B" />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -82,28 +103,25 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
   },
   backArrow: {
-    marginTop: 30,
     marginBottom: 20,
   },
   headerText: {
     fontSize: 24,
     fontWeight: "700",
     color: "#415A77",
-    // textAlign: "center",
-    marginBottom: 5,
+    textAlign: "center",
+    marginBottom: 20,
   },
   descriptionText: {
     fontSize: 16,
     color: "#415A77",
-    // textAlign: "center",
-    marginBottom: 30,
+    textAlign: "center",
+    marginBottom: 40,
   },
   codeInputContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    // marginBottom: 40,
-    marginBottom: 30,
-    marginTop: 30
+    marginBottom: 40,
   },
   codeInput: {
     backgroundColor: "#D9D9D980",
@@ -112,9 +130,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 24,
     borderRadius: 5,
-  },
-  codeInputFocus: {
-    outline: "2px solid #1B263B", // Focus outline
   },
   nextButton: {
     backgroundColor: "#415A77",
@@ -131,12 +146,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-between",
-    alignItems: "center",
-    
   },
   keypadButton: {
     width: "30%",
-    paddingVertical: 10,
+    paddingVertical: 20,
     alignItems: "center",
     marginBottom: 20,
     backgroundColor: "#F4F4F9",
@@ -152,7 +165,6 @@ const styles = StyleSheet.create({
   },
   zeroButton: {
     width: "100%", // Center the "0" button
-    marginBottom: 0,
   },
 });
 
