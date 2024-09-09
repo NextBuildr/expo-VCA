@@ -61,7 +61,7 @@ const createContact = ({}) => {
             />
           </View>
           <View style={styles.inputWrapperFlex}>
-            <View style={styles.inputWrapper}>
+            <View style={styles.inputWrapperInner}>
               <View style={styles.inputWrapper}>
                 <AntDesign
                   name="phone"
@@ -158,6 +158,9 @@ const styles = StyleSheet.create({
     borderBottomColor: "#1B263B",
     paddingBottom: 5,
     width: "100%",
+  },
+  inputWrapperInner: {
+marginRight: 20
   },
   inputWrapperFlex: {
     flexDirection: "row",
