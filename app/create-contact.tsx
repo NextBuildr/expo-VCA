@@ -1,141 +1,179 @@
-import React from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  TextInput,
+  Image,
+  TouchableOpacity,
+  StyleSheet,
+  ScrollView,
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { FontAwesome, AntDesign } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 
-export default function CreateContactPage() {
+const createContact = ({}) => {
+  const navigation = useNavigation();
+
+  const [password, setPassword] = useState("");
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible(!isPasswordVisible);
+  };
+
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
-      {/* Header Section */}
-      <View style={styles.headerContainer}>
-        <TouchableOpacity style={styles.backButton}>
-          <AntDesign name="arrowleft" size={24} color="black" />
+      <ScrollView contentContainerStyle={styles.contentContainer}>
+        <View style={styles.header}>
+          <TouchableOpacity
+            onPress={() => router.replace("/profile")}
+            style={styles.arrowButton}
+          >
+            <AntDesign name="arrowleft" size={24} color="#1B263B" />
+          </TouchableOpacity>
+          <Text style={styles.headerText}>Create contact</Text>
+        </View>
+
+        <Text style={styles.label}>Enter Old Password</Text>
+        <View style={styles.passwordContainer}>
+          <TextInput
+            style={styles.inputWithIcon}
+            placeholder="Enter your password"
+            secureTextEntry={!isPasswordVisible}
+            value={password}
+            onChangeText={setPassword}
+          />
+          <TouchableOpacity
+            style={styles.eyeIcon}
+            onPress={togglePasswordVisibility}
+          >
+            <FontAwesome
+              name={isPasswordVisible ? "eye" : "eye-slash"}
+              size={20}
+              color="#778DA9"
+            />
+          </TouchableOpacity>
+        </View>
+
+        <Text style={styles.label}>New Password</Text>
+        <View style={styles.passwordContainer}>
+          <TextInput
+            style={styles.inputWithIcon}
+            placeholder="Enter your password"
+            secureTextEntry={!isPasswordVisible}
+            value={password}
+            onChangeText={setPassword}
+          />
+          <TouchableOpacity
+            style={styles.eyeIcon}
+            onPress={togglePasswordVisibility}
+          >
+            <FontAwesome
+              name={isPasswordVisible ? "eye" : "eye-slash"}
+              size={20}
+              color="#778DA9"
+            />
+          </TouchableOpacity>
+        </View>
+
+        <Text style={styles.label}>Confirm New Password</Text>
+        <View style={styles.passwordContainer}>
+          <TextInput
+            style={styles.inputWithIcon}
+            placeholder="Enter your password"
+            secureTextEntry={!isPasswordVisible}
+            value={password}
+            onChangeText={setPassword}
+          />
+          <TouchableOpacity
+            style={styles.eyeIcon}
+            onPress={togglePasswordVisibility}
+          >
+            <FontAwesome
+              name={isPasswordVisible ? "eye" : "eye-slash"}
+              size={20}
+              color="#778DA9"
+            />
+          </TouchableOpacity>
+        </View>
+
+        <TouchableOpacity
+          style={styles.formSubmitButton}
+          onPress={() => router.replace("/profile")}
+        >
+          <Text style={styles.buttonText}>Change Password</Text>
         </TouchableOpacity>
-        <Text style={styles.headerText}>Create New Contact</Text>
-      </View>
-
-      {/* Profile Image */}
-      <View style={styles.imageContainer}>
-        <Image
-          source={{ uri: 'https://via.placeholder.com/100' }} // Placeholder image
-          style={styles.profileImage}
-        />
-      </View>
-
-      {/* Input Fields */}
-      <View style={styles.inputContainer}>
-        {/* First Name */}
-        <View style={styles.inputWrapper}>
-          <AntDesign name="user" size={20} color="#1B263B" style={styles.icon} />
-          <TextInput
-            placeholder="First Name"
-            style={styles.inputWithIcon}
-          />
-        </View>
-
-        {/* Last Name */}
-        <View style={styles.inputWrapper}>
-          <View style={styles.emptyIcon} /> {/* Empty space for icon alignment */}
-          <TextInput
-            placeholder="Last Name"
-            style={styles.inputWithIcon}
-          />
-        </View>
-
-        {/* Country with Label */}
-        <Text style={styles.label}>Country</Text> {/* Label wrapped in <Text> */}
-        <View style={styles.inputWrapper}>
-          <AntDesign name="phone" size={20} color="#1B263B" style={styles.icon} />
-          <TextInput
-            placeholder="Country"
-            style={styles.inputWithIcon}
-          />
-        </View>
-
-        {/* Phone */}
-        <View style={styles.inputWrapper}>
-          <View style={styles.emptyIcon} /> {/* Empty space for icon alignment */}
-          <TextInput
-            placeholder="Phone"
-            style={styles.inputWithIcon}
-          />
-        </View>
-      </View>
-
-      {/* Save Button */}
-      <TouchableOpacity style={styles.saveButton}>
-        <Text style={styles.saveButtonText}>Save</Text>
-      </TouchableOpacity>
+      </ScrollView>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#fff',
+    backgroundColor: "#FFF",
   },
-  headerContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 30,
-  },
-  backButton: {
-    position: 'absolute',
-    left: 0,
+  arrowButton: {},
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 80,
+    marginTop: 50,
   },
   headerText: {
     flex: 1,
-    textAlign: 'center',
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-  imageContainer: {
-    alignItems: 'center',
-    marginBottom: 30,
-  },
-  profileImage: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-    backgroundColor: '#ccc',
+    textAlign: "center",
+    fontSize: 20,
+    fontWeight: "700",
+    color: "#415A77",
+    lineHeight: 30,
   },
   inputContainer: {
-    width: '100%',
-  },
-  inputWrapper: {
-    flexDirection: 'row',
-    alignItems: 'center',
     marginBottom: 20,
-    borderBottomWidth: 1,
-    borderBottomColor: '#1B263B',
-    paddingBottom: 5,
-  },
-  icon: {
-    marginRight: 10,
-  },
-  emptyIcon: {
-    width: 30, // This should match the icon size for alignment
-  },
-  inputWithIcon: {
-    flex: 1,
-    fontSize: 16,
   },
   label: {
     fontSize: 14,
-    color: '#1B263B',
+    fontWeight: "400",
     marginBottom: 5,
+    color: "#1B263B",
   },
-  saveButton: {
-    marginTop: 'auto',
-    backgroundColor: '#1B263B',
-    padding: 15,
-    borderRadius: 5,
-    alignItems: 'center',
+  inputWithIcon: {
+    height: 44,
+    padding: 12,
+    fontSize: 14,
+    borderColor: "#ccc",
+    borderWidth: 1,
+    borderRadius: 4,
+    backgroundColor: "#fff",
+    marginBottom: 50,
   },
-  saveButtonText: {
-    color: '#fff',
-    fontSize: 18,
-    fontWeight: 'bold',
+
+  passwordContainer: {
+    position: "relative",
+  },
+  eyeIcon: {
+    position: "absolute",
+    right: 10,
+    top: 14, // Adjust to vertically center the icon inside the input
+  },
+
+  formSubmitButton: {
+    backgroundColor: "#415a77",
+    padding: 12,
+    borderRadius: 10,
+    alignItems: "center",
+    marginTop: 80,
+    marginBottom: 25,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 15,
   },
 });
+
+export default createContact;
+
