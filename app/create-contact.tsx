@@ -154,9 +154,11 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "#1B263B",
     paddingBottom: 5,
+    width: "100%",
   },
   inputWrapperFlex: {
     flexDirection: "row",
+    flex: 1,
     width: "100%",
   },
 
