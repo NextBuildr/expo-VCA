@@ -29,7 +29,7 @@ const createContact = ({}) => {
       <ScrollView contentContainerStyle={styles.contentContainer}>
         <View style={styles.header}>
           <TouchableOpacity
-            onPress={() => router.replace("/profile")}
+            onPress={() => router.replace("/contact")}
             style={styles.arrowButton}
           >
             <AntDesign name="arrowleft" size={24} color="#1B263B" />
@@ -87,14 +87,13 @@ const createContact = ({}) => {
             </View>
           </View>
         </View>
-
-        <TouchableOpacity
-          style={styles.formSubmitButton}
-          onPress={() => router.replace("/profile")}
-        >
-          <Text style={styles.buttonText}>Change Password</Text>
-        </TouchableOpacity>
       </ScrollView>
+      <TouchableOpacity
+        style={styles.formSubmitButton}
+        onPress={() => router.replace("/profile")}
+      >
+        <Text style={styles.buttonText}>Save</Text>
+      </TouchableOpacity>
     </View>
   );
 };
