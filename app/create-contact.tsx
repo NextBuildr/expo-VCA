@@ -60,12 +60,11 @@ const createContact = ({}) => {
               style={styles.inputWithIcon}
             />
           </View>
-          <View>
+          <View style={styles.inputWrapperFlex}>
+          <Text style={styles.label}>Full Name</Text>
             <View style={styles.inputWrapper}>
               <AntDesign
-                name="user"
-                size={20}
-                color="#1B263B"
+               name="phone" size={20} color="#1B263B"
                 style={styles.icon}
               />
               <TextInput
@@ -83,7 +82,7 @@ const createContact = ({}) => {
                 style={styles.icon}
               />
               <TextInput
-                placeholder="First name"
+                placeholder="Phone"
                 placeholderTextColor="#1B263BE5"
                 style={styles.inputWithIcon}
               />
@@ -134,6 +133,13 @@ const styles = StyleSheet.create({
   icon: {
     marginRight: 10,
   },
+  label: {
+    fontSize: 15,
+    fontWeight: "400",
+    marginBottom: 5,
+    lineHeight: 27,
+    color: "#1B263B",
+  },
   emptyIcon: {
     width: 30, // This should match the icon size for alignment
   },
@@ -146,6 +152,9 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "#1B263B",
     paddingBottom: 5,
+  },
+  inputWrapperFlex: {
+    flexDirection: "row",
   },
 
   formSubmitButton: {
