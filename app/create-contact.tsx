@@ -131,6 +131,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginBottom: 20,
+    flex: 1,
   },
   icon: {
     marginRight: 10,
@@ -157,9 +158,9 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   inputWrapperFlex: {
-    flexDirection: "row",
-    flex: 1,
-    width: "100%",
+    flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'space-between',
   },
 
   formSubmitButton: {
