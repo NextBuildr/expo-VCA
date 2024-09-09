@@ -4,12 +4,11 @@ import { FontAwesome } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 
 const NavigationTab = ({ activeTab, handleTabPress }) => {
-
   const router = useRouter();
 
   const handleNavigation = (tab) => {
-    handleTabPress(tab); 
-    router.replace(tab); 
+    handleTabPress(tab);
+    router.replace(tab);
   };
 
   return (
@@ -47,7 +46,7 @@ const NavigationTab = ({ activeTab, handleTabPress }) => {
 
         <TouchableOpacity
           style={[styles.navItem, activeTab === "schedule" && styles.activeTab]}
-          onPress={() => handleTabPress("schedule")}
+          onPress={() => handleNavigation("call")}
         >
           <View style={styles.navContent}>
             <FontAwesome
@@ -103,7 +102,6 @@ const styles = StyleSheet.create({
     right: 0,
     backgroundColor: "#fff",
     paddingVertical: 20,
-    
   },
   navigationTab: {
     flexDirection: "row",
@@ -114,7 +112,7 @@ const styles = StyleSheet.create({
     borderColor: "#415A77",
     borderRadius: 30,
     marginLeft: 20,
-    marginRight: 20
+    marginRight: 20,
   },
 
   navItem: {

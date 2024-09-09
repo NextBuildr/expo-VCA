@@ -81,6 +81,7 @@ function AppNavigator() {
         <Stack.Screen name="contact" options={{ headerShown: false }} />
         <Stack.Screen name="create-contact" options={{ headerShown: false }} />
         <Stack.Screen name="call" options={{ headerShown: false }} />
+        <Stack.Screen name="schedule" options={{ headerShown: false }} />
         <Stack.Screen name="profile" options={{ headerShown: false }} />
         <Stack.Screen name="edit-profile" options={{ headerShown: false }} />
         <Stack.Screen name="change-password" options={{ headerShown: false }} />
