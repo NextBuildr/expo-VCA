@@ -106,7 +106,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     borderColor: "#ccc",
     borderWidth: 1,
-    borderRadius: 4,
     backgroundColor: "#fff",
     borderBottomWidth: 1,
     borderBottomColor: "#1B263B",
