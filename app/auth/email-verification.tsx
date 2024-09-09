@@ -148,13 +148,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
   },
   backArrow: {
-    marginBottom: 20,
+    marginTop: 30,
+    marginBottom: 30,
   },
   headerText: {
     fontSize: 24,
     fontWeight: "700",
     color: "#415A77",
-    textAlign: "center",
+    // textAlign: "center",
     marginBottom: 20,
   },
   descriptionText: {
