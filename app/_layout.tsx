@@ -59,6 +59,10 @@ function AppNavigator() {
           name="auth/email-verification"
           options={{ headerShown: false }}
         />
+          <Stack.Screen
+          name="auth/email-create-password"
+          options={{ headerShown: false }}
+        />
         <Stack.Screen
           name="auth/congrats-mail"
           options={{ headerShown: false }}

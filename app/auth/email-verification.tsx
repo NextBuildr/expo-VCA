@@ -155,20 +155,17 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "700",
     color: "#415A77",
-    // textAlign: "center",
     marginBottom: 10,
   },
   descriptionText: {
     fontSize: 16,
     color: "#415A77",
-    // textAlign: "center",
-    // marginBottom: 40,
   },
   codeInputContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 60,
-    marginTop: 40,
+    marginBottom: 80,
+    marginTop: 80,
   },
   codeInput: {
     backgroundColor: "#D9D9D980",
@@ -195,18 +192,19 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   keypadContainer: {
-    alignItems: "center",
+    flex: 1,
+    justifyContent: "center",
   },
   keypadRow: {
     flexDirection: "row",
     justifyContent: "space-around",
     marginBottom: 20,
-    width: "100%",
   },
   keypadButton: {
     width: 80,
-    paddingVertical: 10,
+    height: 80,
     alignItems: "center",
+    justifyContent: "center",
     backgroundColor: "#F4F4F9",
     borderRadius: 10,
   },
@@ -219,7 +217,12 @@ const styles = StyleSheet.create({
     color: "#415A77",
   },
   zeroButton: {
-    width: "45%", // Make the zero button wider for a centered effect
+    width: "45%",
+    height: 80,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#F4F4F9",
+    borderRadius: 10,
   },
 });
 
