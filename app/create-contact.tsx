@@ -51,6 +51,15 @@ const createContact = ({}) => {
               style={styles.inputWithIcon}
             />
           </View>
+
+          <View style={styles.inputWrapper}>
+            
+            <TextInput
+              placeholder="First Name"
+              placeholderTextColor="#1B263BE5"
+              style={styles.inputWithIcon}
+            />
+          </View>
         </View>
 
         <TouchableOpacity
