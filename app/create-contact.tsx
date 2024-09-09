@@ -61,10 +61,12 @@ const createContact = ({}) => {
             />
           </View>
           <View style={styles.inputWrapperFlex}>
-          <Text style={styles.label}>Full Name</Text>
+            <Text style={styles.label}>Full Name</Text>
             <View style={styles.inputWrapper}>
               <AntDesign
-               name="phone" size={20} color="#1B263B"
+                name="phone"
+                size={20}
+                color="#1B263B"
                 style={styles.icon}
               />
               <TextInput
