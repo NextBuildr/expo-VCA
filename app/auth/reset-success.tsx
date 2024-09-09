@@ -25,7 +25,7 @@ export default function ConfirmationPage() {
         />
 
         <Text style={styles.headText}>
-          Congratulations! Your Account is Now Active!
+        new password confrimed successful
         </Text>
         <Text style={styles.descriptionText}>
           You have successfully confirm your new password. Please use your new
