@@ -61,22 +61,20 @@ const createContact = ({}) => {
             />
           </View>
           <View style={styles.inputWrapperFlex}>
-            <View style={styles.inputWrapperInner}>
-              <View style={styles.inputWrapper}>
-                <AntDesign
-                  name="phone"
-                  size={20}
-                  color="#1B263B"
-                  style={styles.icon}
+            <View style={[styles.inputWrapper, styles.specialInput]}>
+              <AntDesign
+                name="phone"
+                size={20}
+                color="#1B263B"
+                style={styles.icon}
+              />
+              <View style={styles.inputInnerWrapper}>
+                <Text style={styles.label}>Country</Text>
+                <TextInput
+                  placeholder="NG"
+                  placeholderTextColor="#1B263BE5"
+                  style={styles.inputWithIcon}
                 />
-                <View style={styles.inputInnerWrapper}>
-                  <Text style={styles.label}>Full Name</Text>
-                  <TextInput
-                    placeholder="First name"
-                    placeholderTextColor="#1B263BE5"
-                    style={styles.inputWithIcon}
-                  />
-                </View>
               </View>
             </View>
 
@@ -159,9 +157,12 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
     width: "100%",
   },
-  inputWrapperInner: {
-marginRight: 20
+  specialInput: {
+    marginRight: 10,
   },
+  //   inputWrapperInner: {
+  // marginRight: 20
+  //   },
   inputWrapperFlex: {
     flexDirection: "row",
     width: "100%",
