@@ -68,12 +68,14 @@ const createContact = ({}) => {
                 color="#1B263B"
                 style={styles.icon}
               />
-              <Text style={styles.label}>Full Name</Text>
-              <TextInput
-                placeholder="First name"
-                placeholderTextColor="#1B263BE5"
-                style={styles.inputWithIcon}
-              />
+              <View style={styles.inputInnerWrapper}>
+                <Text style={styles.label}>Full Name</Text>
+                <TextInput
+                  placeholder="First name"
+                  placeholderTextColor="#1B263BE5"
+                  style={styles.inputWithIcon}
+                />
+              </View>
             </View>
 
             <View style={styles.inputWrapper}>
@@ -139,7 +141,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 15,
     fontWeight: "400",
-    marginBottom: 5,
+    // marginBottom: 5,
     lineHeight: 27,
     color: "#1B263B",
   },
@@ -158,9 +160,13 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   inputWrapperFlex: {
-    flexDirection: 'row',
-    width: '100%',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    width: "100%",
+    justifyContent: "space-between",
+  },
+
+  inputInnerWrapper: {
+    flexDirection: "column",
   },
 
   formSubmitButton: {
