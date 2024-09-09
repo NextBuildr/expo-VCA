@@ -6,9 +6,12 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
+import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons"; // For back arrow icon
 
 export default function ForgotPasswordScreen() {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
       {/* Back Arrow */}
@@ -40,7 +43,10 @@ export default function ForgotPasswordScreen() {
       </TouchableOpacity>
 
       {/* Send Button */}
-      <TouchableOpacity style={styles.formSubmitButton}>
+      <TouchableOpacity
+        style={styles.formSubmitButton}
+        onPress={() => router.replace("/auth/check-mail")}
+      >
         <Text style={styles.buttonText}>Send</Text>
       </TouchableOpacity>
     </View>

@@ -33,36 +33,51 @@ function AppNavigator() {
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-    <Stack>
-      {/* Splash Screen */}
-      <Stack.Screen name="splash/index" options={{ headerShown: false }} />
+      <Stack>
+        {/* Splash Screen */}
+        <Stack.Screen name="splash/index" options={{ headerShown: false }} />
 
-      {/* Onboarding Stack */}
-      <Stack.Screen name="onboarding/page1" options={{ headerShown: false }} />
-      <Stack.Screen name="onboarding/page2" options={{ headerShown: false }} />
-      <Stack.Screen name="onboarding/page3" options={{ headerShown: false }} />
-  
+        {/* Onboarding Stack */}
+        <Stack.Screen
+          name="onboarding/page1"
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="onboarding/page2"
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="onboarding/page3"
+          options={{ headerShown: false }}
+        />
 
-      {/* Auth Stack */}
-      <Stack.Screen name="auth/login" options={{ headerShown: false }} />
-      <Stack.Screen name="auth/signup" options={{ headerShown: false }} />
-      <Stack.Screen name="auth/check-mail" options={{ headerShown: false }} />
-      <Stack.Screen name="auth/congrats-mail" options={{ headerShown: false }} />
-      <Stack.Screen name="auth/forget-password" options={{ headerShown: false }} />
+        {/* Auth Stack */}
+        <Stack.Screen name="auth/login" options={{ headerShown: false }} />
+        <Stack.Screen name="auth/signup" options={{ headerShown: false }} />
+        <Stack.Screen name="auth/check-mail" options={{ headerShown: false }} />
+        <Stack.Screen
+          name="auth/email-verification"
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="auth/congrats-mail"
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="auth/forget-password"
+          options={{ headerShown: false }}
+        />
 
-
-      {/* Main App Stack */}
-      <Stack.Screen name="home" options={{ headerShown: false }} />
-      <Stack.Screen name="contact" options={{ headerShown: false }} />
-      <Stack.Screen name="create-contact" options={{ headerShown: false }} />
-      <Stack.Screen name="call" options={{ headerShown: false }} />
-      <Stack.Screen name="profile" options={{ headerShown: false }} />
-      <Stack.Screen name="edit-profile" options={{ headerShown: false }} />
-      <Stack.Screen name="change-password" options={{ headerShown: false }} />
-      {/* <Stack.Screen name="edit-profile" options={{ headerShown: false }} /> */}
-
-
-    </Stack>
+        {/* Main App Stack */}
+        <Stack.Screen name="home" options={{ headerShown: false }} />
+        <Stack.Screen name="contact" options={{ headerShown: false }} />
+        <Stack.Screen name="create-contact" options={{ headerShown: false }} />
+        <Stack.Screen name="call" options={{ headerShown: false }} />
+        <Stack.Screen name="profile" options={{ headerShown: false }} />
+        <Stack.Screen name="edit-profile" options={{ headerShown: false }} />
+        <Stack.Screen name="change-password" options={{ headerShown: false }} />
+        {/* <Stack.Screen name="edit-profile" options={{ headerShown: false }} /> */}
+      </Stack>
     </GestureHandlerRootView>
   );
 }

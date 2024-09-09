@@ -32,7 +32,7 @@ export default function ConfirmationPage() {
 
         <TouchableOpacity
           style={styles.checkoutButton}
-          onPress={() => router.replace("/auth/congrats-mail")}
+          onPress={() => router.replace("auth/email-verification")}
         >
           <Text style={styles.checkoutButtonText}>Check Out</Text>
         </TouchableOpacity>
