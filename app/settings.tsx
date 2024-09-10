@@ -9,7 +9,7 @@ import {
   ScrollView,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { MaterialIcons,AntDesign, Entypo } from '@expo/vector-icons';
+import { MaterialIcons, AntDesign, Entypo } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 
 const EditProfile = ({}) => {
@@ -37,71 +37,74 @@ const EditProfile = ({}) => {
           <Text style={styles.headerText}>Change password</Text>
         </View>
 
-         {/* Light Mode */}
-      <TouchableOpacity style={styles.listItem}>
-        <View style={styles.listItemContent}>
-          <MaterialIcons name="wb-sunny" size={24} color="#1B263B" />
-          <Text style={styles.listItemText}>Light Mode</Text>
-        </View>
-        <Entypo name="chevron-right" size={24} color="#778DA9" />
-      </TouchableOpacity>
+        {/* Light Mode */}
+        <TouchableOpacity style={styles.listItem}>
+          <View style={styles.listItemContent}>
+            <MaterialIcons name="wb-sunny" size={24} color="#1B263B" />
+            <Text style={styles.listItemText}>Light Mode</Text>
+          </View>
+          <Entypo name="chevron-right" size={24} color="#778DA9" />
+        </TouchableOpacity>
 
-      {/* Verify Account */}
-      <TouchableOpacity style={styles.listItem}>
-        <View style={styles.listItemContent}>
-          <MaterialIcons name="verified-user" size={24} color="#1B263B" />
-          <Text style={styles.listItemText}>Verify Account</Text>
-        </View>
-        <Entypo name="chevron-right" size={24} color="#778DA9" />
-      </TouchableOpacity>
+        {/* Verify Account */}
+        <TouchableOpacity style={styles.listItem}>
+          <View style={styles.listItemContent}>
+            <MaterialIcons name="verified-user" size={24} color="#1B263B" />
+            <Text style={styles.listItemText}>Verify Account</Text>
+          </View>
+          <Entypo name="chevron-right" size={24} color="#778DA9" />
+        </TouchableOpacity>
 
-      {/* About Us */}
-      <TouchableOpacity style={styles.listItem}>
-        <View style={styles.listItemContent}>
-          <MaterialIcons name="info-outline" size={24} color="#1B263B" />
-          <Text style={styles.listItemText}>About Us</Text>
-        </View>
-        <Entypo name="chevron-right" size={24} color="#778DA9" />
-      </TouchableOpacity>
+        {/* About Us */}
+        <TouchableOpacity style={styles.listItem}>
+          <View style={styles.listItemContent}>
+            <MaterialIcons name="info-outline" size={24} color="#1B263B" />
+            <Text style={styles.listItemText}>About Us</Text>
+          </View>
+          <Entypo name="chevron-right" size={24} color="#778DA9" />
+        </TouchableOpacity>
 
-      {/* Delete Account */}
-      <TouchableOpacity style={styles.listItem}>
-        <View style={styles.listItemContent}>
-          <MaterialIcons name="delete-outline" size={24} color="#B22222" />
-          <Text style={[styles.listItemText, styles.deleteText]}>Delete Account</Text>
-        </View>
-        <Entypo name="chevron-right" size={24} color="#778DA9" />
-      </TouchableOpacity>
-
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => setModalVisible(false)}
-      >
-        <View style={styles.modalContainer}>
-          <View style={styles.modalContent}>
-            <Text style={styles.modalTitle}>Logout</Text>
-            <Text style={styles.modalText}>
-              Are you sure you want to log out?
+        {/* Delete Account */}
+        <TouchableOpacity style={styles.listItem}>
+          <View style={styles.listItemContent}>
+            <MaterialIcons name="delete-outline" size={24} color="#B22222" />
+            <Text style={[styles.listItemText, styles.deleteText]}>
+              Delete Account
             </Text>
-            <View style={styles.modalButtons}>
-              <TouchableOpacity
-                style={styles.cancelButton}
-                onPress={() => setModalVisible(false)}
-              >
-                <Text style={styles.cancelButtonText}>Cancel</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.logoutButton}
-                onPress={handleLogout}
-              >
-                <Text style={styles.logoutButtonText}>Delete Account</Text>
-              </TouchableOpacity>
+          </View>
+          <Entypo name="chevron-right" size={24} color="#778DA9" />
+        </TouchableOpacity>
+
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => setModalVisible(false)}
+        >
+          <View style={styles.modalContainer}>
+            <View style={styles.modalContent}>
+              <Text style={styles.modalTitle}>Logout</Text>
+              <Text style={styles.modalText}>
+                Are you sure you want to delete your account? You will loose all
+                progress and this cannot be reversed .Thre is no going back!
+              </Text>
+              <View style={styles.modalButtons}>
+                <TouchableOpacity
+                  style={styles.cancelButton}
+                  onPress={() => setModalVisible(false)}
+                >
+                  <Text style={styles.cancelButtonText}>Cancel</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={styles.logoutButton}
+                  onPress={handleLogout}
+                >
+                  <Text style={styles.logoutButtonText}>Delete Account</Text>
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
-        </View>
-      </Modal>
+        </Modal>
       </ScrollView>
     </View>
   );
@@ -157,7 +160,7 @@ const styles = StyleSheet.create({
     fontWeight: "400",
   },
   deleteText: {
-    color: '#B22222', // Red color for Delete Account text
+    color: "#B22222", // Red color for Delete Account text
   },
   modalContainer: {
     flex: 1,
