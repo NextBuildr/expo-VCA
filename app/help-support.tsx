@@ -257,8 +257,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   modalContainer: {
-    flex: 1,
-    justifyContent: "center",
+     flex: 1,
+    justifyContent: 'flex-end',
     alignItems: "center",
     backgroundColor: "rgba(0, 0, 0, 0.6)", // Semi-transparent background with blur effect
     backdropFilter: "blur(10px)", // Blurring effect (for web, add equivalent for mobile)
