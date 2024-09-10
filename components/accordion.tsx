@@ -20,7 +20,7 @@ const Accordion = ({ title, children }) => {
       <TouchableOpacity style={styles.accordionHeader} onPress={toggleAccordion}>
         <Text style={styles.accordionTitle}>{title}</Text>
         <Entypo
-          name={isOpen ? 'chevron-up' : 'chevron-down'}
+          name={isOpen ? 'keyboard-arrow-up' : 'keyboard-arrow-down'}
           size={24}
           color="#1B263B"
         />
