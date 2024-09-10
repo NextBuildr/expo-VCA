@@ -258,6 +258,7 @@ const styles = StyleSheet.create({
   },
   modalContainer: {
      flex: 1,
+     marginBottom: 30,
     justifyContent: 'flex-end',
     alignItems: "center",
     backgroundColor: "rgba(0, 0, 0, 0.6)", // Semi-transparent background with blur effect
@@ -265,8 +266,8 @@ const styles = StyleSheet.create({
   },
   modalContent: {
     width: "90%",
-    maxWidth: 390,
-    height: 300,
+    // maxWidth: 390,
+    // height: 300,
     backgroundColor: "#0D1B2A",
     borderRadius: 20,
     padding: 20,
