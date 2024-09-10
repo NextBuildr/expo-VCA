@@ -66,7 +66,7 @@ const sos = ({}) => {
               key={box.id}
             >
               <View  style={styles.box}>
-                <Image source={{ uri: box.image }} style={styles.image} />
+                <Image source={box.image } style={styles.image} />
                 <Text style={styles.text}>{box.text}</Text>
               </View>
             </TouchableOpacity>
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     lineHeight: 30,
   },
   box: {
-    width: 185,
+    width: "45%",
     height: 130,
     backgroundColor: "#778DA933",
     justifyContent: "center",
@@ -170,12 +170,15 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#fff",
     marginBottom: 10,
+    textAlign: "center",
+
   },
   modalText: {
     fontSize: 16,
     color: "#fff",
     // textAlign: "center",
     marginBottom: 30,
+    textAlign: "center",
   },
   modalButtons: {
     flexDirection: "column", // Arrange buttons in a column
