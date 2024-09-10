@@ -53,7 +53,14 @@ const SOS = ({}) => {
           <Text style={styles.headerText}>Emergency calls</Text>
         </View>
 
-      
+        <View>
+          {boxData.map((box) => (
+            <View key={box.id} style={styles.box}>
+              <Image source={{ uri: box.image }} style={styles.image} />
+              <Text style={styles.text}>{box.text}</Text>
+            </View>
+          ))}
+        </View>
       </ScrollView>
     </View>
   );
@@ -80,8 +87,25 @@ const styles = StyleSheet.create({
     color: "#415A77",
     lineHeight: 30,
   },
-  
- 
+  box: {
+    width: 185,
+    height: 130,
+    backgroundColor: "#778DA933",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 20, // Space between boxes
+    borderRadius: 10,
+  },
+  image: {
+    width: 50,
+    height: 50,
+    marginBottom: 10,
+  },
+  text: {
+    fontSize: 16,
+    color: "#000",
+    textAlign: "center",
+  },
 });
 
 export default SOS;
