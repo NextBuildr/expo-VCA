@@ -15,11 +15,11 @@ import { useRouter } from "expo-router";
 const EditProfile = ({}) => {
   const navigation = useNavigation();
 
-  const [password, setPassword] = useState("");
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-
-  const togglePasswordVisibility = () => {
-    setIsPasswordVisible(!isPasswordVisible);
+  const [modalVisible, setModalVisible] = useState(false);
+  const handleLogout = () => {
+    // Perform logout logic here
+    setModalVisible(false);
+    // Navigate to the login screen or perform other actions
   };
 
   const router = useRouter();
