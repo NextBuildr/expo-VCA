@@ -40,8 +40,22 @@ const SettingsScreen = ({}) => {
           </TouchableOpacity>
           <Text style={styles.headerText}>Notification Settings</Text>
         </View>
-       
-        
+        {/* SMS Notification */}
+        <TouchableOpacity style={styles.listItem}>
+          <View style={styles.listItemContent}>
+            <MaterialIcons name="sms" size={24} color="#1B263B" />
+            <Text style={styles.listItemText}>SMS Notifications</Text>
+          </View>
+          <Switch
+            trackColor={{ false: "#778DA9", true: "#415A77" }}
+            thumbColor={isSMSEnabled ? "#ffffff" : "#ffffff"}
+            ios_backgroundColor="#778DA9"
+            onValueChange={() => toggleSwitch("sms")}
+            value={isSMSEnabled}
+          />
+        </TouchableOpacity>
+
+      
       </ScrollView>
     </View>
   );
