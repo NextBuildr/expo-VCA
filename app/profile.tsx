@@ -257,11 +257,11 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   cancelButton: {
-    borderWidth: 1, // Defines the thickness of the border (1px)
-    borderColor: "#D9D9D9", // Sets the border color
+    borderWidth: 1, 
+    borderColor: "#D9D9D9", 
     borderRadius: 25,
     padding: 15,
-    marginBottom: 10, // Space between buttons
+    marginBottom: 10, 
     alignItems: "center",
   },
   cancelButtonText: {

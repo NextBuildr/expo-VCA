@@ -119,10 +119,11 @@ const HomePage = () => {
           <View style={styles.boxWrapper}>
             <TouchableOpacity style={styles.box}>
               <View style={styles.plusIconContainer}>
-                <FontAwesome name="plus" size={20} color="#0D1B2A" />
+                {/* <FontAwesome name="plus" size={20} color="#0D1B2A" /> */}
+                <Image source={require("../assets/images/sos.png")} />
               </View>
             </TouchableOpacity>
-            <Text style={styles.boxText}>Join</Text>
+            <Text style={styles.boxText}>SOS</Text>
           </View>
         </View>
 
@@ -292,7 +293,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   plusIconContainer: {
-    backgroundColor: "#FFF",
+    // backgroundColor: "#FFF",
     padding: 5,
   },
   recentCallsHeader: {
