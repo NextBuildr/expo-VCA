@@ -50,6 +50,10 @@ const styles = StyleSheet.create({
     color: '#1B263B',
   },
   accordionContent: {
+    fontSize: 18,
+    fontWeight: "400",
+    lineHeight: 27,
+    color: '#1B263B',
     paddingVertical: 10,
     paddingHorizontal: 5,
     backgroundColor: '#F5F5F5', // Light background for the content
