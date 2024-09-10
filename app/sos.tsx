@@ -77,16 +77,16 @@ const SOS = ({}) => {
             </Text>
             <View style={styles.modalButtons}>
               <TouchableOpacity
+                style={styles.logoutButton}
+                onPress={handleLogout}
+              >
+                <Text style={styles.logoutButtonText}>Call</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
                 style={styles.cancelButton}
                 onPress={() => setModalVisible(false)}
               >
                 <Text style={styles.cancelButtonText}>Cancel</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.logoutButton}
-                onPress={handleLogout}
-              >
-                <Text style={styles.logoutButtonText}>Log Out</Text>
               </TouchableOpacity>
             </View>
           </View>
