@@ -66,7 +66,10 @@ const EditProfile = ({}) => {
         </TouchableOpacity>
 
         {/* Delete Account */}
-        <TouchableOpacity style={styles.listItem}  onPress={() => setModalVisible(true)}>
+        <TouchableOpacity
+          style={styles.listItem}
+          onPress={() => setModalVisible(true)}
+        >
           <View style={styles.listItemContent}>
             <MaterialIcons name="delete-outline" size={24} color="#B22222" />
             <Text style={[styles.listItemText, styles.deleteText]}>
