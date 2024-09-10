@@ -41,50 +41,49 @@ const Notifications = ({}) => {
           <Text style={styles.headerText}>Notification Settings</Text>
         </View>
 
-        {/* Push Notification */}
         <TouchableOpacity style={styles.listItem}>
-          <View style={styles.listItemContent}>
-            <MaterialIcons name="sms" size={24} color="#1B263B" />
-            <Text style={styles.listItemText}>Push Notifications</Text>
-          </View>
-          <Switch
-            trackColor={{ false: "#778DA9", true: "#415A77" }}
-            thumbColor={isSMSEnabled ? "#ffffff" : "#ffffff"}
-            ios_backgroundColor="#778DA9"
-            onValueChange={() => toggleSwitch("sms")}
-            value={isSMSEnabled}
-          />
-        </TouchableOpacity>
+        <View style={styles.listItemContent}>
+          <MaterialIcons name="devices" size={24} color="#1B263B" /> {/* Device Mobile Outline */}
+          <Text style={styles.listItemText}>Push Notifications</Text>
+        </View>
+        <Switch
+          trackColor={{ false: "#778DA9", true: "#415A77" }}
+          thumbColor={isPushEnabled ? "#ffffff" : "#ffffff"}
+          ios_backgroundColor="#778DA9"
+          onValueChange={() => toggleSwitch("push")}
+          value={isPushEnabled}
+        />
+      </TouchableOpacity>
 
-        {/* SMS Notification */}
-        <TouchableOpacity style={styles.listItem}>
-          <View style={styles.listItemContent}>
-            <MaterialIcons name="sms" size={24} color="#1B263B" />
-            <Text style={styles.listItemText}>SMS Notifications</Text>
-          </View>
-          <Switch
-            trackColor={{ false: "#778DA9", true: "#415A77" }}
-            thumbColor={isSMSEnabled ? "#ffffff" : "#ffffff"}
-            ios_backgroundColor="#778DA9"
-            onValueChange={() => toggleSwitch("sms")}
-            value={isSMSEnabled}
-          />
-        </TouchableOpacity>
+      {/* SMS Notification */}
+      <TouchableOpacity style={styles.listItem}>
+        <View style={styles.listItemContent}>
+          <MaterialIcons name="chat-bubble-outline" size={24} color="#1B263B" /> {/* Chat Circle Outline */}
+          <Text style={styles.listItemText}>SMS Notifications</Text>
+        </View>
+        <Switch
+          trackColor={{ false: "#778DA9", true: "#415A77" }}
+          thumbColor={isSMSEnabled ? "#ffffff" : "#ffffff"}
+          ios_backgroundColor="#778DA9"
+          onValueChange={() => toggleSwitch("sms")}
+          value={isSMSEnabled}
+        />
+      </TouchableOpacity>
 
-        {/* Email Notification */}
-        <TouchableOpacity style={styles.listItem}>
-          <View style={styles.listItemContent}>
-            <MaterialIcons name="email" size={24} color="#1B263B" />
-            <Text style={styles.listItemText}>Email Notifications</Text>
-          </View>
-          <Switch
-            trackColor={{ false: "#778DA9", true: "#415A77" }}
-            thumbColor={isEmailEnabled ? "#ffffff" : "#ffffff"}
-            ios_backgroundColor="#778DA9"
-            onValueChange={() => toggleSwitch("email")}
-            value={isEmailEnabled}
-          />
-        </TouchableOpacity>
+      {/* Email Notification */}
+      <TouchableOpacity style={styles.listItem}>
+        <View style={styles.listItemContent}>
+          <MaterialIcons name="mail-outline" size={24} color="#1B263B" /> {/* Envelope Outline */}
+          <Text style={styles.listItemText}>Email Notifications</Text>
+        </View>
+        <Switch
+          trackColor={{ false: "#778DA9", true: "#415A77" }}
+          thumbColor={isEmailEnabled ? "#ffffff" : "#ffffff"}
+          ios_backgroundColor="#778DA9"
+          onValueChange={() => toggleSwitch("email")}
+          value={isEmailEnabled}
+        />
+      </TouchableOpacity>
       </ScrollView>
     </View>
   );
