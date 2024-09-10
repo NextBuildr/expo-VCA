@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, LayoutAnimation, UIManager, Platform } from 'react-native';
-import { Entypo } from '@expo/vector-icons'; // Importing arrow icons
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  LayoutAnimation,
+  UIManager,
+  Platform,
+} from "react-native";
+import { Entypo } from "@expo/vector-icons"; // Importing arrow icons
 
 // Enable LayoutAnimation for Android
-if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
+if (
+  Platform.OS === "android" &&
+  UIManager.setLayoutAnimationEnabledExperimental
+) {
   UIManager.setLayoutAnimationEnabledExperimental(true);
 }
 
@@ -17,10 +28,19 @@ const Accordion = ({ title, children }) => {
 
   return (
     <View style={styles.accordionContainer}>
-      <TouchableOpacity style={styles.accordionHeader} onPress={toggleAccordion}>
-        <Text style={styles.accordionTitle}>{title}</Text>
+      <TouchableOpacity
+        style={styles.accordionHeader}
+        onPress={toggleAccordion}
+      >
+        <Text
+          style={styles.accordionTitle}
+          numberOfLines={1}
+          ellipsizeMode="tail"
+        >
+          {title}
+        </Text>
         <Entypo
-          name={isOpen ? 'keyboard-arrow-up' : 'keyboard-arrow-down'}
+          name={isOpen ? "keyboard-arrow-up" : "keyboard-arrow-down"}
           size={24}
           color="#1B263B"
         />
@@ -35,28 +55,28 @@ const styles = StyleSheet.create({
   accordionContainer: {
     marginVertical: 10,
     borderBottomWidth: 1,
-    borderBottomColor: '#1B263B',
+    borderBottomColor: "#1B263B",
   },
   accordionHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     paddingVertical: 15,
   },
   accordionTitle: {
     fontSize: 20,
     fontWeight: "700",
     lineHeight: 30,
-    color: '#1B263B',
+    color: "#1B263B",
   },
   accordionContent: {
     fontSize: 18,
     fontWeight: "400",
     lineHeight: 27,
-    color: '#1B263B',
+    color: "#1B263B",
     paddingVertical: 10,
     paddingHorizontal: 5,
-    // backgroundColor: '#F5F5F5', 
+    // backgroundColor: '#F5F5F5',
   },
 });
 
