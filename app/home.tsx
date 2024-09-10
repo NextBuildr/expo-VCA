@@ -11,9 +11,10 @@ import {
 import { FontAwesome } from "@expo/vector-icons";
 import NavigationTab from "../components/navigation-tab";
 import RecentCallsCard from "../components/callCard";
+import { useRouter } from "expo-router";
 const HomePage = () => {
   const [activeTab, setActiveTab] = useState("home"); // Default active tab
-
+  const router = useRouter();
   const recentCallsData = [
     {
       name: "John Doe",
@@ -116,7 +117,7 @@ const HomePage = () => {
             <Text style={styles.boxText}>Schedule</Text>
           </View>
 
-          <View style={styles.boxWrapper}>
+          <View style={styles.boxWrapper} onPress={() => router.replace("/SOS")}>
             <TouchableOpacity style={styles.box}>
               <View style={styles.plusIconContainer}>
                 {/* <FontAwesome name="plus" size={20} color="#0D1B2A" /> */}
