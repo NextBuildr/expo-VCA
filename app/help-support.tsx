@@ -118,7 +118,8 @@ const SettingsScreen = ({}) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1, 
+    justifyContent: 'flex-end', 
     padding: 20,
     backgroundColor: "#FFF",
   },

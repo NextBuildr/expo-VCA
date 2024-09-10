@@ -19,6 +19,7 @@ const Contact = () => {
   const [expandedCardIndex, setExpandedCardIndex] = useState(null);
   const router = useRouter();
 
+
   const contacts = [
     {
       name: "Aloye",
@@ -202,7 +203,6 @@ const Contact = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "flex-end",
     position: "relative",
   },
   contentContainer: {
