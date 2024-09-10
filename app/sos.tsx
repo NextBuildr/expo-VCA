@@ -16,6 +16,11 @@ import { useRouter } from "expo-router";
 
 const SOS = ({}) => {
   const navigation = useNavigation();
+  const [modalVisible, setModalVisible] = useState(false);
+  const handleLogout = () => {
+    setModalVisible(false);
+  };
+
   const router = useRouter();
   const boxData = [
     {
@@ -55,10 +60,15 @@ const SOS = ({}) => {
 
         <View>
           {boxData.map((box) => (
-            <View key={box.id} style={styles.box}>
-              <Image source={{ uri: box.image }} style={styles.image} />
-              <Text style={styles.text}>{box.text}</Text>
-            </View>
+            <TouchableOpacity
+              style={styles.listItem}
+              onPress={() => setModalVisible(true)}
+            >
+              <View key={box.id} style={styles.box}>
+                <Image source={{ uri: box.image }} style={styles.image} />
+                <Text style={styles.text}>{box.text}</Text>
+              </View>
+            </TouchableOpacity>
           ))}
         </View>
       </ScrollView>
@@ -73,7 +83,7 @@ const SOS = ({}) => {
           <View style={styles.modalContent}>
             <Text style={styles.modalTitle}>Logout</Text>
             <Text style={styles.modalText}>
-            *** will be dialed by tapping call
+              *** will be dialed by tapping call
             </Text>
             <View style={styles.modalButtons}>
               <TouchableOpacity
@@ -172,11 +182,11 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   cancelButton: {
-    borderWidth: 1, 
-    borderColor: "#D9D9D9", 
+    borderWidth: 1,
+    borderColor: "#D9D9D9",
     borderRadius: 25,
     padding: 15,
-    marginBottom: 10, 
+    marginBottom: 10,
     alignItems: "center",
   },
   cancelButtonText: {
