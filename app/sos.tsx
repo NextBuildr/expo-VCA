@@ -20,23 +20,23 @@ const SOS = ({}) => {
   const boxData = [
     {
       id: 1,
-      image: "https://via.placeholder.com/50",
-      text: "This is the first box",
+      image: "../assets/images/Ambulance.png",
+      text: "Medical Assistance",
     },
     {
       id: 2,
-      image: "https://via.placeholder.com/50",
-      text: "This is the second box",
+      image: "../assets/images/Fire.png",
+      text: "Fire Department",
     },
     {
       id: 3,
-      image: "https://via.placeholder.com/50",
-      text: "This is the third box",
+      image: "../assets/images/Siren.png",
+      text: "Police",
     },
     {
       id: 4,
-      image: "https://via.placeholder.com/50",
-      text: "This is the fourth box",
+      image: "../assets/images/FirstAid.png",
+      text: "Emergency Services",
     },
   ];
 
@@ -62,6 +62,36 @@ const SOS = ({}) => {
           ))}
         </View>
       </ScrollView>
+
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => setModalVisible(false)}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalTitle}>Logout</Text>
+            <Text style={styles.modalText}>
+            *** will be dialed by tapping call
+            </Text>
+            <View style={styles.modalButtons}>
+              <TouchableOpacity
+                style={styles.cancelButton}
+                onPress={() => setModalVisible(false)}
+              >
+                <Text style={styles.cancelButtonText}>Cancel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.logoutButton}
+                onPress={handleLogout}
+              >
+                <Text style={styles.logoutButtonText}>Log Out</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 };
@@ -105,6 +135,64 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#000",
     textAlign: "center",
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.6)", // Semi-transparent background with blur effect
+    backdropFilter: "blur(10px)", // Blurring effect (for web, add equivalent for mobile)
+  },
+  modalContent: {
+    width: "90%",
+    maxWidth: 390,
+    height: 300,
+    backgroundColor: "#0D1B2A",
+    borderRadius: 20,
+    padding: 20,
+    // alignItems: "center",
+    justifyContent: "center",
+    marginHorizontal: 20,
+  },
+  modalTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#fff",
+    marginBottom: 10,
+  },
+  modalText: {
+    fontSize: 16,
+    color: "#fff",
+    // textAlign: "center",
+    marginBottom: 30,
+  },
+  modalButtons: {
+    flexDirection: "column", // Arrange buttons in a column
+    justifyContent: "space-between",
+    width: "100%",
+  },
+  cancelButton: {
+    borderWidth: 1, 
+    borderColor: "#D9D9D9", 
+    borderRadius: 25,
+    padding: 15,
+    marginBottom: 10, 
+    alignItems: "center",
+  },
+  cancelButtonText: {
+    color: "#fff",
+    fontSize: 15,
+  },
+  logoutButton: {
+    backgroundColor: "#415a77",
+    padding: 15,
+    borderRadius: 25,
+    alignItems: "center",
+    marginBottom: 25,
+  },
+  logoutButtonText: {
+    color: "#fff",
+    fontSize: 15,
   },
 });
 
