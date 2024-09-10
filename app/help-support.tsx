@@ -18,9 +18,7 @@ const helpSupport = ({}) => {
 
   const [modalVisible, setModalVisible] = useState(false);
   const handleLogout = () => {
-    // Perform logout logic here
     setModalVisible(false);
-    // Navigate to the login screen or perform other actions
   };
 
   const accordionData = [
@@ -113,8 +111,45 @@ const helpSupport = ({}) => {
         style={styles.formSubmitButton}
         onPress={() => router.replace("auth/reset-success")}
       >
-        <Text style={styles.buttonText}>Reset Password</Text>
+        <Text style={styles.buttonText}>Send message</Text>
       </TouchableOpacity>
+
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => setModalVisible(false)}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalTitle}>Warning</Text>
+            <Text style={styles.modalText}>
+              Are you sure you want to delete your account? You will lose all
+              progress and this cannot be reversed. There is no going back!
+            </Text>
+            <TextInput
+              style={styles.textarea}
+              placeholder="Enter reason for deleting your account"
+              multiline={true}
+              numberOfLines={4}
+            />
+            <View style={styles.modalButtons}>
+              <TouchableOpacity
+                style={styles.logoutButton}
+                onPress={handleLogout}
+              >
+                <Text style={styles.logoutButtonText}>Send</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.cancelButton}
+                onPress={() => setModalVisible(false)}
+              >
+                <Text style={styles.cancelButtonText}>Cancel</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 };
@@ -126,10 +161,11 @@ const styles = StyleSheet.create({
   },
   header: {
     position: 'absolute',
-    top: 20,
+    top: 0,
     left: 0,
     right: 0,
     height: 60,
+    // paddingTop: 50,
     backgroundColor: '#fff',
     flexDirection: 'row',
     alignItems: 'center',
@@ -220,6 +256,7 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 15,
   },
+  
 });
 
 export default helpSupport;
