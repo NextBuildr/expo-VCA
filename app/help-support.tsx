@@ -3,7 +3,6 @@ import {
   View,
   Text,
   TextInput,
-  Image,
   TouchableOpacity,
   StyleSheet,
   Modal,
@@ -14,7 +13,7 @@ import { MaterialIcons, AntDesign, FontAwesome } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import Accordion from "../components/accordion";
 
-const SettingsScreen = ({}) => {
+const helpSupport = ({}) => {
   const navigation = useNavigation();
 
   const [modalVisible, setModalVisible] = useState(false);
@@ -23,6 +22,7 @@ const SettingsScreen = ({}) => {
     setModalVisible(false);
     // Navigate to the login screen or perform other actions
   };
+
   const accordionData = [
     {
       title: "How do I start a video call?",
@@ -60,17 +60,20 @@ const SettingsScreen = ({}) => {
 
   return (
     <View style={styles.container}>
-      <ScrollView contentContainerStyle={styles.contentContainer}>
-        <View style={styles.header}>
-          <TouchableOpacity
-            onPress={() => router.replace("/profile")}
-            style={styles.arrowButton}
-          >
-            <AntDesign name="arrowleft" size={24} color="#1B263B" />
-          </TouchableOpacity>
-          <Text style={styles.headerText}>Help & Support</Text>
-        </View>
+      <View style={styles.header}>
+        <TouchableOpacity
+          onPress={() => router.replace("/profile")}
+          style={styles.arrowButton}
+        >
+          <AntDesign name="arrowleft" size={24} color="#1B263B" />
+        </TouchableOpacity>
+        <Text style={styles.headerText}>Help & Support</Text>
+      </View>
 
+      <ScrollView
+        contentContainerStyle={styles.contentContainer}
+        style={styles.scrollView}
+      >
         <Text style={styles.heeaderText}>
           We're Here to Help with Anything at Onbrela
         </Text>
@@ -104,31 +107,41 @@ const SettingsScreen = ({}) => {
             </Accordion>
           ))}
         </View>
-
-        <TouchableOpacity
-          style={styles.formSubmitButton}
-          onPress={() => router.replace("auth/reset-success")}
-        >
-          <Text style={styles.buttonText}>Reset Password</Text>
-        </TouchableOpacity>
       </ScrollView>
+
+      <TouchableOpacity
+        style={styles.formSubmitButton}
+        onPress={() => router.replace("auth/reset-success")}
+      >
+        <Text style={styles.buttonText}>Reset Password</Text>
+      </TouchableOpacity>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, 
-    justifyContent: 'flex-end', 
-    padding: 20,
+    flex: 1,
     backgroundColor: "#FFF",
   },
-  arrowButton: {},
   header: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 20,
-    marginTop: 50,
+    position: 'absolute',
+    top: 10,
+    left: 0,
+    right: 0,
+    height: 60,
+    backgroundColor: '#fff',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    zIndex: 1000,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    elevation: 2,
+  },
+  arrowButton: {
+    padding: 10,
   },
   headerText: {
     flex: 1,
@@ -137,6 +150,14 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     color: "#292D32",
     lineHeight: 30,
+  },
+  contentContainer: {
+    paddingTop: 70, // Adjust to be just below the header
+    paddingBottom: 100, // Space for the button
+    paddingHorizontal: 20,
+  },
+  scrollView: {
+    flex: 1,
   },
   heeaderText: {
     fontSize: 20,
@@ -182,6 +203,23 @@ const styles = StyleSheet.create({
     color: "#1B263B",
     fontSize: 16,
   },
+  accordionwrap: {
+    marginTop: 20,
+  },
+  formSubmitButton: {
+    backgroundColor: "#415a77",
+    padding: 12,
+    borderRadius: 10,
+    alignItems: "center",
+    position: "absolute",
+    bottom: 20,
+    left: 10,
+    right: 10,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 15,
+  },
 });
 
-export default SettingsScreen;
+export default helpSupport;
