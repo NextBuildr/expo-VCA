@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 80,
+    marginBottom: 20,
     marginTop: 50,
   },
   headerText: {
