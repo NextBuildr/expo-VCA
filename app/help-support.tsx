@@ -38,11 +38,31 @@ const SettingsScreen = ({}) => {
           <Text style={styles.headerText}>Change password</Text>
         </View>
 
-        <Text style={styles.heeaderText}>We're Here to Help with Anything at Onbrela</Text>
+        <Text style={styles.heeaderText}>
+          We're Here to Help with Anything at Onbrela
+        </Text>
         <Text style={styles.descriptionText}>
           Need assistance with SmartVideo? Our team is here to help you with any
           questions or issues—reach out for quick support!
         </Text>
+
+        <View style={styles.searchSection}>
+          <View style={styles.searchInputContainer}>
+            <FontAwesome
+              name="search"
+              size={20}
+              color="#1B263B"
+              style={styles.searchIcon}
+            />
+            <TextInput
+              placeholder="Search"
+              placeholderTextColor="#1B263B"
+              style={styles.searchInput}
+              value={searchQuery}
+              onChangeText={setSearchQuery}
+            />
+          </View>
+        </View>
       </ScrollView>
     </View>
   );
@@ -79,6 +99,30 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#415A77",
     marginBottom: 50,
+  },
+  searchSection: {
+    flexDirection: "row",
+    alignItems: "center",
+    borderRadius: 8,
+    marginTop: 30,
+  },
+  searchInputContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 15,
+    backgroundColor: "#D9D9D980",
+    flex: 1,
+    paddingHorizontal: 10,
+    borderRadius: 5,
+    marginRight: 5,
+  },
+  searchIcon: {
+    marginRight: 10,
+  },
+  searchInput: {
+    flex: 1,
+    color: "#1B263B",
+    fontSize: 16,
   },
 });
 
