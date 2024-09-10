@@ -12,7 +12,7 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { MaterialIcons, AntDesign, FontAwesome } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-import Accordion from "../components/accordion"
+import Accordion from "../components/accordion";
 
 const SettingsScreen = ({}) => {
   const navigation = useNavigation();
@@ -112,7 +112,10 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   faqheadtext: {
-    
+    fontSize: 24,
+    fontWeight: "700",
+    color: "#415A77",
+    lineHeight: 36,
   },
   descriptionText: {
     fontSize: 16,
