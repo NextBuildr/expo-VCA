@@ -8,7 +8,7 @@ import {
   StyleSheet,
   Modal,
   ScrollView,
-  Switch 
+  Switch,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { MaterialIcons, AntDesign, Entypo } from "@expo/vector-icons";
@@ -23,11 +23,10 @@ const SettingsScreen = ({}) => {
   const [isEmailEnabled, setIsEmailEnabled] = useState(false);
 
   const toggleSwitch = (type) => {
-    if (type === 'push') setIsPushEnabled((prevState) => !prevState);
-    if (type === 'sms') setIsSMSEnabled((prevState) => !prevState);
-    if (type === 'email') setIsEmailEnabled((prevState) => !prevState);
+    if (type === "push") setIsPushEnabled((prevState) => !prevState);
+    if (type === "sms") setIsSMSEnabled((prevState) => !prevState);
+    if (type === "email") setIsEmailEnabled((prevState) => !prevState);
   };
-
 
   return (
     <View style={styles.container}>
@@ -41,9 +40,8 @@ const SettingsScreen = ({}) => {
           </TouchableOpacity>
           <Text style={styles.headerText}>Notification Settings</Text>
         </View>
-
        
-       
+        </TouchableOpacity>
       </ScrollView>
     </View>
   );
