@@ -245,6 +245,7 @@ const styles = StyleSheet.create({
   formSubmitButton: {
     backgroundColor: "#415a77",
     padding: 12,
+    paddingVertical: 16,
     borderRadius: 10,
     alignItems: "center",
     position: "absolute",
@@ -264,14 +265,13 @@ const styles = StyleSheet.create({
     backdropFilter: "blur(10px)", // Blurring effect (for web, add equivalent for mobile)
   },
   modalContent: {
-    width: "90%",
+    width: "95%",
     // maxWidth: 390,
     // height: 300,
     backgroundColor: "#0D1B2A",
     borderRadius: 20,
-    marginBottom: 30,
+    marginBottom: 20,
     padding: 20,
-    // alignItems: "center",
     justifyContent: "center",
     marginHorizontal: 20,
   },
