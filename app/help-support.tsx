@@ -12,6 +12,7 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { MaterialIcons, AntDesign, FontAwesome } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
+import Accordion from "../components/accordion"
 
 const SettingsScreen = ({}) => {
   const navigation = useNavigation();
@@ -22,6 +23,12 @@ const SettingsScreen = ({}) => {
     setModalVisible(false);
     // Navigate to the login screen or perform other actions
   };
+  const accordionData = [
+    { title: "Section 1", content: "This is the content for section 1." },
+    { title: "Section 2", content: "This is the content for section 2." },
+    { title: "Section 3", content: "This is the content for section 3." },
+    { title: "Section 4", content: "This is the content for section 4." },
+  ];
 
   const router = useRouter();
 
@@ -62,10 +69,16 @@ const SettingsScreen = ({}) => {
           </View>
         </View>
 
-        
         <Text style={styles.faqheadtext}>
           We're Here to Help with Anything at Onbrela
         </Text>
+        <View>
+          {accordionData.map((item, index) => (
+            <Accordion key={index} title={item.title}>
+              <Text>{item.content}</Text>
+            </Accordion>
+          ))}
+        </View>
       </ScrollView>
     </View>
   );
@@ -97,6 +110,9 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     color: "#415A77",
     marginBottom: 10,
+  },
+  faqheadtext: {
+    
   },
   descriptionText: {
     fontSize: 16,
