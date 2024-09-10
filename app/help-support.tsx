@@ -120,14 +120,16 @@ const styles = StyleSheet.create({
   },
   descriptionText: {
     fontSize: 16,
-    color: "#415A77",
-    marginBottom: 50,
+    color: "#1B263BE5",
+    marginBottom: 10,
+    lineHeight: 26,
   },
   searchSection: {
     flexDirection: "row",
     alignItems: "center",
     borderRadius: 8,
-    marginTop: 30,
+    marginTop: 10,
+    marginBottom: 10,
   },
   searchInputContainer: {
     flexDirection: "row",
