@@ -10,7 +10,7 @@ import {
   ScrollView,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { MaterialIcons, AntDesign, Entypo } from "@expo/vector-icons";
+import { MaterialIcons, AntDesign, FontAwesome } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 
 const SettingsScreen = ({}) => {
@@ -58,8 +58,6 @@ const SettingsScreen = ({}) => {
               placeholder="Search"
               placeholderTextColor="#1B263B"
               style={styles.searchInput}
-              value={searchQuery}
-              onChangeText={setSearchQuery}
             />
           </View>
         </View>
