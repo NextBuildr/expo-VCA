@@ -61,6 +61,11 @@ const SettingsScreen = ({}) => {
             />
           </View>
         </View>
+
+        
+        <Text style={styles.faqheadtext}>
+          We're Here to Help with Anything at Onbrela
+        </Text>
       </ScrollView>
     </View>
   );
