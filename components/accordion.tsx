@@ -44,7 +44,9 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
   },
   accordionTitle: {
-    fontSize: 16,
+    fontSize: 20,
+    fontWeight: "700",
+    lineHeight: 30,
     color: '#1B263B',
   },
   accordionContent: {

@@ -70,7 +70,7 @@ const SettingsScreen = ({}) => {
         </View>
 
         <Text style={styles.faqheadtext}>
-          We're Here to Help with Anything at Onbrela
+         FAQ'S
         </Text>
 
         <View style={styles.accordionwrap}>
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
   faqheadtext: {
     fontSize: 24,
     fontWeight: "700",
-    color: "#415A77",
+    color: "#1B263B",
     lineHeight: 36,
   },
   descriptionText: {
