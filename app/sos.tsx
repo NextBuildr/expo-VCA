@@ -17,6 +17,28 @@ import { useRouter } from "expo-router";
 const SOS = ({}) => {
   const navigation = useNavigation();
   const router = useRouter();
+  const boxData = [
+    {
+      id: 1,
+      image: "https://via.placeholder.com/50",
+      text: "This is the first box",
+    },
+    {
+      id: 2,
+      image: "https://via.placeholder.com/50",
+      text: "This is the second box",
+    },
+    {
+      id: 3,
+      image: "https://via.placeholder.com/50",
+      text: "This is the third box",
+    },
+    {
+      id: 4,
+      image: "https://via.placeholder.com/50",
+      text: "This is the fourth box",
+    },
+  ];
 
   return (
     <View style={styles.container}>
