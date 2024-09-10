@@ -49,29 +49,7 @@ const SettingsScreen = ({}) => {
           visible={modalVisible}
           onRequestClose={() => setModalVisible(false)}
         >
-          <View style={styles.modalContainer}>
-            <View style={styles.modalContent}>
-              <Text style={styles.modalTitle}>Warning</Text>
-              <Text style={styles.modalText}>
-                Are you sure you want to delete your account? You will loose all
-                progress and this cannot be reversed .Thre is no going back!
-              </Text>
-              <View style={styles.modalButtons}>
-                <TouchableOpacity
-                  style={styles.cancelButton}
-                  onPress={() => setModalVisible(false)}
-                >
-                  <Text style={styles.cancelButtonText}>Cancel</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={styles.logoutButton}
-                  onPress={handleLogout}
-                >
-                  <Text style={styles.logoutButtonText}>Delete Account</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
+         
         </Modal>
       </ScrollView>
     </View>
