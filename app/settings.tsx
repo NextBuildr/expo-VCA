@@ -44,7 +44,6 @@ const SettingsScreen = ({}) => {
             <MaterialIcons name="wb-sunny" size={24} color="#1B263B" />
             <Text style={styles.listItemText}>Light Mode</Text>
           </View>
-          <Entypo name="chevron-right" size={24} color="#778DA9" />
         </TouchableOpacity>
 
         {/* Verify Account */}
@@ -76,7 +75,6 @@ const SettingsScreen = ({}) => {
               Delete Account
             </Text>
           </View>
-          
         </TouchableOpacity>
 
         <Modal
