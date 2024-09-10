@@ -31,6 +31,27 @@ const Accordion = ({ title, children }) => {
   );
 };
 
-
+const styles = StyleSheet.create({
+  accordionContainer: {
+    marginVertical: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#778DA9',
+  },
+  accordionHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 15,
+  },
+  accordionTitle: {
+    fontSize: 16,
+    color: '#1B263B',
+  },
+  accordionContent: {
+    paddingVertical: 10,
+    paddingHorizontal: 5,
+    backgroundColor: '#F5F5F5', // Light background for the content
+  },
+});
 
 export default Accordion;
