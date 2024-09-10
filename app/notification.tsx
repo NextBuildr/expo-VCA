@@ -59,7 +59,11 @@ const Notifications = ({}) => {
         {/* SMS Notification */}
         <TouchableOpacity style={styles.listItem}>
           <View style={styles.listItemContent}>
-            <MaterialIcons name="sms" size={24} color="#1B263B" />
+            <MaterialIcons
+              name="chat-bubble-outline"
+              size={24}
+              color="#1B263B"
+            />
             <Text style={styles.listItemText}>SMS Notifications</Text>
           </View>
           <Switch
