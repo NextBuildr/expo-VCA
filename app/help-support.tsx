@@ -24,10 +24,26 @@ const SettingsScreen = ({}) => {
     // Navigate to the login screen or perform other actions
   };
   const accordionData = [
-    { title: "Section 1", content: "This is the content for section 1." },
-    { title: "Section 2", content: "This is the content for section 2." },
-    { title: "Section 3", content: "This is the content for section 3." },
-    { title: "Section 4", content: "This is the content for section 4." },
+    {
+      title: "How do I start a video call?",
+      content:
+        "Select a contact from your list and click the video call icon to initiate the call immediately.",
+    },
+    {
+      title: "Can I use the app on multiple devices?",
+      content:
+        "Select a contact from your list and click the video call icon to initiate the call immediately.",
+    },
+    {
+        title: "How do I start a video call?",
+        content:
+          "Select a contact from your list and click the video call icon to initiate the call immediately.",
+      },
+      {
+        title: "Can I use the app on multiple devices?",
+        content:
+          "Select a contact from your list and click the video call icon to initiate the call immediately.",
+      },
   ];
 
   const router = useRouter();
@@ -69,9 +85,7 @@ const SettingsScreen = ({}) => {
           </View>
         </View>
 
-        <Text style={styles.faqheadtext}>
-         FAQ'S
-        </Text>
+        <Text style={styles.faqheadtext}>FAQ'S</Text>
 
         <View style={styles.accordionwrap}>
           {accordionData.map((item, index) => (
@@ -117,6 +131,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     color: "#1B263B",
     lineHeight: 36,
+    marginTop: 10,
   },
   descriptionText: {
     fontSize: 16,

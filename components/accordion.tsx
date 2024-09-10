@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   accordionContainer: {
     marginVertical: 10,
     borderBottomWidth: 1,
-    borderBottomColor: '#778DA9',
+    borderBottomColor: '#1B263B',
   },
   accordionHeader: {
     flexDirection: 'row',
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     color: '#1B263B',
     paddingVertical: 10,
     paddingHorizontal: 5,
-    backgroundColor: '#F5F5F5', // Light background for the content
+    // backgroundColor: '#F5F5F5', 
   },
 });
 
