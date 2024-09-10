@@ -292,6 +292,8 @@ const styles = StyleSheet.create({
   },
   modalText: {
     fontSize: 16,
+    fontWeight: "400",
+    lineHeight: 27,
     color: "#fff",
     // textAlign: "center",
     marginBottom: 30,
