@@ -96,7 +96,7 @@ const EditProfile = ({}) => {
                 style={styles.logoutButton}
                 onPress={handleLogout}
               >
-                <Text style={styles.logoutButtonText}>Log Out</Text>
+                <Text style={styles.logoutButtonText}>Delete Account</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -158,6 +158,64 @@ const styles = StyleSheet.create({
   },
   deleteText: {
     color: '#B22222', // Red color for Delete Account text
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.6)", // Semi-transparent background with blur effect
+    backdropFilter: "blur(10px)", // Blurring effect (for web, add equivalent for mobile)
+  },
+  modalContent: {
+    width: "90%",
+    maxWidth: 390,
+    height: 300,
+    backgroundColor: "#0D1B2A",
+    borderRadius: 20,
+    padding: 20,
+    // alignItems: "center",
+    justifyContent: "center",
+    marginHorizontal: 20,
+  },
+  modalTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#fff",
+    marginBottom: 10,
+  },
+  modalText: {
+    fontSize: 16,
+    color: "#fff",
+    // textAlign: "center",
+    marginBottom: 30,
+  },
+  modalButtons: {
+    flexDirection: "column", // Arrange buttons in a column
+    justifyContent: "space-between",
+    width: "100%",
+  },
+  cancelButton: {
+    borderWidth: 1, // Defines the thickness of the border (1px)
+    borderColor: "#D9D9D9", // Sets the border color
+    borderRadius: 25,
+    padding: 15,
+    marginBottom: 10, // Space between buttons
+    alignItems: "center",
+  },
+  cancelButtonText: {
+    color: "#fff",
+    fontSize: 15,
+  },
+  logoutButton: {
+    backgroundColor: "#415a77",
+    padding: 15,
+    borderRadius: 25,
+    alignItems: "center",
+    marginBottom: 25,
+  },
+  logoutButtonText: {
+    color: "#fff",
+    fontSize: 15,
   },
 });
 
