@@ -35,15 +35,25 @@ const SettingsScreen = ({}) => {
         "Select a contact from your list and click the video call icon to initiate the call immediately.",
     },
     {
-        title: "How do I start a video call?",
-        content:
-          "Select a contact from your list and click the video call icon to initiate the call immediately.",
-      },
-      {
-        title: "Can I use the app on multiple devices?",
-        content:
-          "Select a contact from your list and click the video call icon to initiate the call immediately.",
-      },
+      title: "How do I start a video call?",
+      content:
+        "Select a contact from your list and click the video call icon to initiate the call immediately.",
+    },
+    {
+      title: "Can I use the app on multiple devices?",
+      content:
+        "Select a contact from your list and click the video call icon to initiate the call immediately.",
+    },
+    {
+      title: "Can I use the app on multiple devices?",
+      content:
+        "Select a contact from your list and click the video call icon to initiate the call immediately.",
+    },
+    {
+      title: "Can I use the app on multiple devices?",
+      content:
+        "Select a contact from your list and click the video call icon to initiate the call immediately.",
+    },
   ];
 
   const router = useRouter();
@@ -94,6 +104,13 @@ const SettingsScreen = ({}) => {
             </Accordion>
           ))}
         </View>
+
+        <TouchableOpacity
+          style={styles.formSubmitButton}
+          onPress={() => router.replace("auth/reset-success")}
+        >
+          <Text style={styles.buttonText}>Reset Password</Text>
+        </TouchableOpacity>
       </ScrollView>
     </View>
   );

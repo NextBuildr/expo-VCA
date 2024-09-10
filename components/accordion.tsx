@@ -33,14 +33,14 @@ const Accordion = ({ title, children }) => {
         onPress={toggleAccordion}
       >
         <Text
-          style={styles.accordionTitle}
-          numberOfLines={1}
+         numberOfLines={isOpen ? 2 : 1}
           ellipsizeMode="tail"
+          style={styles.accordionTitle}
         >
           {title}
         </Text>
         <Entypo
-          name={isOpen ? "keyboard-arrow-up" : "keyboard-arrow-down"}
+          name={isOpen ? "chevron-up" : "chevron-down"}
           size={24}
           color="#1B263B"
         />
@@ -68,6 +68,8 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     lineHeight: 30,
     color: "#1B263B",
+    maxWidth: '90%', 
+    marginRight: 10,
   },
   accordionContent: {
     fontSize: 18,
