@@ -109,7 +109,7 @@ const helpSupport = ({}) => {
 
       <TouchableOpacity
         style={styles.formSubmitButton}
-        onPress={() => router.replace("auth/reset-success")}
+        onPress={() => setModalVisible(true)}
       >
         <Text style={styles.buttonText}>Send message</Text>
       </TouchableOpacity>
@@ -273,6 +273,15 @@ const styles = StyleSheet.create({
     // alignItems: "center",
     justifyContent: "center",
     marginHorizontal: 20,
+  },
+  textarea: {
+    height: 100,
+    borderColor: '#ccc',
+    borderWidth: 1,
+    borderRadius: 5,
+    padding: 10,
+    marginBottom: 15,
+    textAlignVertical: 'top', // Ensures text starts at the top of the TextInput
   },
   modalTitle: {
     fontSize: 24,
