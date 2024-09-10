@@ -44,7 +44,7 @@ const Notifications = ({}) => {
         {/* Push Notification */}
         <TouchableOpacity style={styles.listItem}>
           <View style={styles.listItemContent}>
-            <MaterialIcons name="sms" size={24} color="#1B263B" />
+            <MaterialIcons name="devices" size={24} color="#1B263B" />
             <Text style={styles.listItemText}>Push Notifications</Text>
           </View>
           <Switch
