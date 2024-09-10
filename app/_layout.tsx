@@ -85,6 +85,7 @@ function AppNavigator() {
         <Stack.Screen name="profile" options={{ headerShown: false }} />
         <Stack.Screen name="edit-profile" options={{ headerShown: false }} />
         <Stack.Screen name="change-password" options={{ headerShown: false }} />
+        <Stack.Screen name="notification" options={{ headerShown: false }} />
         {/* <Stack.Screen name="edit-profile" options={{ headerShown: false }} /> */}
       </Stack>
     </GestureHandlerRootView>

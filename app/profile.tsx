@@ -59,7 +59,10 @@ const ProfilePage = () => {
         <Entypo name="chevron-right" size={24} color="#778DA9" />
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.listItem}>
+      <TouchableOpacity
+        style={styles.listItem}
+        onPress={() => router.replace("/notification")}
+      >
         <View style={styles.listItemContent}>
           <MaterialIcons name="notifications" size={24} color="#1B263B" />
           <Text style={styles.listItemText}>Notification</Text>
