@@ -41,7 +41,7 @@ const SettingsScreen = ({}) => {
           <Text style={styles.headerText}>Notification Settings</Text>
         </View>
        
-        </TouchableOpacity>
+        
       </ScrollView>
     </View>
   );
