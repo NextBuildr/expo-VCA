@@ -83,7 +83,7 @@ const EditProfile = ({}) => {
         >
           <View style={styles.modalContainer}>
             <View style={styles.modalContent}>
-              <Text style={styles.modalTitle}>Logout</Text>
+              <Text style={styles.modalTitle}>Warning</Text>
               <Text style={styles.modalText}>
                 Are you sure you want to delete your account? You will loose all
                 progress and this cannot be reversed .Thre is no going back!
