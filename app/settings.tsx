@@ -129,8 +129,8 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: "center",
     fontSize: 20,
-    fontWeight: "700",
-    color: "#415A77",
+    fontWeight: "500",
+    color: "#292D32",
     lineHeight: 30,
   },
   inputContainer: {

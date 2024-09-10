@@ -42,7 +42,7 @@ const SettingsScreen = ({}) => {
           >
             <AntDesign name="arrowleft" size={24} color="#1B263B" />
           </TouchableOpacity>
-          <Text style={styles.headerText}>Change password</Text>
+          <Text style={styles.headerText}>Help & Support</Text>
         </View>
 
         <Text style={styles.heeaderText}>
@@ -72,7 +72,8 @@ const SettingsScreen = ({}) => {
         <Text style={styles.faqheadtext}>
           We're Here to Help with Anything at Onbrela
         </Text>
-        <View>
+
+        <View style={styles.accordionwrap}>
           {accordionData.map((item, index) => (
             <Accordion key={index} title={item.title}>
               <Text>{item.content}</Text>
@@ -101,14 +102,14 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: "center",
     fontSize: 20,
-    fontWeight: "700",
-    color: "#415A77",
+    fontWeight: "500",
+    color: "#292D32",
     lineHeight: 30,
   },
   heeaderText: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: "700",
-    color: "#415A77",
+    color: "#1B263B",
     marginBottom: 10,
   },
   faqheadtext: {

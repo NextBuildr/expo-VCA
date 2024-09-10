@@ -85,7 +85,10 @@ const ProfilePage = () => {
       </TouchableOpacity>
       <View style={styles.horizontalLine} />
 
-      <TouchableOpacity style={styles.listItem}>
+      <TouchableOpacity
+        style={styles.listItem}
+        onPress={() => router.replace("/help-support")}
+      >
         <View style={styles.listItemContent}>
           <MaterialIcons name="help-outline" size={24} color="#1B263B" />
           <Text style={styles.listItemText}>Help & Support</Text>
