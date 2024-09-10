@@ -14,7 +14,7 @@ import { useNavigation } from "@react-navigation/native";
 import { MaterialIcons, AntDesign, Entypo } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 
-const SettingsScreen = ({}) => {
+const Notifications = ({}) => {
   const navigation = useNavigation();
   const router = useRouter();
 
@@ -40,7 +40,8 @@ const SettingsScreen = ({}) => {
           </TouchableOpacity>
           <Text style={styles.headerText}>Notification Settings</Text>
         </View>
-        {/* SMS Notification */}
+
+        {/* Push Notification */}
         <TouchableOpacity style={styles.listItem}>
           <View style={styles.listItemContent}>
             <MaterialIcons name="sms" size={24} color="#1B263B" />
@@ -54,6 +55,7 @@ const SettingsScreen = ({}) => {
             value={isSMSEnabled}
           />
         </TouchableOpacity>
+
         {/* SMS Notification */}
         <TouchableOpacity style={styles.listItem}>
           <View style={styles.listItemContent}>
@@ -98,7 +100,7 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 80,
+    marginBottom: 20,
     marginTop: 50,
   },
   headerText: {
@@ -140,7 +142,6 @@ const styles = StyleSheet.create({
   deleteText: {
     color: "#B22222", // Red color for Delete Account text
   },
-
 });
 
-export default SettingsScreen;
+export default Notifications;

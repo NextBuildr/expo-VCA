@@ -13,7 +13,7 @@ import { useNavigation } from "@react-navigation/native";
 import { MaterialIcons, AntDesign, Entypo } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 
-const EditProfile = ({}) => {
+const SettingsScreen = ({}) => {
   const navigation = useNavigation();
 
   const [modalVisible, setModalVisible] = useState(false);
@@ -226,4 +226,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default EditProfile;
+export default SettingsScreen;
