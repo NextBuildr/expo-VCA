@@ -43,14 +43,7 @@ const SettingsScreen = ({}) => {
         </View>
 
        
-        <Modal
-          animationType="slide"
-          transparent={true}
-          visible={modalVisible}
-          onRequestClose={() => setModalVisible(false)}
-        >
-         
-        </Modal>
+       
       </ScrollView>
     </View>
   );
