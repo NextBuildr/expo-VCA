@@ -14,7 +14,7 @@ import { useNavigation } from "@react-navigation/native";
 import { MaterialIcons, AntDesign, Entypo } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 
-const SOS = ({}) => {
+const sos = ({}) => {
   const navigation = useNavigation();
   const [modalVisible, setModalVisible] = useState(false);
   const handleLogout = () => {
@@ -25,22 +25,22 @@ const SOS = ({}) => {
   const boxData = [
     {
       id: 1,
-      image: "../assets/images/Ambulance.png",
+      image: require("../assets/images/Ambulance.png"),
       text: "Medical Assistance",
     },
     {
       id: 2,
-      image: "../assets/images/Fire.png",
+      image: require("../assets/images/Fire.png"),
       text: "Fire Department",
     },
     {
       id: 3,
-      image: "../assets/images/Siren.png",
+      image: require("../assets/images/Siren.png"),
       text: "Police",
     },
     {
       id: 4,
-      image: "../assets/images/FirstAid.png",
+      image: require("../assets/images/FirstAid.png"),
       text: "Emergency Services",
     },
   ];
@@ -50,7 +50,7 @@ const SOS = ({}) => {
       <ScrollView contentContainerStyle={styles.contentContainer}>
         <View style={styles.header}>
           <TouchableOpacity
-            onPress={() => router.replace("/profile")}
+            onPress={() => router.replace("/home")}
             style={styles.arrowButton}
           >
             <AntDesign name="arrowleft" size={24} color="#1B263B" />
@@ -63,8 +63,9 @@ const SOS = ({}) => {
             <TouchableOpacity
               style={styles.listItem}
               onPress={() => setModalVisible(true)}
+              key={box.id}
             >
-              <View key={box.id} style={styles.box}>
+              <View  style={styles.box}>
                 <Image source={{ uri: box.image }} style={styles.image} />
                 <Text style={styles.text}>{box.text}</Text>
               </View>
@@ -206,4 +207,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SOS;
+export default sos;

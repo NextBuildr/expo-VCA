@@ -117,15 +117,17 @@ const HomePage = () => {
             <Text style={styles.boxText}>Schedule</Text>
           </View>
 
-          <View style={styles.boxWrapper} onPress={() => router.replace("/SOS")}>
-            <TouchableOpacity style={styles.box}>
-              <View style={styles.plusIconContainer}>
-                {/* <FontAwesome name="plus" size={20} color="#0D1B2A" /> */}
-                <Image source={require("../assets/images/sos.png")} />
-              </View>
-            </TouchableOpacity>
-            <Text style={styles.boxText}>SOS</Text>
-          </View>
+          <TouchableOpacity onPress={() => router.replace("/sos")}>
+            <View style={styles.boxWrapper}>
+              <TouchableOpacity style={styles.box}>
+                <View style={styles.plusIconContainer}>
+                  {/* <FontAwesome name="plus" size={20} color="#0D1B2A" /> */}
+                  <Image source={require("../assets/images/sos.png")} />
+                </View>
+              </TouchableOpacity>
+              <Text style={styles.boxText}>SOS</Text>
+            </View>
+          </TouchableOpacity>
         </View>
 
         {/* Recent Calls Header */}
