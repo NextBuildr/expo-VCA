@@ -38,7 +38,7 @@ const SettingsScreen = ({}) => {
           <Text style={styles.headerText}>Change password</Text>
         </View>
 
-        <Text style={styles.heeaderText}>Create New Password</Text>
+        <Text style={styles.heeaderText}>We're Here to Help with Anything at Onbrela</Text>
         <Text style={styles.descriptionText}>
           Need assistance with SmartVideo? Our team is here to help you with any
           questions or issues—reach out for quick support!
