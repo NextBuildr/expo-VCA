@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
   },
   header: {
     position: 'absolute',
-    top: 10,
+    top: 20,
     left: 0,
     right: 0,
     height: 60,
