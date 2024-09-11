@@ -58,15 +58,14 @@ const sos = ({}) => {
           <Text style={styles.headerText}>Emergency calls</Text>
         </View>
 
-        <View>
+        <View style={styles.listItem}>
           {boxData.map((box) => (
             <TouchableOpacity
-              style={styles.listItem}
               onPress={() => setModalVisible(true)}
               key={box.id}
             >
-              <View  style={styles.box}>
-                <Image source={box.image } style={styles.image} />
+              <View style={styles.box}>
+                <Image source={box.image} style={styles.image} />
                 <Text style={styles.text}>{box.text}</Text>
               </View>
             </TouchableOpacity>
@@ -128,8 +127,13 @@ const styles = StyleSheet.create({
     color: "#415A77",
     lineHeight: 30,
   },
+  listItem: {
+    flexDirection: "row",
+    flexWrap: "wrap", 
+    justifyContent: "center",
+  },
   box: {
-    width: "45%",
+    width: 185,
     height: 130,
     backgroundColor: "#778DA933",
     justifyContent: "center",
@@ -171,7 +175,6 @@ const styles = StyleSheet.create({
     color: "#fff",
     marginBottom: 10,
     textAlign: "center",
-
   },
   modalText: {
     fontSize: 16,

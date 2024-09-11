@@ -80,7 +80,7 @@ const SignupScreen = () => {
         </View>
         <TouchableOpacity
           style={styles.formSubmitButton}
-          onPress={() => router.replace("/auth/check-mail")}
+          onPress={() => router.replace("home")}
         >
           <Text style={styles.buttonText}>Sign Up</Text>
         </TouchableOpacity>

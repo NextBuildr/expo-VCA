@@ -56,11 +56,16 @@ const LoginScreen = () => {
             </TouchableOpacity>
             <Text style={styles.rememberText}>Remember me for 30 days</Text>
           </View>
-          <TouchableOpacity onPress={() => router.replace("/auth/forget-password")}>
+          <TouchableOpacity
+            onPress={() => router.replace("/auth/forget-password")}
+          >
             <Text style={styles.forgetPassword}>Forget password?</Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.formSubmitButton} onPress={login}>
+        <TouchableOpacity
+          style={styles.formSubmitButton}
+          onPress={() => router.replace("home")}
+        >
           <Text style={styles.buttonText}>Log in</Text>
         </TouchableOpacity>
         <View style={styles.divider}>
