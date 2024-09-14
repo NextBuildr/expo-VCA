@@ -54,7 +54,7 @@ const LoginScreen = () => {
             <TouchableOpacity style={styles.checkboxWrapper}>
               {/* Checkbox would go here */}
             </TouchableOpacity>
-            <Text style={styles.rememberText}>Remember me for 30 days</Text>
+            {/* <Text style={styles.rememberText}>Remember me for 30 days</Text> */}
           </View>
           <TouchableOpacity
             onPress={() => router.replace("/auth/forget-password")}
